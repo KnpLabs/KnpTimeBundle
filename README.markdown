@@ -8,5 +8,8 @@ Enable the helper in your config.yml:
 
 ## USAGE
 
-    // Use the helper
+    // Use the helper with Php
     echo $view->time->ago($dateTime); // returns something like "3 minutes ago"
+    // Use the helper with twig
+    {{ _view.time.ago(DateTimeObject) }}
+
