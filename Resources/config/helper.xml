@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+  <parameters>
+
+    <parameter key="templating.helper.time.class">Bundle\TimeBundle\Helper\TimeHelper</parameter>
+
+  </parameters>
+
+  <services>
+
+    <service id="templating.helper.time" class="%templating.helper.time.class%">
+      <tag name="templating.helper" alias="time" />
+    </service>
+    
+  </services>
+</container>
