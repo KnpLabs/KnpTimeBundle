@@ -2,7 +2,7 @@
 
 namespace Bundle\TimeBundle\Helper;
 
-use Symfony\Components\Templating\Helper\HelperInterface;
+use Symfony\Component\Templating\Helper\HelperInterface;
 
 class TimeHelper implements HelperInterface
 {
