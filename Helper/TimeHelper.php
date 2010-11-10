@@ -43,8 +43,10 @@ class TimeHelper implements HelperInterface
      *
      * @return string
      **/
-    public function ago(\DateTime $since, \DateTime $to = null)
+    public function ago(\DateTime $since = null, \DateTime $to = null)
     {
+        if(!$since) return '';
+
         $to = $to ?: new \DateTime();
         $interval = $to->diff($since);
         $suffix = ( $interval->invert ? ' ago' : '' );
