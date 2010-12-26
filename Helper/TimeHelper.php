@@ -3,51 +3,21 @@
 namespace Bundle\TimeBundle\Helper;
 
 use Symfony\Component\Templating\Helper\HelperInterface;
+use DateTime;
 
 class TimeHelper implements HelperInterface
 {
-    /**
-     * @var TimeParser
-     */
-    protected $parser;
-    protected $charset = 'UTF-8';
-
-    /**
-     * Sets the default charset.
-     *
-     * @param string $charset The charset
-     */
-    public function setCharset($charset)
-    {
-        $this->charset = $charset;
-    }
-
-    /**
-     * Gets the default charset.
-     *
-     * @return string The default charset
-     */
-    public function getCharset()
-    {
-        return $this->charset;
-    }
-
-    public function getName()
-    {
-        return 'time';
-    }
-
     /**
      * Returns a single number of years, months, days, hours, minutes or seconds between the current date and the provided date.
      * If the date occurs in the past (is negative/inverted), it suffixes it with 'ago'.
      *
      * @return string
      **/
-    public function ago(\DateTime $since = null, \DateTime $to = null)
+    public function ago(DateTime $since = null, DateTime $to = null)
     {
         if(!$since) return '';
 
-        $to = $to ?: new \DateTime();
+        $to = $to ?: new DateTime();
         $interval = $to->diff($since);
         $suffix = ( $interval->invert ? ' ago' : '' );
         if ( $v = $interval->y >= 1 ) return static::pluralize( $interval->y, 'year' ) . $suffix;
@@ -60,17 +30,11 @@ class TimeHelper implements HelperInterface
 
     protected static function pluralize($count, $text)
     {
-        return $count.' '.( ( $count === 1 ) ? ( $text ) : ( $text.'s' ) );
+        return $count.' '.(  $count === 1  ?  $text  :  $text.'s'  );
     }
 
-    /**
-     * Transforms markdown syntax to HTML
-     * @param   string  $markdownText   The markdown syntax text
-     * @return  string                  The HTML code
-     */
-    public function transform($markdownText)
+    public function getName()
     {
-        return $this->parser->transform($markdownText);
+        return 'time';
     }
-
 }
