@@ -13,6 +13,7 @@ class TimeExtension extends Extension
     {
         $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
         $loader->load('templating.xml');
+        $loader->load('twig.xml');
     }
 
     /**

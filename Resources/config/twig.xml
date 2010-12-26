@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="time.twig.extension.time.class">Bundle\TimeBundle\Twig\Extension\TimeExtension</parameter>
+    </parameters>
+
+    <services>
+        <service id="time.twig.extension.time" class="%time.twig.extension.time.class%">
+            <argument type="service" id="time.templating.helper.time" />
+            <tag name="twig.extension" />
+        </service>
+    </services>
+</container>
