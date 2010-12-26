@@ -9,10 +9,10 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 class TimeExtension extends Extension
 {
 
-    public function helperLoad($config, ContainerBuilder $container)
+    public function configLoad($config, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
-        $loader->load('helper.xml');
+        $loader->load('templating.xml');
     }
 
     /**

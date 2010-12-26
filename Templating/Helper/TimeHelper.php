@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\TimeBundle\Helper;
+namespace Bundle\TimeBundle\Templating\Helper;
 
 use Symfony\Component\Templating\Helper\HelperInterface;
 use DateTime;
