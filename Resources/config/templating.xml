@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
-  <parameters>
-    <parameter key="templating.helper.time.class">Bundle\TimeBundle\Templating\Helper\TimeHelper</parameter>
-  </parameters>
+    <parameters>
+        <parameter key="time.templating.helper.time.class">Bundle\TimeBundle\Templating\Helper\TimeHelper</parameter>
+    </parameters>
 
-  <services>
+    <services>
 
-    <service id="templating.helper.time" class="%templating.helper.time.class%">
-      <tag name="templating.helper" alias="time" />
-    </service>
+        <service id="time.templating.helper.time" class="%time.templating.helper.time.class%">
+            <tag name="templating.helper" alias="time" />
+        </service>
 
-  </services>
+    </services>
 </container>
