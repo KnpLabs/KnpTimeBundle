@@ -2,10 +2,10 @@
 
 namespace Bundle\TimeBundle\Templating\Helper;
 
-use Symfony\Component\Templating\Helper\HelperInterface;
+use Symfony\Component\Templating\Helper\Helper;
 use DateTime;
 
-class TimeHelper implements HelperInterface
+class TimeHelper extends Helper
 {
     /**
      * Returns a single number of years, months, days, hours, minutes or seconds between the current date and the provided date.
