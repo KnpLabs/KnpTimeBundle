@@ -19,7 +19,7 @@ class TimeHelper extends Helper
 
         $to = $to ?: new DateTime();
         $interval = $to->diff($since);
-        $suffix = ( $interval->invert ? ' ago' : '' );
+        $suffix = ' ago';
         if ( $v = $interval->y >= 1 ) return static::pluralize( $interval->y, 'year' ) . $suffix;
         if ( $v = $interval->m >= 1 ) return static::pluralize( $interval->m, 'month' ) . $suffix;
         if ( $v = $interval->d >= 1 ) return static::pluralize( $interval->d, 'day' ) . $suffix;
