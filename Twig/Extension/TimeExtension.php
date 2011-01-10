@@ -3,6 +3,7 @@
 namespace Bundle\TimeBundle\Twig\Extension;
 
 use Bundle\TimeBundle\Templating\Helper\TimeHelper;
+use DateTime;
 
 /*
  * This file is part of the Symfony package.
@@ -31,11 +32,16 @@ class TimeExtension extends \Twig_Extension
      *
      * @return array An array of global functions
      */
-    public function getGlobals()
+    public function getFunctions()
     {
         return array(
-            'fn_ago'  => new \Twig_Function($this->helper, 'ago')
+            'ago'  => new \Twig_Function_Method($this, 'ago')
         );
+    }
+
+    public function ago(DateTime $since = null, DateTime $to = null)
+    {
+        return $this->helper->ago($since, $to);
     }
 
     /**
