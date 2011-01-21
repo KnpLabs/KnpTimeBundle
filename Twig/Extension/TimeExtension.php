@@ -3,7 +3,6 @@
 namespace Bundle\TimeBundle\Twig\Extension;
 
 use Bundle\TimeBundle\Templating\Helper\TimeHelper;
-use DateTime;
 
 /*
  * This file is part of the Symfony package.
@@ -39,7 +38,7 @@ class TimeExtension extends \Twig_Extension
         );
     }
 
-    public function ago(DateTime $since = null, DateTime $to = null)
+    public function ago($since = null, $to = null)
     {
         return $this->helper->ago($since, $to);
     }

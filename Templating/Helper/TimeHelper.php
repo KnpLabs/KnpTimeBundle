@@ -11,26 +11,83 @@ class TimeHelper extends Helper
      * Returns a single number of years, months, days, hours, minutes or seconds between the current date and the provided date.
      * If the date occurs in the past (is negative/inverted), it suffixes it with 'ago'.
      *
+     * @param  mixed $since The datetime for wich the diff will be calculated
+     * @param  mixed $to    Tho datetime from wich the diff will be calculated
+     *
      * @return string
-     **/
-    public function ago(DateTime $since = null, DateTime $to = null)
+     */
+    public function ago($since = null, $to = null)
     {
-        if(!$since) return '';
+        if (null === $since) {
+            return '';
+        }
 
-        $to = $to ?: new DateTime();
+        $since = $this->getDatetimeObject($since);
+        $to = $this->getDatetimeObject($to);
+
         $interval = $to->diff($since);
-        $suffix = ' ago';
-        if ( $v = $interval->y >= 1 ) return static::pluralize( $interval->y, 'year' ) . $suffix;
-        if ( $v = $interval->m >= 1 ) return static::pluralize( $interval->m, 'month' ) . $suffix;
-        if ( $v = $interval->d >= 1 ) return static::pluralize( $interval->d, 'day' ) . $suffix;
-        if ( $v = $interval->h >= 1 ) return static::pluralize( $interval->h, 'hour' ) . $suffix;
-        if ( $v = $interval->i >= 1 ) return static::pluralize( $interval->i, 'minute' ) . $suffix;
-        return static::pluralize( $interval->s, 'second' ) . $suffix;
+
+        if (0 !== $interval->y) {
+            $count  = $interval->y;
+            $unit   = 'year';
+        }
+        elseif (0 !== $interval->m) {
+            $count  = $interval->m;
+            $unit   = 'month';
+        }
+        elseif (0 !== $interval->d) {
+            $count  = $interval->d;
+            $unit   = 'day';
+        }
+        elseif (0 !== $interval->h) {
+            $count  = $interval->h;
+            $unit   = 'hour';
+        }
+        elseif (0 !== $interval->i) {
+            $count  = $interval->i;
+            $unit   = 'minute';
+        }
+        elseif (0 !== $interval->s) {
+            $count  = $interval->s;
+            $unit   = 'second';
+        }
+        else {
+            return 'just now';
+        }
+
+        return sprintf('%s %s ago', $count, $this->pluralize($count, $unit));
     }
 
-    protected static function pluralize($count, $text)
+    /**
+     * Returns the pluralized version of the given text depending of the
+     * specified count
+     *
+     * @param  integer $count
+     * @param  string  $text
+     */
+    public function pluralize($count, $text)
     {
-        return $count.' '.(  $count === 1  ?  $text  :  $text.'s'  );
+        return $count === 1 ? $text : $text . 's';
+    }
+
+    /**
+     * Returns a DateTime instance for the given datetime
+     *
+     * @param  mixed $datetime
+     *
+     * @return DateTime
+     */
+    public function getDatetimeObject($datetime = null)
+    {
+        if ($datetime instanceof DateTime) {
+            return $datetime;
+        }
+
+        if (is_integer($datetime)) {
+            $datetime = date('Y-m-d H:i:s', $datetime);
+        }
+
+        return new DateTime($datetime);
     }
 
     public function getName()
