@@ -9,11 +9,20 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 class TimeExtension extends Extension
 {
 
-    public function configLoad($config, ContainerBuilder $container)
+    public function configLoad(array $configs, ContainerBuilder $container)
     {
-        $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
-        $loader->load('templating.xml');
-        $loader->load('twig.xml');
+        foreach ($configs as $config) {
+            $this->doConfigLoad($config, $container);
+        }
+    }
+
+    public function doConfigLoad(array $config, ContainerBuilder $container)
+    {
+        if(!$container->hasDefinition('time.templating.helper.time')) {
+            $loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
+            $loader->load('templating.xml');
+            $loader->load('twig.xml');
+        }
     }
 
     /**
