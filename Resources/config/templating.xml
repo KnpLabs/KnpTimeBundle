@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="time.templating.helper.time.class">Bundle\TimeBundle\Templating\Helper\TimeHelper</parameter>
+        <parameter key="time.templating.helper.time.class">Knplabs\TimeBundle\Templating\Helper\TimeHelper</parameter>
     </parameters>
 
     <services>

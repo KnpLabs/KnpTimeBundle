@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\TimeBundle\DependencyInjection;
+namespace Knplabs\TimeBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;

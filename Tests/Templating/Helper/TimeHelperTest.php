@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\TimeBundle\Templating\Helper;
+namespace Knplabs\TimeBundle\Templating\Helper;
 
 class TimeHelperTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bundle\TimeBundle\Twig\Extension;
+namespace Knplabs\TimeBundle\Twig\Extension;
 
-use Bundle\TimeBundle\Templating\Helper\TimeHelper;
+use Knplabs\TimeBundle\Templating\Helper\TimeHelper;
 
 /*
  * This file is part of the Symfony package.

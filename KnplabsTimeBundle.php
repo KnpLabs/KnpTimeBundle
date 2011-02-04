@@ -1,10 +1,10 @@
 <?php
 
-namespace Bundle\TimeBundle;
+namespace Knplabs\TimeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 
-class TimeBundle extends BaseBundle
+class KnplabsTimeBundle extends BaseBundle
 {
     public function getNamespace()
     {
