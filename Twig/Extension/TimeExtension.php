@@ -34,13 +34,13 @@ class TimeExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'ago'  => new \Twig_Function_Method($this, 'ago')
+            'time_diff'  => new \Twig_Function_Method($this, 'diff')
         );
     }
 
-    public function ago($since = null, $to = null)
+    public function diff($since = null, $to = null)
     {
-        return $this->helper->ago($since, $to);
+        return $this->helper->diff($since, $to);
     }
 
     /**

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>il y a 1 an|il y a %count% ans</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>il y a 1 mois|il y a %count% mois</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>il y a 1 jour|il y a %count% jours</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>il y a 1 heure|il y a %count% heures</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.second</source>
+                <target>il y a 1 seconde|il y a %count% secondes</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.empty</source>
+                <target>maintenant</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.in.second</source>
+                <target>dans 1 seconde|dans %count% secondes</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.hour</source>
+                <target>dans 1 heure|dans %count% heures</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.day</source>
+                <target>dans 1 jour|dans %count% jours</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.month</source>
+                <target>dans 1 mois|dans %count% mois</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.year</source>
+                <target>dans 1 an|dans %count% ans</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

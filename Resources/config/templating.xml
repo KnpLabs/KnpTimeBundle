@@ -6,13 +6,17 @@
 
     <parameters>
         <parameter key="time.templating.helper.time.class">Knplabs\TimeBundle\Templating\Helper\TimeHelper</parameter>
+        <parameter key="time.datetime_formatter.class">Knplabs\TimeBundle\DateTimeFormatter</parameter>
     </parameters>
 
     <services>
-
-        <service id="time.templating.helper.time" class="%time.templating.helper.time.class%">
-            <tag name="templating.helper" alias="time" />
+        <service id="time.datetime_formatter" class="%time.datetime_formatter.class%">
+            <argument type="service" id="translator"/>
         </service>
 
+        <service id="time.templating.helper.time" class="%time.templating.helper.time.class%">
+            <argument type="service" id="time.datetime_formatter" />
+            <tag name="templating.helper" alias="time" />
+        </service>
     </services>
 </container>

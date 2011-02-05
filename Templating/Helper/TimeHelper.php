@@ -3,71 +3,33 @@
 namespace Knplabs\TimeBundle\Templating\Helper;
 
 use Symfony\Component\Templating\Helper\Helper;
+use Knplabs\TimeBundle\DateTimeFormatter;
 use DateTime;
 
 class TimeHelper extends Helper
 {
-    /**
-     * Returns a single number of years, months, days, hours, minutes or seconds between the current date and the provided date.
-     * If the date occurs in the past (is negative/inverted), it suffixes it with 'ago'.
-     *
-     * @param  mixed $since The datetime for wich the diff will be calculated
-     * @param  mixed $to    Tho datetime from wich the diff will be calculated
-     *
-     * @return string
-     */
-    public function ago($since = null, $to = null)
+    protected $formatter;
+
+    public function __construct(DateTimeFormatter $formatter)
     {
-        if (null === $since) {
-            return '';
-        }
-
-        $since = $this->getDatetimeObject($since);
-        $to = $this->getDatetimeObject($to);
-
-        $interval = $to->diff($since);
-
-        if (0 !== $interval->y) {
-            $count  = $interval->y;
-            $unit   = 'year';
-        }
-        elseif (0 !== $interval->m) {
-            $count  = $interval->m;
-            $unit   = 'month';
-        }
-        elseif (0 !== $interval->d) {
-            $count  = $interval->d;
-            $unit   = 'day';
-        }
-        elseif (0 !== $interval->h) {
-            $count  = $interval->h;
-            $unit   = 'hour';
-        }
-        elseif (0 !== $interval->i) {
-            $count  = $interval->i;
-            $unit   = 'minute';
-        }
-        elseif (0 !== $interval->s) {
-            $count  = $interval->s;
-            $unit   = 'second';
-        }
-        else {
-            return 'just now';
-        }
-
-        return sprintf('%s %s ago', $count, $this->pluralize($count, $unit));
+        $this->formatter = $formatter;
     }
 
     /**
-     * Returns the pluralized version of the given text depending of the
-     * specified count
+     * Returns a single number of years, months, days, hours, minutes or
+     * seconds between the specified date times.
      *
-     * @param  integer $count
-     * @param  string  $text
+     * @param  mixed $since The datetime for which the diff will be calculated
+     * @param  mixed $since The datetime from which the diff will be calculated
+     *
+     * @return string
      */
-    public function pluralize($count, $text)
+    public function diff($from, $to = null)
     {
-        return $count === 1 ? $text : $text . 's';
+        $from = $this->getDatetimeObject($from);
+        $to = $this->getDatetimeObject($to);
+
+        return $this->formatter->formatDiff($from, $to);
     }
 
     /**

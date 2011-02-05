@@ -8,23 +8,7 @@ class TimeHelperTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->helper = new TimeHelper();
-    }
-
-    public function testAgo()
-    {
-        $this->assertEquals('2 months ago', $this->helper->ago('2 months ago'));
-        $this->assertEquals('1 month ago', $this->helper->ago('2 months ago', '1 month ago'));
-    }
-
-    public function testPluralize()
-    {
-        $this->assertEquals('months', $this->helper->pluralize(2, 'month'));
-    }
-
-    public function testPluralizeDoesNotDoAnythingWhenTheCountEqualsOne()
-    {
-        $this->assertEquals('month', $this->helper->pluralize(1, 'month'));
+        $this->helper = new TimeHelper($this->getMock('Knplabs\TimeBundle\DateTimeFormatter', array(), array(), '', false));
     }
 
     public function testGetDatetimeObject()
