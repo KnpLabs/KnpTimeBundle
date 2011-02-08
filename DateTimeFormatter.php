@@ -29,7 +29,7 @@ class DateTimeFormatter
      */
     public function formatDiff(Datetime $from, Datetime $to)
     {
-        $units = array(
+        static $units = array(
             'y' => 'year',
             'm' => 'month',
             'd' => 'day',
@@ -43,7 +43,7 @@ class DateTimeFormatter
         foreach ($units as $attribute => $unit) {
             $count = $diff->$attribute;
             if (0 !== $count) {
-                return $this->getDiffMessage($count, $diff->invert, $unit);
+                return $this->doGetDiffMessage($count, $diff->invert, $unit);
             }
         }
 
@@ -72,6 +72,11 @@ class DateTimeFormatter
             throw new \InvalidArgumentException(sprintf('The unit \'%s\' is not supported.', $unit));
         }
 
+        return $this->doGetDiffMessage($count, $invert, $unit);
+    }
+
+    protected function doGetDiffMessage($count, $invert, $unit)
+    {
         $id = sprintf('diff.%s.%s', $invert ? 'ago' : 'in', $unit);
 
         return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time');
