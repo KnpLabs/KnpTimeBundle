@@ -34,7 +34,9 @@ class TimeExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'time_diff'  => new \Twig_Function_Method($this, 'diff')
+            'time_diff'  => new \Twig_Function_Method($this, 'diff', array(
+                'is_safe' => array('html')
+            ))
         );
     }
 
