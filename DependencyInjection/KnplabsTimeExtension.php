@@ -9,10 +9,9 @@ use Symfony\Component\Config\FileLocator;
 
 class TimeExtension extends Extension
 {
-
-    public function configLoad(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container)
     {
-        foreach ($configs as $config) {
+        foreach (self::normalizeKeys($configs) as $config) {
             $this->doConfigLoad($config, $container);
         }
     }
@@ -43,7 +42,6 @@ class TimeExtension extends Extension
 
     public function getAlias()
     {
-        return 'time';
+        return 'knplabs_time';
     }
-
 }
