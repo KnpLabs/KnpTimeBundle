@@ -9,7 +9,7 @@
     </parameters>
 
     <services>
-        <service id="time.twig.extension.time" class="%time.twig.extension.time.class%">
+        <service id="time.twig.extension.time" class="%time.twig.extension.time.class%" public="false">
             <argument type="service" id="time.templating.helper.time" />
             <tag name="twig.extension" />
         </service>
