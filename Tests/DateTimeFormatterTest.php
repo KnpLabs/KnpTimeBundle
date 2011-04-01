@@ -1,6 +1,6 @@
 <?php
 
-namespace Knplabs\TimeBundle;
+namespace Knplabs\Bundle\TimeBundle;
 
 class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
 {

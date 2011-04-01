@@ -1,6 +1,6 @@
 <?php
 
-namespace Knplabs\TimeBundle;
+namespace Knplabs\Bundle\TimeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
 

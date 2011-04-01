@@ -1,6 +1,6 @@
 <?php
 
-namespace Knplabs\TimeBundle\Templating\Helper;
+namespace Knplabs\Bundle\TimeBundle\Templating\Helper;
 
 class TimeHelperTest extends \PHPUnit_Framework_TestCase
 {
@@ -8,7 +8,7 @@ class TimeHelperTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->helper = new TimeHelper($this->getMock('Knplabs\TimeBundle\DateTimeFormatter', array(), array(), '', false));
+        $this->helper = new TimeHelper($this->getMock('Knplabs\Bundle\TimeBundle\DateTimeFormatter', array(), array(), '', false));
     }
 
     public function testGetDatetimeObject()

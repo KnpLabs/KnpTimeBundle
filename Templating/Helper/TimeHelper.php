@@ -1,9 +1,9 @@
 <?php
 
-namespace Knplabs\TimeBundle\Templating\Helper;
+namespace Knplabs\Bundle\TimeBundle\Templating\Helper;
 
 use Symfony\Component\Templating\Helper\Helper;
-use Knplabs\TimeBundle\DateTimeFormatter;
+use Knplabs\Bundle\TimeBundle\DateTimeFormatter;
 use DateTime;
 
 class TimeHelper extends Helper
