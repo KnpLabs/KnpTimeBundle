@@ -1,4 +1,4 @@
-Provide a time helper to Symfony2 projects.
+# Provide a time helper to Symfony2 projects.
 
 ## INSTALLATION
 
@@ -50,7 +50,7 @@ Enable the helper in your config.yml:
 ### Note:
 
 If you are using a different language code than two letters (en_US for example) then
-should copy the TimeBundle's language codes and rename the middle part according to your language:
+should copy the TimeBundle's language files and rename the middle part according to your language:
 
     from:
     MyProject/vendor/bundles/Knplabs/Bundle/TimeBundle/Resources/translations/time.en.xliff
@@ -59,4 +59,6 @@ should copy the TimeBundle's language codes and rename the middle part according
     to:
     MyProject/app/Resources/translations/time.en_US.xliff
     MyProject/app/Resources/translations/time.fr_FR.xliff
+
+Don't forget to clear your cache afterwards.
 
