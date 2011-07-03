@@ -4,7 +4,7 @@
 
 Add it to your Symfony Project:
 
-    git submodule add git://github.com/knplabs/TimeBundle.git MyProject/vendor/bundles/Knplabs/Bundle/TimeBundle
+    git submodule add git://github.com/knplabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
 
 Add it to your app/autoload.php:
 
@@ -13,7 +13,7 @@ Add it to your app/autoload.php:
         'Symfony'                                             => array($vendorDir.'/symfony/src', $vendorDir.'/bundles'),
         // ...
         // Depencies
-        'Knplabs'                                             => $vendorDir.'/bundles',
+        'Knp'                                             => $vendorDir.'/bundles',
         // ...
         // own Namespaces
         // ...
@@ -28,7 +28,7 @@ Add it to your app/AppKernel.php:
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             // ...
             // dependencies
-            new Knplabs\Bundle\TimeBundle\KnplabsTimeBundle(),
+            new Knp\Bundle\TimeBundle\KnpTimeBundle(),
             // own bundles
             // ...
         );
@@ -38,7 +38,7 @@ Add it to your app/AppKernel.php:
 
 Enable the helper in your config.yml:
 
-    knplabs_time: ~      # Enable the helper for use in templates
+    knp_time: ~      # Enable the helper for use in templates
 
 ## USAGE
 
@@ -53,8 +53,8 @@ If you are using a different language code than two letters (en_US for example) 
 should copy the TimeBundle's language files and rename the middle part according to your language:
 
     from:
-    MyProject/vendor/bundles/Knplabs/Bundle/TimeBundle/Resources/translations/time.en.xliff
-    MyProject/vendor/bundles/Knplabs/Bundle/TimeBundle/Resources/translations/time.fr.xliff
+    MyProject/vendor/bundles/Knp/Bundle/TimeBundle/Resources/translations/time.en.xliff
+    MyProject/vendor/bundles/Knp/Bundle/TimeBundle/Resources/translations/time.fr.xliff
 
     to:
     MyProject/app/Resources/translations/time.en_US.xliff

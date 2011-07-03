@@ -1,13 +1,13 @@
 <?php
 
-namespace Knplabs\Bundle\TimeBundle\DependencyInjection;
+namespace Knp\Bundle\TimeBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 
-class KnplabsTimeExtension extends Extension
+class KnpTimeExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
