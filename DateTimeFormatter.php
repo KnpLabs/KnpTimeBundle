@@ -89,6 +89,6 @@ class DateTimeFormatter
      */
     public function getEmptyDiffMessage()
     {
-        return $this->translator->trans('diff.empty');
+        return $this->translator->trans('diff.empty', array(), 'time');
     }
 }
