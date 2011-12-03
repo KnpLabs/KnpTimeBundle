@@ -4,7 +4,7 @@
 
 Add it to your Symfony Project:
 
-    git submodule add git://github.com/knplabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
+    git submodule add git://github.com/KnpLabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
 
 Add it to your app/autoload.php:
 
