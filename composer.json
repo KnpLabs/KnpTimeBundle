@@ -1,0 +1,31 @@
+{
+    "name":        "knplabs/knp-time-bundle",
+    "type":        "symfony-bundle",
+    "keywords":    ["time", "date"],
+    "homepage":    "http://github.com/KnpLabs/KnpTimeBundle",
+    "license":     "MIT",
+
+    "authors": [
+        {
+            "name": "KnpLabs Team",
+            "homepage": "http://knplabs.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "http://github.com/KnpLabs/KnpTimeBundle/contributors"
+        }
+    ],
+
+    "require": {
+        "php":                      ">=5.3.2",
+        "symfony/framework-bundle": "2.0.*"
+    },
+
+    "autoload": {
+        "psr-0": {
+            "Knp\\Bundle\\TimeBundle": ""
+        }
+    },
+
+    "target-dir": "Knp/Bundle/TimeBundle"
+}
