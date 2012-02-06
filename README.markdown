@@ -17,10 +17,10 @@ Add it to your app/autoload.php:
 
     $loader->registerNamespaces(array(
         // Symfony Core Namespaces
-    'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
+        'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
         // ...
         // Depencies
-           'Knp'              => __DIR__.'/../vendor/bundles',
+        'Knp'              => __DIR__.'/../vendor/bundles',
         // ...
         // own Namespaces
         // ...
