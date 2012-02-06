@@ -5,15 +5,22 @@
 Add it to your Symfony Project:
 
     git submodule add git://github.com/KnpLabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
+    
+Or Using Deps (Add the following to deps file and run bin/vendors):
+
+    [KnpTimeBundle]
+    git=git://github.com/KnpLabs/KnpTimeBundle.git
+    target=bundles/Knp/Bundle/TimeBundle
+
 
 Add it to your app/autoload.php:
 
     $loader->registerNamespaces(array(
         // Symfony Core Namespaces
-        'Symfony'                                             => array($vendorDir.'/symfony/src', $vendorDir.'/bundles'),
+        'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
         // ...
         // Depencies
-        'Knp'                                             => $vendorDir.'/bundles',
+        'Knp\Bundle'              => __DIR__.'/../vendor/bundles',
         // ...
         // own Namespaces
         // ...
