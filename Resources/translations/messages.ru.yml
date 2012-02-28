@@ -1,0 +1,8 @@
+knp_time:
+    text:
+        age_incorrect:
+            еще не родился(лась)
+        age_suffix:
+            years: лет
+            year: год
+            year_: года

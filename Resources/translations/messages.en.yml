@@ -1,0 +1,7 @@
+knp_time:
+    text:
+        age_incorrect:
+            not born yet
+        age_suffix:
+            years: years
+            year: year
