@@ -54,6 +54,18 @@
                 <source>diff.tra.year</source>
                 <target>tra 1 anno|tra %count% anni</target>
             </trans-unit>
+            <trans-unit id="20">
+                <source>age.years</source>
+                <target>%count% anno|%count% anni</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>age.null</source>
+                <target>meno di un anno</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>age.incorrect</source>
+                <target>non ancora nati</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -54,6 +54,18 @@
                 <source>diff.in.year</source>
                 <target>恩 等 1 年|恩 等 %count% 年</target>
             </trans-unit>
+            <trans-unit id="20">
+                <source>age.years</source>
+                <target>%count% 年 內|%count% 年 內</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>age.null</source>
+                <target>不 到 一 年 的 時 間</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>age.incorrect</source>
+                <target>尚 未 出 生</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
