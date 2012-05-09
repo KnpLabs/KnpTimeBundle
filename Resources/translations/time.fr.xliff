@@ -54,6 +54,18 @@
                 <source>diff.in.year</source>
                 <target>dans 1 an|dans %count% ans</target>
             </trans-unit>
+            <trans-unit id="20">
+                <source>age.years</source>
+                <target>%count% an|%count% ans</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>age.null</source>
+                <target>moins d'un an</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>age.incorrect</source>
+                <target>pas encore né</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -91,4 +91,30 @@ class DateTimeFormatter
     {
         return $this->translator->trans('diff.empty', array(), 'time');
     }
+
+    /**
+     * Returns a formatted diff for the given birthdate and current datetimes
+     *
+     * @param  Datetime $birthdate
+     * @param  Datetime $current
+     *
+     * @return string
+     */
+    public function formatAge(Datetime $birthdate, Datetime $current)
+    {
+        $yearsDiff = $birthdate->diff($current);
+
+        if ($yearsDiff->invert) {
+            return $this->translator->trans('age.incorrect', array(), 'time');
+        }
+
+        $y = $yearsDiff->y;
+
+        if ($y == 0) {
+            return $this->translator->trans('age.null', array(), 'time');
+        }
+
+        return $this->translator->transChoice('age.years', $y, array('%count%' => $y), 'time');
+    }
+
 }

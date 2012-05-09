@@ -42,12 +42,14 @@ Enable the helper in your config.yml:
 
 ## USAGE
 
+### TIME_DIFF
+
     // Use the helper with Php
     echo $view['time']->diff($dateTime); // returns something like "3 minutes ago"
     // Use the helper with twig
     {{ time_diff(DateTimeObject) }}
 
-### Note:
+#### Note:
 
 If you are using a different language code than two letters (en_US for example) then
 should copy the TimeBundle's language files and rename the middle part according to your language:
@@ -61,4 +63,11 @@ should copy the TimeBundle's language files and rename the middle part according
     MyProject/app/Resources/translations/time.fr_FR.xliff
 
 Don't forget to clear your cache afterwards.
+
+### AGE
+
+    // Use the helper with Php
+    echo $view['time']->age($dateTime); // returns something like "5 years" or "1 year"
+    // Use the helper with twig
+    {{ age(DateTimeObject) }}
 

@@ -36,13 +36,21 @@ class TimeExtension extends \Twig_Extension
         return array(
             'time_diff'  => new \Twig_Function_Method($this, 'diff', array(
                 'is_safe' => array('html')
-            ))
+            )),
+            'age'  => new \Twig_Function_Method($this, 'age', array(
+                'is_safe' => array('html')
+            )),
         );
     }
 
     public function diff($since = null, $to = null)
     {
         return $this->helper->diff($since, $to);
+    }
+
+    public function age($birthday = null, $current = null)
+    {
+        return $this->helper->age($birthday, $current);
     }
 
     /**

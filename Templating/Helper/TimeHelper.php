@@ -33,6 +33,23 @@ class TimeHelper extends Helper
     }
 
     /**
+     * Returns a single number of full years
+     * between the specified date times.
+     *
+     * @param  mixed $birthdate The datetime for which the diff will be calculated
+     * @param  mixed $current The datetime from which the diff will be calculated
+     *
+     * @return string
+     */
+    public function age($birthdate, $current = null)
+    {
+        $birthdate = $this->getDatetimeObject($birthdate);
+        $current = $this->getDatetimeObject($current);
+
+        return $this->formatter->formatAge($birthdate, $current);
+    }
+
+    /**
      * Returns a DateTime instance for the given datetime
      *
      * @param  mixed $datetime
