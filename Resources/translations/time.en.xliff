@@ -4,19 +4,19 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>{0} right now|{1} 1 year ago|]1,Inf] %count% years ago</target>
+                <target>{0} right now|{1} 1 year ago|%count% years ago</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>{0} right now|{1} 1 month ago|]1,Inf] %count% months ago</target>
+                <target>{0} right now|{1} 1 month ago|%count% months ago</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>{0} right now|{1} 1 day ago|]1,Inf] %count% days ago</target>
+                <target>{0} right now|{1} 1 day ago|%count% days ago</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>{0} right now|{1} 1 hour ago|]1,Inf] %count% hours ago</target>
+                <target>{0} right now|{1} 1 hour ago|%count% hours ago</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
@@ -24,7 +24,7 @@
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>{0} right now|{1} 1 second ago|]1,Inf] %count% seconds ago</target>
+                <target>{0} right now|{1} 1 second ago|%count% seconds ago</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -32,27 +32,27 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>diff.in.second</source>
-                <target>{0} right now|{1} in 1 second|in ]1,Inf] %count% seconds</target>
+                <target>{0} right now|{1} in 1 second|in %count% seconds</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>diff.in.hour</source>
-                <target>{0} right now|{1} in 1 hour|in ]1,Inf] %count% hours</target>
+                <target>{0} right now|{1} in 1 hour|in %count% hours</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>{0} right now|{1} in 1 minute|in ]1,Inf] %count% minutes</target>
+                <target>{0} right now|{1} in 1 minute|in %count% minutes</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>{0} right now|{1} in 1 day|in ]1,Inf] %count% days</target>
+                <target>{0} right now|{1} in 1 day|in %count% days</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
-                <target>{0} right now|{1} in 1 month|in ]1,Inf] %count% months</target>
+                <target>{0} right now|{1} in 1 month|in %count% months</target>
             </trans-unit>
             <trans-unit id="13">
                 <source>diff.in.year</source>
-                <target>{0} right now|{1} in 1 year|in ]1,Inf] %count% years</target>
+                <target>{0} right now|{1} in 1 year|in %count% years</target>
             </trans-unit>
         </body>
     </file>
