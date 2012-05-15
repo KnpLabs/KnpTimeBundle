@@ -4,27 +4,27 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>{0} right now|{1} 1 year ago|%count% years ago</target>
+                <target>{0} right now|{1} {0} right now|{1} 1 year ago|%count% years ago</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>{0} right now|{1} 1 month ago|%count% months ago</target>
+                <target>{0} right now|{1} {0} right now|{1} 1 month ago|%count% months ago</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>{0} right now|{1} 1 day ago|%count% days ago</target>
+                <target>{0} right now|{1} {0} right now|{1} 1 day ago|%count% days ago</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>{0} right now|{1} 1 hour ago|%count% hours ago</target>
+                <target>{0} right now|{1} {0} right now|{1} 1 hour ago|%count% hours ago</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>{0} right now|{1} 1 minute ago|]1,Inf] %count% minutes ago</target>
+                <target>{0} right now|{1} {0} right now|{1} 1 minute ago|]1,Inf] %count% minutes ago</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>{0} right now|{1} 1 second ago|%count% seconds ago</target>
+                <target>{0} right now|{1} {0} right now|{1} 1 second ago|%count% seconds ago</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
