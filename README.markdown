@@ -2,50 +2,62 @@
 
 ## INSTALLATION
 
-Add it to your Symfony Project:
+Add it to your Symfony Project using git:
 
     git submodule add git://github.com/KnpLabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
 
-Add it to your app/autoload.php:
+Or use `deps`:
 
-    $loader->registerNamespaces(array(
-        // Symfony Core Namespaces
-        'Symfony'                                             => array($vendorDir.'/symfony/src', $vendorDir.'/bundles'),
-        // ...
-        // Depencies
-        'Knp'                                             => $vendorDir.'/bundles',
-        // ...
-        // own Namespaces
-        // ...
-    ));
+    [KnpTimeBundle]
+        git=https://github.com/KnpLabs/KnpTimeBundle.git
+        target=bundles/Knp/Bundle/TimeBundle
 
-Add it to your app/AppKernel.php:
+Register the namespaces:
 
-    public function registerBundles()
-    {
-        $bundles = array(
-            // Symfony Core Stuff
-            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            // ...
-            // dependencies
-            new Knp\Bundle\TimeBundle\KnpTimeBundle(),
-            // own bundles
-            // ...
-        );
+```php
+<?php
+// app/autoload.php
+$loader->registerNamespaces(array(
+    // ...
+    'Knp\Bundle' => __DIR__.'/../vendor/bundles',
+    // ...
+));
+```
 
-        // ...
-    }
+Register the bundle:
+
+```php
+<?php
+// app/AppKernel.php
+public function registerBundles()
+{
+    $bundles = array(
+		// ...
+		new Knp\Bundle\TimeBundle\KnpTimeBundle(),
+	);
+	// ...
+}
+```
 
 Enable the helper in your config.yml:
 
-    knp_time: ~      # Enable the helper for use in templates
+```yaml
+# app/config/config.yml
+knp_time: ~      # Enable the helper for use in templates
+```
 
 ## USAGE
 
-    // Use the helper with Php
-    echo $view['time']->diff($dateTime); // returns something like "3 minutes ago"
-    // Use the helper with twig
-    {{ time_diff(DateTimeObject) }}
+```php
+<?php
+// Use the helper with Php
+echo $view['time']->diff($dateTime); // returns something like "3 minutes ago"
+```
+
+```html+jinja
+// Use the helper with twig
+{{ time_diff(DateTimeObject) }}
+```
 
 ### Note:
 
