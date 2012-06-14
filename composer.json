@@ -19,7 +19,11 @@
 
     "require": {
         "php":                      ">=5.3.2",
-        "symfony/framework-bundle": ">=2.0.0"
+        "symfony/framework-bundle": ">=2.0,<2.2-dev"
+    },
+
+    "suggest": {
+        "symfony/twig-bundle": "to use the Twig time_diff function"
     },
 
     "autoload": {
