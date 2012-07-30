@@ -24,7 +24,7 @@
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>1 second geleden|%count% seconden geleden</target>
+                <target>1 seconde geleden|%count% seconden geleden</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
