@@ -12,7 +12,7 @@
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>wczoraj|%count% dni temu</target>
+                <target>wczoraj|[2,Inf] %count% dni temu</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
@@ -44,7 +44,7 @@
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>za dzień|za %count% dni</target>
+                <target>za dzień|[2, Inf] za %count% dni</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
