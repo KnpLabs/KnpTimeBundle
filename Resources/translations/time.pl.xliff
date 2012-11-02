@@ -4,15 +4,15 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>rok temu|[2-4] %count% lata temu|[5,Inf] %count% lat temu</target>
+                <target>rok temu|[2,4] %count% lata temu|[5,Inf] %count% lat temu</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>miesiąc temu|[2-4] %count% miesiące temu|[5,Inf] %count% miesięcy temu</target>
+                <target>miesiąc temu|[2,4] %count% miesiące temu|[5,Inf] %count% miesięcy temu</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>wczoraj|%count% dni temu</target>
+                <target>wczoraj|[2,Inf] %count% dni temu</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
@@ -20,11 +20,11 @@
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>minutę temu|[2-4] %count% minuty temu|[5,Inf] %count% minut temu</target>
+                <target>minutę temu|[2,4] %count% minuty temu|[5,Inf] %count% minut temu</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>sekundę temu|[2-4] %count% sekundy temu|[5,Inf] %count% sekund temu</target>
+                <target>sekundę temu|[2,4] %count% sekundy temu|[5,Inf] %count% sekund temu</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -44,7 +44,7 @@
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>za dzień|za %count% dni</target>
+                <target>za dzień|[2, Inf] za %count% dni</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
