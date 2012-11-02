@@ -4,11 +4,11 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>rok temu|[2-4] %count% lata temu|[5,Inf] %count% lat temu</target>
+                <target>rok temu|[2,4] %count% lata temu|[5,Inf] %count% lat temu</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>miesiąc temu|[2-4] %count% miesiące temu|[5,Inf] %count% miesięcy temu</target>
+                <target>miesiąc temu|[2,4] %count% miesiące temu|[5,Inf] %count% miesięcy temu</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
@@ -20,11 +20,11 @@
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>minutę temu|[2-4] %count% minuty temu|[5,Inf] %count% minut temu</target>
+                <target>minutę temu|[2,4] %count% minuty temu|[5,Inf] %count% minut temu</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>sekundę temu|[2-4] %count% sekundy temu|[5,Inf] %count% sekund temu</target>
+                <target>sekundę temu|[2,4] %count% sekundy temu|[5,Inf] %count% sekund temu</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
