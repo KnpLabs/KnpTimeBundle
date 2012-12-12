@@ -1,12 +1,17 @@
 # Provide a time helper to Symfony2 projects.
 
 ## INSTALLATION
+### Composer
 
+    composer require knplabs/knp-time-bundle
+    composer --dev update knplabs/knp-time-bundle
+    
+### Submodule
 Add it to your Symfony Project using git:
 
     git submodule add git://github.com/KnpLabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
 
-Or use `deps`:
+### Deps
 
     [KnpTimeBundle]
         git=https://github.com/KnpLabs/KnpTimeBundle.git
@@ -24,6 +29,7 @@ $loader->registerNamespaces(array(
 ));
 ```
 
+## CONFIGURATION
 Register the bundle:
 
 ```php
