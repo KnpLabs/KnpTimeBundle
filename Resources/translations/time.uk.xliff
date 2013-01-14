@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="uk" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>1 рiк тому|%count% роки тому|%count% рокiв тому</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>1 мiсяць тому|%count% мiсяця тому|%count% мiсяцiв тому</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>1 день тому|%count% днi тому|%count% днiв тому</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>1 годину тому|%count% години тому|%count% годин тому</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.minute</source>
+                <target>1 хвилину тому|%count% хвилини тому|%count% хвилин тому</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.ago.second</source>
+                <target>1 секунду тому|%count% секунди тому|%count% секунд тому</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.empty</source>
+                <target>зараз</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.second</source>
+                <target>через 1 секунду|через %count% секунди|через %count% секунд</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.hour</source>
+                <target>через 1 годину|через %count% години|через %count% годин</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.minute</source>
+                <target>через 1 хвилину|через %count% хвилини|через %count% хвилин</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.day</source>
+                <target>через 1 день|через %count% днi|через %count% днiв</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>diff.in.month</source>
+                <target>через 1 мiсяць|через %count% мiсяцi|через %count% мiсяцiв</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>diff.in.year</source>
+                <target>через 1 рiк|через %count% роки|через %count% рокiв</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
