@@ -31,27 +31,27 @@
                 <target>ora</target>
             </trans-unit>
             <trans-unit id="8">
-                <source>diff.tra.second</source>
+                <source>diff.in.second</source>
                 <target>tra 1 secondo|tra %count% secondi</target>
             </trans-unit>
             <trans-unit id="9">
-                <source>diff.tra.hour</source>
+                <source>diff.in.hour</source>
                 <target>tra 1 ora|tra %count% ore</target>
             </trans-unit>
             <trans-unit id="10">
-                <source>diff.tra.minute</source>
+                <source>diff.in.minute</source>
                 <target>tra 1 minuto|tra %count% minuti</target>
             </trans-unit>
             <trans-unit id="11">
-                <source>diff.tra.day</source>
-                <target>tra 1 giorno|tra %count% giorno</target>
+                <source>diff.in.day</source>
+                <target>tra 1 giorno|tra %count% giorni</target>
             </trans-unit>
             <trans-unit id="12">
-                <source>diff.tra.month</source>
+                <source>diff.in.month</source>
                 <target>tra 1 mese|tra %count% mesi</target>
             </trans-unit>
             <trans-unit id="13">
-                <source>diff.tra.year</source>
+                <source>diff.in.year</source>
                 <target>tra 1 anno|tra %count% anni</target>
             </trans-unit>
         </body>
