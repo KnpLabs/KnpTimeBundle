@@ -5,7 +5,7 @@
 
     composer require knplabs/knp-time-bundle
     composer --dev update knplabs/knp-time-bundle
-    
+
 ### Submodule
 Add it to your Symfony Project using git:
 
@@ -51,6 +51,16 @@ Enable the helper in your config.yml:
 # app/config/config.yml
 knp_time: ~      # Enable the helper for use in templates
 ```
+
+Also enable translation component if you haven't do it yet.
+
+```yaml
+# app/config/config.yml
+framework:
+    # ...
+    translator:      { fallback: %locale% } # uncomment this line if you see this line commented
+```
+
 
 ## USAGE
 
