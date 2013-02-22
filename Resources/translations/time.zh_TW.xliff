@@ -4,27 +4,27 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>1 年以前|%count% 年以前</target>
+                <target>%count% 年前</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>1 個月以前|%count% 個月以前</target>
+                <target>%count% 月前</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>1 天以前|%count% 天以前</target>
+                <target>%count% 天前</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>1 個小時以前|%count% 小時以前</target>
+                <target>%count% 小時前</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>1 分鐘以前|%count% 分鐘以前</target>
+                <target>%count% 分鐘前</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>1 秒以前|%count% 秒以前</target>
+                <target>%count% 秒前</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -32,27 +32,27 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>diff.in.second</source>
-                <target>1 秒後|%count% 秒後</target>
+                <target>%count% 秒後</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>diff.in.hour</source>
-                <target>1 個小時後|%count% 個小時後</target>
+                <target>%count% 小時後</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>1 分鐘後|%count% 分鐘後</target>
+                <target>%count% 分鐘後</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>1 天後|%count% 天後</target>
+                <target>%count% 天後</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
-                <target>1 個月後|%count% 個月後</target>
+                <target>%count% 個月後</target>
             </trans-unit>
             <trans-unit id="13">
                 <source>diff.in.year</source>
-                <target>1 年後|%count% 年後</target>
+                <target>%count% 年後</target>
             </trans-unit>
         </body>
     </file>
