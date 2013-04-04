@@ -6,29 +6,6 @@
     composer require knplabs/knp-time-bundle
     composer --dev update knplabs/knp-time-bundle
 
-### Submodule
-Add it to your Symfony Project using git:
-
-    git submodule add git://github.com/KnpLabs/KnpTimeBundle.git MyProject/vendor/bundles/Knp/Bundle/TimeBundle
-
-### Deps
-
-    [KnpTimeBundle]
-        git=https://github.com/KnpLabs/KnpTimeBundle.git
-        target=bundles/Knp/Bundle/TimeBundle
-
-Register the namespaces:
-
-```php
-<?php
-// app/autoload.php
-$loader->registerNamespaces(array(
-    // ...
-    'Knp\Bundle' => __DIR__.'/../vendor/bundles',
-    // ...
-));
-```
-
 ## CONFIGURATION
 Register the bundle:
 
