@@ -4,27 +4,27 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>1 год назад|%count% года назад|%count% лет назад</target>
+                <target>%count% год назад|%count% года назад|%count% лет назад</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>1 месяц назад|%count% месяца назад|%count% месяцев назад</target>
+                <target>%count% месяц назад|%count% месяца назад|%count% месяцев назад</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>1 день назад|%count% дня назад|%count% дней назад</target>
+                <target>%count% день назад|%count% дня назад|%count% дней назад</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>1 час назад|%count% часа назад|%count% часов назад</target>
+                <target>%count% час назад|%count% часа назад|%count% часов назад</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>1 минуту назад|%count% минуты назад|%count% минут назад</target>
+                <target>%count% минуту назад|%count% минуты назад|%count% минут назад</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>1 секунду назад|%count% секунды назад|%count% секунд назад</target>
+                <target>%count% секунду назад|%count% секунды назад|%count% секунд назад</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -32,27 +32,27 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>diff.in.second</source>
-                <target>через 1 секунду|через %count% секунды|через %count% секунд</target>
+                <target>через %count% секунду|через %count% секунды|через %count% секунд</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>diff.in.hour</source>
-                <target>через 1 час|через %count% часа|через %count% часов</target>
+                <target>через %count% час|через %count% часа|через %count% часов</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>через 1 минуту|через %count% минуты|через %count% минут</target>
+                <target>через %count% минуту|через %count% минуты|через %count% минут</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>через 1 день|через %count% дня|через %count% дней</target>
+                <target>через %count% день|через %count% дня|через %count% дней</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
-                <target>через 1 месяц|через %count% месяца|через %count% месяцев</target>
+                <target>через %count% месяц|через %count% месяца|через %count% месяцев</target>
             </trans-unit>
             <trans-unit id="13">
                 <source>diff.in.year</source>
-                <target>через 1 год|через %count% года|через %count% лет</target>
+                <target>через %count% год|через %count% года|через %count% лет</target>
             </trans-unit>
         </body>
     </file>
