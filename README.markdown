@@ -21,14 +21,7 @@ public function registerBundles()
 }
 ```
 
-Enable the helper in your config.yml:
-
-```yaml
-# app/config/config.yml
-knp_time: ~      # Enable the helper for use in templates
-```
-
-Also enable translation component if you haven't do it yet.
+Enable the translation component if you haven't already done it:
 
 ```yaml
 # app/config/config.yml
@@ -40,15 +33,20 @@ framework:
 
 ## USAGE
 
+In PHP!
+
 ```php
 <?php
 // Use the helper with Php
 echo $view['time']->diff($dateTime); // returns something like "3 minutes ago"
 ```
 
+In Twig!
+
 ```html+jinja
-// Use the helper with twig
-{{ time_diff(DateTimeObject) }}
+{{ someDateTimeVariable|ago }}
+... or use the equivalent function
+{{ time_diff(someDateTimeVariable) }}
 ```
 
 ### Note:
