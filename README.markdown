@@ -1,7 +1,15 @@
-# Provide a time helper to Symfony2 projects.
+# Friendly ago dates ("5 minutes ago")!
 
-## INSTALLATION
-### Composer
+This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
+
+```html+jinja
+    Last edited {{ post.updatedAt|ago }}
+    <-- Last edited 1 week ago -->
+```
+
+The date formatted can be translated into any language, and may are supported out of the box.
+
+## INSTALLATION via Composer
 
     composer require knplabs/knp-time-bundle
 
