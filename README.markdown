@@ -14,10 +14,10 @@ Register the bundle:
 public function registerBundles()
 {
     $bundles = array(
-		// ...
-		new Knp\Bundle\TimeBundle\KnpTimeBundle(),
-	);
-	// ...
+        // ...
+        new Knp\Bundle\TimeBundle\KnpTimeBundle(),
+    );
+    // ...
 }
 ```
 
