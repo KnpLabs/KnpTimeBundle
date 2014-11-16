@@ -4,7 +4,6 @@
 ### Composer
 
     composer require knplabs/knp-time-bundle
-    composer --dev update knplabs/knp-time-bundle
 
 ## CONFIGURATION
 Register the bundle:
