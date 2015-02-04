@@ -1,10 +1,17 @@
-# Provide a time helper to Symfony2 projects.
+# Friendly ago dates ("5 minutes ago")!
 
-## INSTALLATION
-### Composer
+This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
+
+```html+jinja
+    Last edited {{ post.updatedAt|ago }}
+    <-- Last edited 1 week ago -->
+```
+
+The date formatted can be translated into any language, and may are supported out of the box.
+
+## INSTALLATION via Composer
 
     composer require knplabs/knp-time-bundle
-    composer --dev update knplabs/knp-time-bundle
 
 ## CONFIGURATION
 Register the bundle:
@@ -15,21 +22,14 @@ Register the bundle:
 public function registerBundles()
 {
     $bundles = array(
-		// ...
-		new Knp\Bundle\TimeBundle\KnpTimeBundle(),
-	);
-	// ...
+        // ...
+        new Knp\Bundle\TimeBundle\KnpTimeBundle(),
+    );
+    // ...
 }
 ```
 
-Enable the helper in your config.yml:
-
-```yaml
-# app/config/config.yml
-knp_time: ~      # Enable the helper for use in templates
-```
-
-Also enable translation component if you haven't do it yet.
+Enable the translation component if you haven't already done it:
 
 ```yaml
 # app/config/config.yml
@@ -41,15 +41,20 @@ framework:
 
 ## USAGE
 
+In PHP!
+
 ```php
 <?php
 // Use the helper with Php
 echo $view['time']->diff($dateTime); // returns something like "3 minutes ago"
 ```
 
+In Twig!
+
 ```html+jinja
-// Use the helper with twig
-{{ time_diff(DateTimeObject) }}
+{{ someDateTimeVariable|ago }}
+... or use the equivalent function
+{{ time_diff(someDateTimeVariable) }}
 ```
 
 ### Note:
