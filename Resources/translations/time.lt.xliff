@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="lt" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>prieš metus|prieš %count% metus|prieš %count% metų</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>prieš mėnesį|prieš %count% mėnesius|prieš %count% mėnesių</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>prieš dieną|prieš %count% dienas|prieš %count% dienų</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>prieš valandą|prieš %count% valandas|prieš %count% valandų</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.minute</source>
+                <target>prieš minutę|prieš %count% minutes|prieš %count% minučių</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.ago.second</source>
+                <target>prieš sekundę|prieš %count% sekundes|prieš %count% sekundžių</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.empty</source>
+                <target>dabar</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.second</source>
+                <target>po sekundės|po %count% sekundžių|po %count% sekundžių</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.hour</source>
+                <target>po valandos|po %count% valandų|po %count% valandų</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.minute</source>
+                <target>po minutės|po %count% minučių|po %count% minučių</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.day</source>
+                <target>po dienos|po %count% dienų|po %count% dienų</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>diff.in.month</source>
+                <target>po mėnesio|po %count% mėnesių|po %count% mėnesių</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>diff.in.year</source>
+                <target>po metų|po %count% metų|po %count% metų</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
