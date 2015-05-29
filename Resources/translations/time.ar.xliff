@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="yes"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>{1}منذ سنة|{2}منذ سنتين|[3,9]منذ %count% سنوات|[10,+Inf]منذ %count% سنة</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>{1}منذ شهر|{2}منذ شهرين|[2,9]منذ %count% أشهر|[10,+Inf]منذ %count% شهور</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>{1} منذ يوم|{2}منذ يومين|[2,10]منذ %count% ايام|[11,+Inf]منذ %count% يوم</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>{1}منذ ساعة|{2}منذ ساعتين|[2,10]منذ %count% ساعات|[11,+Inf]منذ %count% ساعة</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.minute</source>
+                <target>{1}منذ دقيقة واحدة|{2}منذ دقيقتين|[2,10]منذ %count% دقائق|[11,+Inf]منذ %count% دقيقة</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.ago.second</source>
+                <target>{1}منذ ثانية واحدة|{2}منذ ثانيتين|[2,10]منذ %count% ثواني|[11,+Inf]منذ %count% ثانية</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.empty</source>
+                <target>الان</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.second</source>
+                <target>{1}في خلال ثانية|{2}في خلال ثانيتين|[3,10]في خلال %count% ثواني|[11,+Inf]في خلال %count% ثانية</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.hour</source>
+                <target>{1}في خلال ساعة|{2}في خلال ساعتين|[3,10]في خلال %count% ساعات|[11,+Inf]في خلال %count% ساعة</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.minute</source>
+                <target>{1}في خلال دقيقة|{2}في خلال دقيقتين|[3,10]في خلال %count% دقائق|[11,+Inf]في خلال %count% دقيقة</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.day</source>
+                <target>{1}في خلال يوم|{2}في خلال يومين|[3,10]في خلال %count% ايام|[11,+Inf]في خلال %count% يوم</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>diff.in.month</source>
+                <target>{1}في خلال شهر|{2}في خلال شهرين|[3,10]في خلال %count% أشهر|[11,+Inf]في خلال %count% شهر</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>diff.in.year</source>
+                <target>{1}في خلال سنة|{2}في خلال سنتين|[3,10]في خلال %count% سنوات|[11,+Inf]في خلال %count% سنة</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
