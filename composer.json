@@ -1,11 +1,10 @@
 {
-    "name":        "knplabs/knp-time-bundle",
-    "type":        "symfony-bundle",
+    "name": "knplabs/knp-time-bundle",
+    "type": "symfony-bundle",
     "description": "Knplabs time bundle makes your dates look sensible and descriptive",
-    "keywords":    ["time", "date", "descriptive time", "knplabs", "knp", "bundle"],
-    "homepage":    "http://github.com/KnpLabs/KnpTimeBundle",
-    "license":     "MIT",
-
+    "keywords": ["time", "date", "descriptive time", "knplabs", "knp", "bundle"],
+    "homepage": "http://github.com/KnpLabs/KnpTimeBundle",
+    "license": "MIT",
     "authors": [
         {
             "name": "KnpLabs Team",
@@ -16,27 +15,25 @@
             "homepage": "http://github.com/KnpLabs/KnpTimeBundle/contributors"
         }
     ],
-
     "require": {
-        "php":                      ">=5.3.3",
+        "php": ">=5.3.3",
         "symfony/framework-bundle": "~2.0"
     },
-
     "suggest": {
         "symfony/twig-bundle": "to use the Twig time_diff function"
     },
-
     "autoload": {
         "psr-0": {
             "Knp\\Bundle\\TimeBundle": ""
         }
     },
-
     "target-dir": "Knp/Bundle/TimeBundle",
-
     "extra": {
         "branch-alias": {
             "dev-master": "1.1.x-dev"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7"
     }
 }
