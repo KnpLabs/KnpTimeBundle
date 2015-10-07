@@ -34,18 +34,22 @@ class TimeExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'time_diff'  => new \Twig_Function_Method($this, 'diff', array(
-                'is_safe' => array('html')
-            ))
+            new \Twig_SimpleFunction(
+                    'time_diff', 
+                    array($this, 'diff'), 
+                    array('is_safe' => array('html'))
+                ),
         );
     }
 
     public function getFilters()
     {
         return array(
-            'ago' => new \Twig_Filter_Method($this, 'diff', array(
-                'is_safe' => array('html')
-            ))
+            new \Twig_SimpleFilter(
+                    'ago', 
+                    array($this, 'diff'), 
+                    array('is_safe' => array('html'))
+                ),
         );
     }
 
