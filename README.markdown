@@ -72,3 +72,10 @@ should copy the TimeBundle's language files and rename the middle part according
 
 Don't forget to clear your cache afterwards.
 
+## TESTS
+
+You can run the test suite by executing:
+
+```bash
+phpunit --bootstrap vendor/autoload.php Tests/
+```
