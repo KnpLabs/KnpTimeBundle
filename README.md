@@ -1,5 +1,7 @@
 # Friendly ago dates ("5 minutes ago")!
 
+[![Build Status](https://travis-ci.org/KnpLabs/KnpTimeBundle.svg?branch=master)](https://travis-ci.org/KnpLabs/KnpTimeBundle)
+
 This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
 
 ```html+jinja
@@ -74,8 +76,8 @@ Don't forget to clear your cache afterwards.
 
 ## TESTS
 
-You can run the test suite by executing:
+If you want to run tests, please check that you have installed dev dependencies.
 
 ```bash
-phpunit --bootstrap vendor/autoload.php Tests/
+./vendor/bin/phpunit
 ```
