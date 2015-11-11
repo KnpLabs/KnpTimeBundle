@@ -1,5 +1,7 @@
 # Friendly ago dates ("5 minutes ago")!
 
+[![Build Status](https://travis-ci.org/KnpLabs/KnpTimeBundle.svg?branch=master)](https://travis-ci.org/KnpLabs/KnpTimeBundle)
+
 This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
 
 ```html+jinja
