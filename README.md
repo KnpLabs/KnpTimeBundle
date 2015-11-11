@@ -76,8 +76,8 @@ Don't forget to clear your cache afterwards.
 
 ## TESTS
 
-You can run the test suite by executing:
+If you want to run tests, please check that you have installed dev dependencies.
 
 ```bash
-phpunit --bootstrap vendor/autoload.php Tests/
+./vendor/bin/phpunit
 ```
