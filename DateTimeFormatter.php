@@ -52,7 +52,7 @@ class DateTimeFormatter
                     return $this->doGetDiffMessage($count, $diff->invert, $unit);
                 }
             } else {
-                if( in_array($attribute, $precision) && 0 !== $count ) {
+                if( in_array($attribute, $precision) === true && 0 !== $count ) {
                     $diffMessage .= ($index === 0 ? '' : ' ').$this->doGetDiffMessage($count, $diff->invert, $unit, $firtsMessage);
 
                     $firtsMessage = false;
