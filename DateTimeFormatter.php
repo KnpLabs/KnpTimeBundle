@@ -27,8 +27,12 @@ class DateTimeFormatter
      *
      * @return string
      */
-    public function formatDiff(Datetime $from, Datetime $to)
+    public function formatDiff(Datetime $from, Datetime $to, $precision = array())
     {
+        $index        = 0;
+        $firtsMessage = true;
+        $diffMessage  = '';
+
         static $units = array(
             'y' => 'year',
             'm' => 'month',
@@ -42,12 +46,26 @@ class DateTimeFormatter
 
         foreach ($units as $attribute => $unit) {
             $count = $diff->$attribute;
-            if (0 !== $count) {
-                return $this->doGetDiffMessage($count, $diff->invert, $unit);
+
+            if( count($precision) === 0 ) {
+                if (0 !== $count) {
+                    return $this->doGetDiffMessage($count, $diff->invert, $unit);
+                }
+            } else {
+                if( in_array($attribute, $precision) && 0 !== $count ) {
+                    $diffMessage .= ($index === 0 ? '' : ' ').$this->doGetDiffMessage($count, $diff->invert, $unit, $firtsMessage);
+
+                    $firtsMessage = false;
+                    $index++;
+                }
             }
         }
 
-        return $this->getEmptyDiffMessage();
+        if($index === 0) {
+            $diffMessage = $this->getEmptyDiffMessage();
+        }
+
+        return $diffMessage;
     }
 
     /**
@@ -75,9 +93,13 @@ class DateTimeFormatter
         return $this->doGetDiffMessage($count, $invert, $unit);
     }
 
-    protected function doGetDiffMessage($count, $invert, $unit)
+    protected function doGetDiffMessage($count, $invert, $unit, $firtsMessage = true)
     {
         $id = sprintf('diff.%s.%s', $invert ? 'ago' : 'in', $unit);
+
+        if(!$firtsMessage) {
+            $id = str_replace(array('.ago','.in'), '', $id);
+        }
 
         return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time');
     }
