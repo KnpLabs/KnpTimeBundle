@@ -4,11 +4,11 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>před rokem|před %count% roky</target>
+                <target>před rokem|[2, Inf]před %count% roky</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>před měsícem|před %count% měsíci</target>
+                <target>před měsícem|[2, Inf]před %count% měsíci</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
@@ -16,15 +16,15 @@
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>před hodinou|před %count% hodinami</target>
+                <target>před hodinou|[2, Inf]před %count% hodinami</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>před minutou|před %count% minutami</target>
+                <target>před minutou|[2, Inf]před %count% minutami</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>před sekundou|před %count% sekundami</target>
+                <target>před sekundou|[2, Inf]před %count% sekundami</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
