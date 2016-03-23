@@ -8,7 +8,7 @@
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>%count% мiсяць тому|%count% мiсяця тому|%count% мiсяцiв тому</target>
+                <target>%count% мiсяць тому|%count% мiсяцi тому|%count% мiсяцiв тому</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
