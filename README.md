@@ -87,4 +87,5 @@ If you want to run tests, please check that you have installed dev dependencies.
 Anyone can contribute to this repository (and it's warmly welcomed!). The following
 people maintain and can merge into this library:
 
+* akovalyov
 * weaverryan
