@@ -59,21 +59,6 @@ In Twig!
 {{ time_diff(someDateTimeVariable) }}
 ```
 
-### Note:
-
-If you are using a different language code than two letters (en_US for example) then
-should copy the TimeBundle's language files and rename the middle part according to your language:
-
-    from:
-    MyProject/vendor/bundles/Knp/Bundle/TimeBundle/Resources/translations/time.en.xliff
-    MyProject/vendor/bundles/Knp/Bundle/TimeBundle/Resources/translations/time.fr.xliff
-
-    to:
-    MyProject/app/Resources/translations/time.en_US.xliff
-    MyProject/app/Resources/translations/time.fr_FR.xliff
-
-Don't forget to clear your cache afterwards.
-
 ## TESTS
 
 If you want to run tests, please check that you have installed dev dependencies.
