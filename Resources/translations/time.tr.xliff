@@ -4,27 +4,27 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>1 yıl önce|%count% yıl önce</target>
+                <target>%count% yıl önce</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>1 ay önce|%count% ay önce</target>
+                <target>%count% ay önce</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>1 gün önce|%count% gün önce</target>
+                <target>%count% gün önce</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>1 saat önce|%count% saat önce</target>
+                <target>%count% saat önce</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>1 dakika önce|%count% dakika önce</target>
+                <target>%count% dakika önce</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>1 saniye önce|%count% dakika önce</target>
+                <target>%count% dakika önce</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -32,27 +32,27 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>diff.in.second</source>
-                <target>1 saniye içinde|%count% saniye içinde</target>
+                <target>%count% saniye içinde</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>diff.in.hour</source>
-                <target>1 saat içinde|%count% saat içinde</target>
+                <target>%count% saat içinde</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>1 dakika içinde|%count% dakika içinde</target>
+                <target>%count% dakika içinde</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>1 gün içinde|%count% gün içinde</target>
+                <target>%count% gün içinde</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
-                <target>1 ay içinde|%count% ay içinde</target>
+                <target>%count% ay içinde</target>
             </trans-unit>
             <trans-unit id="13">
                 <source>diff.in.year</source>
-                <target>1 yıl içinde|%count% yıl içinde</target>
+                <target>%count% yıl içinde</target>
             </trans-unit>
         </body>
     </file>
