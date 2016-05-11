@@ -5,8 +5,8 @@
 This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
 
 ```html+jinja
-    Last edited {{ post.updatedAt|ago }}
-    <-- Last edited 1 week ago -->
+Last edited {{ post.updatedAt|ago }}
+<-- Last edited 1 week ago -->
 ```
 
 The date formatted can be translated into any language, and may are supported out of the box.
@@ -37,7 +37,7 @@ Enable the translation component if you haven't already done it:
 # app/config/config.yml
 framework:
     # ...
-    translator:      { fallback: %locale% } # uncomment this line if you see this line commented
+    translator:      { fallback: '%locale%' } # uncomment this line if you see this line commented
 ```
 
 
