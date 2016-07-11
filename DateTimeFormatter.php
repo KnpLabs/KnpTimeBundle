@@ -3,7 +3,7 @@
 namespace Knp\Bundle\TimeBundle;
 
 use Symfony\Component\Translation\TranslatorInterface;
-use Datetime;
+use DatetimeInterface;
 
 class DateTimeFormatter
 {
@@ -22,12 +22,12 @@ class DateTimeFormatter
     /**
      * Returns a formatted diff for the given from and to datetimes
      *
-     * @param  Datetime $from
-     * @param  Datetime $to
+     * @param  DateTimeInterface $from
+     * @param  DateTimeInterface $to
      *
      * @return string
      */
-    public function formatDiff(Datetime $from, Datetime $to)
+    public function formatDiff(DateTimeInterface $from, DateTimeInterface $to)
     {
         static $units = array(
             'y' => 'year',

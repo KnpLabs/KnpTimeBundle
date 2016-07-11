@@ -5,6 +5,7 @@ namespace Knp\Bundle\TimeBundle\Templating\Helper;
 use Symfony\Component\Templating\Helper\Helper;
 use Knp\Bundle\TimeBundle\DateTimeFormatter;
 use DateTime;
+use DateTimeInterface;
 
 class TimeHelper extends Helper
 {
@@ -37,11 +38,11 @@ class TimeHelper extends Helper
      *
      * @param  mixed $datetime
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
     public function getDatetimeObject($datetime = null)
     {
-        if ($datetime instanceof DateTime) {
+        if ($datetime instanceof DateTimeInterface) {
             return $datetime;
         }
 
