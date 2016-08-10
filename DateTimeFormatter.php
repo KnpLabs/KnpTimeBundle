@@ -27,7 +27,7 @@ class DateTimeFormatter
      *
      * @return string
      */
-    public function formatDiff(Datetime $from, Datetime $to)
+    public function formatDiff(Datetime $from, Datetime $to, $locale = null)
     {
         static $units = array(
             'y' => 'year',
@@ -43,7 +43,7 @@ class DateTimeFormatter
         foreach ($units as $attribute => $unit) {
             $count = $diff->$attribute;
             if (0 !== $count) {
-                return $this->doGetDiffMessage($count, $diff->invert, $unit);
+                return $this->doGetDiffMessage($count, $diff->invert, $unit, $locale);
             }
         }
 
@@ -60,7 +60,7 @@ class DateTimeFormatter
      *
      * @return string
      */
-    public function getDiffMessage($count, $invert, $unit)
+    public function getDiffMessage($count, $invert, $unit, $locale)
     {
         if (0 === $count) {
             throw new \InvalidArgumentException('The count must not be null.');
@@ -75,9 +75,13 @@ class DateTimeFormatter
         return $this->doGetDiffMessage($count, $invert, $unit);
     }
 
-    protected function doGetDiffMessage($count, $invert, $unit)
+    protected function doGetDiffMessage($count, $invert, $unit, $locale)
     {
         $id = sprintf('diff.%s.%s', $invert ? 'ago' : 'in', $unit);
+
+        if ($locale) {
+            return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time', $locale);
+        }
 
         return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time');
     }
@@ -87,8 +91,12 @@ class DateTimeFormatter
      *
      * @return string
      */
-    public function getEmptyDiffMessage()
+    public function getEmptyDiffMessage($locale)
     {
+        if ($locale) {
+            return $this->translator->trans('diff.empty', array(), 'time', $locale);
+        }
+
         return $this->translator->trans('diff.empty', array(), 'time');
     }
 }

@@ -53,9 +53,9 @@ class TimeExtension extends \Twig_Extension
         );
     }
 
-    public function diff($since = null, $to = null)
+    public function diff($since = null, $to = null, $locale = null)
     {
-        return $this->helper->diff($since, $to);
+        return $this->helper->diff($since, $to, $locale);
     }
 
     /**
