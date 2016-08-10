@@ -35,8 +35,8 @@ class TimeExtension extends \Twig_Extension
     {
         return array(
             new \Twig_SimpleFunction(
-                    'time_diff', 
-                    array($this, 'diff'), 
+                    'time_diff',
+                    array($this, 'diff'),
                     array('is_safe' => array('html'))
                 ),
         );
@@ -46,16 +46,16 @@ class TimeExtension extends \Twig_Extension
     {
         return array(
             new \Twig_SimpleFilter(
-                    'ago', 
-                    array($this, 'diff'), 
+                    'ago',
+                    array($this, 'diff'),
                     array('is_safe' => array('html'))
                 ),
         );
     }
 
-    public function diff($since = null, $to = null)
+    public function diff($since = null, $to = null, $precision = array())
     {
-        return $this->helper->diff($since, $to);
+        return $this->helper->diff($since, $to, $precision);
     }
 
     /**

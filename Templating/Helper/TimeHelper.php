@@ -24,12 +24,12 @@ class TimeHelper extends Helper
      *
      * @return string
      */
-    public function diff($from, $to = null)
+    public function diff($from, $to = null, $precision = array())
     {
         $from = $this->getDatetimeObject($from);
         $to = $this->getDatetimeObject($to);
 
-        return $this->formatter->formatDiff($from, $to);
+        return $this->formatter->formatDiff($from, $to, $precision);
     }
 
     /**
