@@ -4,27 +4,27 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>rok temu|[2,4] %count% lata temu|[5,Inf] %count% lat temu</target>
+                <target>rok temu|%count% lata temu|%count% lat temu</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>miesiąc temu|[2,4] %count% miesiące temu|[5,Inf] %count% miesięcy temu</target>
+                <target>miesiąc temu|%count% miesiące temu|%count% miesięcy temu</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>wczoraj|[2,Inf] %count% dni temu</target>
+                <target>wczoraj|%count% dni temu|%count% dni temu</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>godzinę temu|[2,4] %count% godziny temu|[5,Inf] %count% godzin temu</target>
+                <target>godzinę temu|%count% godziny temu|%count% godzin temu</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>minutę temu|[2,4] %count% minuty temu|[5,Inf] %count% minut temu</target>
+                <target>minutę temu|%count% minuty temu|%count% minut temu</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>sekundę temu|[2,4] %count% sekundy temu|[5,Inf] %count% sekund temu</target>
+                <target>sekundę temu|%count% sekundy temu|%count% sekund temu</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -32,27 +32,27 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>diff.in.second</source>
-                <target>za sekundę|[2,4] za %count% sekundy|[5,Inf] za %count% sekund</target>
+                <target>za sekundę|za %count% sekundy|za %count% sekund</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>diff.in.hour</source>
-                <target>za godzinę|[2,4] za %count% godziny|[5,Inf] za %count% godzin</target>
+                <target>za godzinę|za %count% godziny|za %count% godzin</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>za minutę|[2,4] za %count% minuty|[5,Inf] za %count% minut</target>
+                <target>za minutę|za %count% minuty|za %count% minut</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>za dzień|[2, Inf] za %count% dni</target>
+                <target>za dzień|za %count% dni|za %count% dni</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
-                <target>za miesiąc|[2,4] za %count% miesiące|[5,Inf] za %count% miesięcy</target>
+                <target>za miesiąc|za %count% miesiące|za %count% miesięcy</target>
             </trans-unit>
             <trans-unit id="13">
                 <source>diff.in.year</source>
-                <target>za rok|[2,4] za %count% lata|[5,Inf] za %count% lat</target>
+                <target>za rok|za %count% lata|za %count% lat</target>
             </trans-unit>
         </body>
     </file>
