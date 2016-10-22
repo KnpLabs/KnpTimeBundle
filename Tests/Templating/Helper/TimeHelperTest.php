@@ -8,7 +8,10 @@ class TimeHelperTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->helper = new TimeHelper($this->createMock('Knp\Bundle\TimeBundle\DateTimeFormatter', array(), array(), '', false));
+        $dateTimeFormatter = $this->getMockBuilder('Knp\Bundle\TimeBundle\DateTimeFormatter')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $this->helper = new TimeHelper($dateTimeFormatter);
     }
 
     public function testGetDatetimeObject()

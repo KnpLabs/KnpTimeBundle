@@ -8,7 +8,9 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $translator = $this->createMock('Symfony\Component\Translation\Translator', array(), array(), '', false);
+        $translator = $this->getMockBuilder('Symfony\Component\Translation\Translator')
+            ->disableOriginalConstructor()
+            ->getMock();
         $translator->expects($this->any())
             ->method('trans')
             ->will($this->returnArgument(0));
