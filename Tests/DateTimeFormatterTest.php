@@ -8,7 +8,7 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $translator = $this->getMock('Symfony\Component\Translation\Translator', array(), array(), '', false);
+        $translator = $this->createMock('Symfony\Component\Translation\Translator', array(), array(), '', false);
         $translator->expects($this->any())
             ->method('trans')
             ->will($this->returnArgument(0));
@@ -38,7 +38,7 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
         );
 
         foreach ($tests as $test) {
-            $from = new \Datetime(date('Y-m-d H:i:s', strtotime($test[0])));
+            $from = new \DatetimeImmutable(date('Y-m-d H:i:s', strtotime($test[0])));
             $to = new \Datetime(date('Y-m-d H:i:s', strtotime($test[1])));
 
             $this->assertEquals($test[2], $this->formatter->formatDiff($from, $to));
