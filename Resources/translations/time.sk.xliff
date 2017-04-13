@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="time.en.xliff">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>pred rokom|[2, Inf]pred %count% rokmi</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>pred mesiacom|[2, Inf]pred %count% mesiacmi</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>{1}včera|{2}predvčerom|[3, Inf]pred %count% dňami</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>pred hodinou|[2, Inf]pred %count% hodinami</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.minute</source>
+                <target>pred minútou|[2, Inf]pred %count% minútami</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.ago.second</source>
+                <target>pred sekundou|[2, Inf]pred %count% sekundami</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.empty</source>
+                <target>teraz</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.second</source>
+                <target>{1}za sekundu|[2, 4]za %count% sekundy|[5, Inf]za %count% sekúnd</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.hour</source>
+                <target>{1}za hodinu|[2, 4]za %count% hodiny|[5, Inf]za %count% hodín</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.minute</source>
+                <target>{1}za minútu|[2, 4]za %count% minúty|[5, Inf]za %count% minút</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.day</source>
+                <target>{1}zajtra|{2}pozajtra|[3, 4]za %count% dni|[5, Inf]za %count% dní</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>diff.in.month</source>
+                <target>{1}za mesiac|[2, 4]za %count% mesiace|[5, Inf]za %count% mesiacov</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>diff.in.year</source>
+                <target>{1}za rok|[2, 4]za %count% roky|[5, Inf]za %count% rokov</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
