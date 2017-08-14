@@ -39,4 +39,4 @@ before_install: if [[ "$SYMFONY_VERSION" != "" ]]; then composer require --no-up
 
 install: composer update --prefer-dist
 
-script: phpunit
+script: vendor/bin/phpunit
