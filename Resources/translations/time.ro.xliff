@@ -20,7 +20,7 @@
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>%count% minută în urmă|%count% minute în urmă|%count% de minute în urmă</target>
+                <target>%count% minut în urmă|%count% minute în urmă|%count% de minute în urmă</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
@@ -40,7 +40,7 @@
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>peste %count% minută|peste %count% minute|peste %count% de minute</target>
+                <target>peste %count% minut|peste %count% minute|peste %count% de minute</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
