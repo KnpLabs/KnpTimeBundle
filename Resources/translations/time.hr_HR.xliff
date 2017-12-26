@@ -4,27 +4,27 @@
         <body>
             <trans-unit id="1">
                 <source>diff.ago.year</source>
-                <target>prije 1 godine|%count% godina</target>
+                <target>prije 1 godine|[2, Inf]%count% godina</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>diff.ago.month</source>
-                <target>prije 1 mjeseca|%count% mjeseci</target>
+                <target>prije 1 mjeseca|[2, Inf]%count% mjeseci</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>diff.ago.day</source>
-                <target>prije 1 dan|%count% dana</target>
+                <target>prije 1 dan|[2, Inf]%count% dana</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>diff.ago.hour</source>
-                <target>prije 1 sat|%count% sati</target>
+                <target>prije 1 sat|[2, Inf]%count% sati</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>diff.ago.minute</source>
-                <target>prije 1 minute|%count% minuta</target>
+                <target>prije 1 minute|[2, Inf]%count% minuta</target>
             </trans-unit>
             <trans-unit id="6">
                 <source>diff.ago.second</source>
-                <target>prije 1 sekunde|%count% sekundi</target>
+                <target>prije 1 sekunde|[2, Inf]%count% sekundi</target>
             </trans-unit>
             <trans-unit id="7">
                 <source>diff.empty</source>
@@ -32,27 +32,27 @@
             </trans-unit>
             <trans-unit id="8">
                 <source>diff.in.second</source>
-                <target>u 1 sekundi|%count% sekundi</target>
+                <target>u 1 sekundi|[2, Inf]%count% sekundi</target>
             </trans-unit>
             <trans-unit id="9">
                 <source>diff.in.hour</source>
-                <target>u 1 satu|%count% sati</target>
+                <target>u 1 satu|[2, Inf]%count% sati</target>
             </trans-unit>
             <trans-unit id="10">
                 <source>diff.in.minute</source>
-                <target>u 1 minuti|%count% minuti</target>
+                <target>u 1 minuti|[2, Inf]%count% minuti</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>u 1 danu|%count% dana</target>
+                <target>u 1 danu|[2, Inf]%count% dana</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
-                <target>u 1 mjesecu|%count% mjeseca</target>
+                <target>u 1 mjesecu|[2, Inf]%count% mjeseca</target>
             </trans-unit>
             <trans-unit id="13">
                 <source>diff.in.year</source>
-                <target>u 1 godini|%count% godine</target>
+                <target>u 1 godini|[2, Inf]%count% godine</target>
             </trans-unit>
         </body>
     </file>
