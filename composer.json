@@ -19,10 +19,10 @@
 
     "require": {
         "php":                          ">=5.5",
-        "symfony/dependency-injection": "~2.3|~3.0",
-        "symfony/templating":           "~2.3|~3.0",
-        "symfony/translation":          "~2.3|~3.0",
-        "symfony/config":               "~2.3|~3.0"
+        "symfony/dependency-injection": "~2.3|~3.0|~4.0",
+        "symfony/templating":           "~2.3|~3.0|~4.0",
+        "symfony/translation":          "~2.3|~3.0|~4.0",
+        "symfony/config":               "~2.3|~3.0|~4.0"
     },
 
     "require-dev": {
