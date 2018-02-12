@@ -57,15 +57,15 @@ In Twig!
 {{ time_diff(someDateTimeVariable) }}
 ```
 
-In Symfony controllers
+### In Symfony controllers
 
-Let's suppose you want to return a custom response like JSON, 
-you can use the DateTimeFormatter service in your controllers.
+Let's suppose you want to return a custom response like JSON, you can use the DateTimeFormatter service in your controllers by passing as a dependency, make sure you have enabled the [autowiring](https://symfony.com/doc/current/service_container/autowiring.html), in Symfony 3 and later it's enabled by default.
 ```
-public function yourAction()
+public function yourAction(DateTimeFormatter $dateTimeFormatter)
 {
     ...
-    $dateTimeFormatter = $this->get('time.datetime_formatter');
+    // also, you can get the service via $this->get()
+    // $dateTimeFormatter = $this->get('time.datetime_formatter'); 
     $someDate = new \DateTime('2017-02-11'); //or $entity->publishedDate()
     $now = new \DateTime();
     
