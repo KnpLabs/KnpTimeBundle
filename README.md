@@ -36,6 +36,7 @@ Enable the translation component if you haven't already done it:
 framework:
     # ...
     translator:      { fallback: '%locale%' } # uncomment this line if you see this line commented
+                                              # it's ok if the parameter name is "fallbacks"
 ```
 
 
