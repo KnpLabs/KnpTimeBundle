@@ -2,8 +2,14 @@
 
 namespace Knp\Bundle\TimeBundle;
 
+use DateInterval;
+use DateTime;
+
 class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var DateTimeFormatter
+     */
     protected $formatter;
 
     public function setUp()
@@ -67,5 +73,45 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
         $this->setExpectedException('InvalidArgumentException');
 
         $this->formatter->getDiffMessage(1, true, 'patate');
+    }
+    
+    public function testFormatDiffMaxDiffSet()
+    {
+        $this->formatter->setMaxDiff(1);
+        $this->formatter->setMaxDiffUnit('day');
+        $format = 'd/m/Y';
+        $this->formatter->setDateFormat($format);
+        
+        $now = new DateTime();
+        
+        $from = (clone $now)->sub(new DateInterval('P2D'));
+        $to = clone $now;
+        $result = $this->formatter->formatDiff($from, $to);
+        $this->assertEquals($from->format($format), $result);
+    
+        $from = (clone $now)->sub(new DateInterval('PT10H'));
+        $to = clone $now;
+        
+        $result = $this->formatter->formatDiff($from, $to);
+        $this->assertEquals('diff.ago.hour', $result);
+    
+        //Other tests with 1 month
+        $this->formatter->setMaxDiff(1);
+        $this->formatter->setMaxDiffUnit('month');
+    
+        $from = (clone $now)->sub(new DateInterval('P2D'));
+        $to = clone $now;
+        $result = $this->formatter->formatDiff($from, $to);
+        $this->assertEquals('diff.ago.day', $result);
+        
+        $from = (clone $now)->sub(new DateInterval('P1M'));
+        $to = clone $now;
+        $result = $this->formatter->formatDiff($from, $to);
+        $this->assertEquals('diff.ago.month', $result);
+    
+        $from = (clone $now)->sub(new DateInterval('P35D'));
+        $to = clone $now;
+        $result = $this->formatter->formatDiff($from, $to);
+        $this->assertEquals($from->format($format), $result);
     }
 }

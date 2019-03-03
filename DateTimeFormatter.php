@@ -2,12 +2,20 @@
 
 namespace Knp\Bundle\TimeBundle;
 
+use DateInterval;
+use DateTime;
 use Symfony\Component\Translation\TranslatorInterface;
 use DatetimeInterface;
 
 class DateTimeFormatter
 {
     protected $translator;
+    
+    protected $maxDiff;
+    
+    protected $maxDiffUnit;
+    
+    protected $dateFormat;
 
     /**
      * Constructor
@@ -39,7 +47,50 @@ class DateTimeFormatter
         );
 
         $diff = $to->diff($from);
-
+        
+        if ($this->maxDiff && $this->maxDiffUnit && $this->dateFormat) {
+            //We have the "maxDiff" options set
+            $timeIntervalUnits = [
+                'hour' => 'H',
+                'minute' => 'M',
+                'second' => 'S',
+            ];
+            $intervalUnits = [
+                    'year' => 'Y',
+                    'month' => 'M',
+                    'day' => 'D',
+                ] + $timeIntervalUnits;
+            
+            if (!array_key_exists($this->maxDiffUnit, $intervalUnits)) {
+                throw new \InvalidArgumentException(sprintf('The unit \'%s\' is not supported.', $this->maxDiffUnit));
+            }
+            
+            //We create the interval format
+            $formatInterval = 'P';
+            $formatInterval .= (array_key_exists($this->maxDiffUnit, $timeIntervalUnits)?'T':'');
+            $formatInterval .= $this->maxDiff . $intervalUnits[$this->maxDiffUnit];
+            
+            if ($diff->invert) {
+                //With the interval format we create the "maxDateTime"
+                $maxDiffDateTime = (clone $to)->sub(new DateInterval($formatInterval));
+                
+                //The tested DateTime is older than the "maxDateTime", we display the date with the passed format
+                if ($maxDiffDateTime > $from)
+                {
+                    return $from->format($this->dateFormat);
+                }
+            }
+            else {
+                //With the interval format we create the "maxDateTime"
+                $maxDiffDateTime = (clone $to)->add(new DateInterval($formatInterval));
+                //The tested DateTime is "newer" than the "maxDateTime", we display the date with the passed format
+                if ($maxDiffDateTime < $from)
+                {
+                    return $from->format($this->dateFormat);
+                }
+            }
+        }
+        
         foreach ($units as $attribute => $unit) {
             $count = $diff->$attribute;
             if (0 !== $count) {
@@ -91,4 +142,29 @@ class DateTimeFormatter
     {
         return $this->translator->trans('diff.empty', array(), 'time');
     }
+
+    /**
+     * @param mixed $maxDiff
+     */
+    public function setMaxDiff($maxDiff)
+    {
+        $this->maxDiff = $maxDiff;
+    }
+    
+    /**
+     * @param mixed $maxDiffUnit
+     */
+    public function setMaxDiffUnit($maxDiffUnit)
+    {
+        $this->maxDiffUnit = $maxDiffUnit;
+    }
+    
+    /**
+     * @param mixed $dateFormat
+     */
+    public function setDateFormat($dateFormat)
+    {
+        $this->dateFormat = $dateFormat;
+    }
+    
 }
