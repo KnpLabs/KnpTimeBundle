@@ -72,7 +72,8 @@ class DateTimeFormatter
             
             if ($diff->invert) {
                 //With the interval format we create the "maxDateTime"
-                $maxDiffDateTime = (clone $to)->sub(new DateInterval($formatInterval));
+                $clonedTo = clone $to;
+                $maxDiffDateTime = $clonedTo->sub(new DateInterval($formatInterval));
                 
                 //The tested DateTime is older than the "maxDateTime", we display the date with the passed format
                 if ($maxDiffDateTime > $from)
@@ -82,7 +83,8 @@ class DateTimeFormatter
             }
             else {
                 //With the interval format we create the "maxDateTime"
-                $maxDiffDateTime = (clone $to)->add(new DateInterval($formatInterval));
+                $clonedTo = clone $to;
+                $maxDiffDateTime = $clonedTo->add(new DateInterval($formatInterval));
                 //The tested DateTime is "newer" than the "maxDateTime", we display the date with the passed format
                 if ($maxDiffDateTime < $from)
                 {
