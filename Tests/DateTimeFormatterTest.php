@@ -84,12 +84,16 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
         
         $now = new DateTime();
         
-        $from = (clone $now)->sub(new DateInterval('P2D'));
+        $newNow = clone $now;
+        
+        $from = $newNow->sub(new DateInterval('P2D'));
         $to = clone $now;
         $result = $this->formatter->formatDiff($from, $to);
         $this->assertEquals($from->format($format), $result);
     
-        $from = (clone $now)->sub(new DateInterval('PT10H'));
+        $newNow = clone $now;
+        
+        $from = $newNow->sub(new DateInterval('PT10H'));
         $to = clone $now;
         
         $result = $this->formatter->formatDiff($from, $to);
@@ -99,17 +103,23 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
         $this->formatter->setMaxDiff(1);
         $this->formatter->setMaxDiffUnit('month');
     
-        $from = (clone $now)->sub(new DateInterval('P2D'));
+        $newNow = clone $now;
+        
+        $from = $newNow->sub(new DateInterval('P2D'));
         $to = clone $now;
         $result = $this->formatter->formatDiff($from, $to);
         $this->assertEquals('diff.ago.day', $result);
+    
+        $newNow = clone $now;
         
-        $from = (clone $now)->sub(new DateInterval('P1M'));
+        $from = $newNow->sub(new DateInterval('P1M'));
         $to = clone $now;
         $result = $this->formatter->formatDiff($from, $to);
         $this->assertEquals('diff.ago.month', $result);
     
-        $from = (clone $now)->sub(new DateInterval('P35D'));
+        $newNow = clone $now;
+        
+        $from = $newNow->sub(new DateInterval('P35D'));
         $to = clone $now;
         $result = $this->formatter->formatDiff($from, $to);
         $this->assertEquals($from->format($format), $result);
