@@ -79,7 +79,12 @@ class DateTimeFormatter
     {
         $id = sprintf('diff.%s.%s', $invert ? 'ago' : 'in', $unit);
 
-        return $this->translator->trans($id, array('%count%' => $count), 'time');
+        // check for Symfony >= 4.2
+        if (class_exists('Symfony\Component\Translation\Formatter\IntlFormatter')) {
+            return $this->translator->trans($id, array('%count%' => $count), 'time');
+        } else {
+            return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time');
+        }
     }
 
     /**
