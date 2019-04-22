@@ -2,6 +2,7 @@
 
 namespace Knp\Bundle\TimeBundle;
 
+use Symfony\Contracts\Translation\LocaleAwareInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 use DatetimeInterface;
 
@@ -80,7 +81,7 @@ class DateTimeFormatter
         $id = sprintf('diff.%s.%s', $invert ? 'ago' : 'in', $unit);
 
         // check for Symfony >= 4.2
-        if (class_exists('Symfony\Component\Translation\Formatter\IntlFormatter')) {
+        if ($this->translator instanceof LocaleAwareInterface) {
             return $this->translator->trans($id, array('%count%' => $count), 'time');
         } else {
             return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time');
