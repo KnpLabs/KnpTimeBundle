@@ -7,7 +7,7 @@ Last edited {{ post.updatedAt|ago }}
 <-- Last edited 1 week ago -->
 ```
 
-The date formatted can be translated into any language, and may are supported out of the box.
+The date formatted can be translated into any language, and many are supported out of the box.
 
 ## INSTALLATION via Composer
 
