@@ -52,6 +52,30 @@ class TimeHelper extends Helper
 
         return new DateTime($datetime);
     }
+    
+    /**
+     * @param $maxDiff
+     */
+    public function setMaxDiff($maxDiff)
+    {
+        $this->formatter->setMaxDiff($maxDiff);
+    }
+    
+    /**
+     * @param $maxDiffUnit
+     */
+    public function setMaxDiffUnit($maxDiffUnit)
+    {
+        $this->formatter->setMaxDiffUnit($maxDiffUnit);
+    }
+    
+    /**
+     * @param $dateFormat
+     */
+    public function setDateFormat($dateFormat)
+    {
+        $this->formatter->setDateFormat($dateFormat);
+    }
 
     public function getName()
     {

@@ -50,7 +50,28 @@ class TimeExtension extends \Twig_Extension
                     array($this, 'diff'), 
                     array('is_safe' => array('html'))
                 ),
+            new \Twig_SimpleFilter(
+                'diffmax',
+                array($this, 'diffmax'),
+                array('is_safe' => array('html'))
+            ),
         );
+    }
+    
+    /**
+     * @param $date \DateTime first argument, the value we want to display
+     * @param null $maxDiff
+     * @param string $dateFormat
+     * @param string $maxDiffUnit
+     *
+     * @return \DateTime
+     */
+    public function diffmax($date, $maxDiff = null, $dateFormat = 'd/m/Y', $maxDiffUnit = 'day')
+    {
+        $this->helper->setMaxDiff($maxDiff);
+        $this->helper->setMaxDiffUnit($maxDiffUnit);
+        $this->helper->setDateFormat($dateFormat);
+        return $date;
     }
 
     public function diff($since = null, $to = null)
