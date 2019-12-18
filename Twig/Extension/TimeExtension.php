@@ -5,6 +5,7 @@ namespace Knp\Bundle\TimeBundle\Twig\Extension;
 use Knp\Bundle\TimeBundle\Templating\Helper\TimeHelper;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /*
  * This file is part of the Symfony package.
@@ -36,7 +37,7 @@ class TimeExtension extends AbstractExtension
     public function getFunctions()
     {
         return array(
-            new TwigFilter(
+            new TwigFunction(
                     'time_diff', 
                     array($this, 'diff'), 
                     array('is_safe' => array('html'))
