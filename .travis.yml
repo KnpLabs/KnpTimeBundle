@@ -1,45 +1,38 @@
 language: php
-
 sudo: false
-
 cache:
-  directories:
-    - $HOME/.composer/cache
+    directories:
+        - $HOME/.composer/cache/files
+        - $HOME/symfony-bridge/.phpunit
 
 env:
-  global:
-    - SYMFONY_VERSION=""
-    - TWIG_VERSION=""
-
-php:
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
-  - hhvm
+    global:
+        - PHPUNIT_FLAGS="-v"
+        - SYMFONY_PHPUNIT_DIR="$HOME/symfony-bridge/.phpunit"
+        - SYMFONY_REQUIRE='>=2.8'
 
 matrix:
-  include:
-    - php: 5.6
-      env: SYMFONY_VERSION="2.3.x"
-    - php: 5.6
-      env: SYMFONY_VERSION="2.8.x symfony/phpunit-bridge:^2.7"
-    - php: 5.6
-      env: SYMFONY_VERSION="3.0.x"
-    - php: 5.6
-      env: SYMFONY_VERSION="dev-master"
-    - php: 5.6
-      env: TWIG_VERSION="2.0.x-dev"
-    - php: 7.1
-      env: SYMFONY_VERSION="4.0.x@beta"
-  fast_finish: true
-  allow_failures:
-    - php: hhvm
-    - env: TWIG_VERSION="2.0.x-dev"
-    - env: SYMFONY_VERSION="dev-master"
+    fast_finish: true
+    include:
+        - php: 7.1
+        - php: 7.2
+        - php: 7.3
+          env: deps=low
 
-before_install: if [[ "$SYMFONY_VERSION" != "" ]]; then composer require --no-update symfony/symfony:${SYMFONY_VERSION}; fi
+before_install:
+    - phpenv config-rm xdebug.ini || true
+    - composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-master
 
-install: composer update --prefer-dist
+install:
+    - |
+      if [[ $deps = low ]]; then
+          export SYMFONY_DEPRECATIONS_HELPER=weak
+          composer update --prefer-dist --prefer-lowest --prefer-stable
+      else
+          composer update --prefer-dist
+      fi
+    - ./vendor/bin/simple-phpunit install
 
-script: vendor/bin/phpunit
+script:
+    - composer validate --strict --no-check-lock
+    - ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
