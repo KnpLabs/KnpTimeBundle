@@ -3,6 +3,9 @@
 namespace Knp\Bundle\TimeBundle\Twig\Extension;
 
 use Knp\Bundle\TimeBundle\Templating\Helper\TimeHelper;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /*
  * This file is part of the Symfony package.
@@ -17,7 +20,7 @@ use Knp\Bundle\TimeBundle\Templating\Helper\TimeHelper;
  *
  * @author Fabien Potencier <fabien.potencier@symfony-project.com>
  */
-class TimeExtension extends \Twig_Extension
+class TimeExtension extends AbstractExtension
 {
     protected $helper;
 
@@ -34,7 +37,7 @@ class TimeExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction(
+            new TwigFunction(
                     'time_diff', 
                     array($this, 'diff'), 
                     array('is_safe' => array('html'))
@@ -45,7 +48,7 @@ class TimeExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter(
+            new TwigFilter(
                     'ago', 
                     array($this, 'diff'), 
                     array('is_safe' => array('html'))
