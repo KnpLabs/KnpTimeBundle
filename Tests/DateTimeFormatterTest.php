@@ -1,21 +1,22 @@
 <?php
 
-namespace Knp\Bundle\TimeBundle;
+namespace Knp\Bundle\TimeBundle\Tests;
 
-class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
+use Knp\Bundle\TimeBundle\DateTimeFormatter;
+use PHPUnit\Framework\TestCase;
+use Symfony\Contracts\Translation\TranslatorInterface;
+
+class DateTimeFormatterTest extends TestCase
 {
     protected $formatter;
 
-    public function setUp()
+    public function setUp(): void
     {
-        $translator = $this->getMockBuilder('Symfony\Component\Translation\Translator')
+        $translator = $this->getMockBuilder(TranslatorInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
         $translator->expects($this->any())
             ->method('trans')
-            ->will($this->returnArgument(0));
-        $translator->expects($this->any())
-            ->method('transChoice')
             ->will($this->returnArgument(0));
 
         $this->formatter = new DateTimeFormatter($translator);
@@ -55,17 +56,19 @@ class DateTimeFormatterTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function testGetDiffMessageThrowsAnExceptionIfTheDiffIsEmpty()
     {
-        $this->setExpectedException('InvalidArgumentException');
-
         $this->formatter->getDiffMessage(0, true, 'day');
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function testGetDiffMessageThrowsAnExceptionIfTheDiffUnitIsNotSupported()
     {
-        $this->setExpectedException('InvalidArgumentException');
-
         $this->formatter->getDiffMessage(1, true, 'patate');
     }
 }
