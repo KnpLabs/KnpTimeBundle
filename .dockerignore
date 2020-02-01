@@ -1,0 +1,10 @@
+**
+!/DependencyInjection/
+!/Resources/
+!/Templating/
+!/Tests/
+!/Twig/
+!composer\.json
+!phpunit\.xml\.dist
+!DateTimeFormatter\.php
+!KnpTimeBundle\.php

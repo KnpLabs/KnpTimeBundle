@@ -1,0 +1,19 @@
+FROM composer:1 AS composer
+
+FROM php:7.2-cli
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+RUN apt update \
+    && apt install --no-install-recommends -y git unzip
+
+WORKDIR /app
+COPY composer.json .
+
+RUN composer update --prefer-dist
+
+RUN vendor/bin/simple-phpunit --version
+
+COPY . .
+
+RUN vendor/bin/simple-phpunit -v
