@@ -3,7 +3,7 @@
 namespace Knp\Bundle\TimeBundle;
 
 use Symfony\Contracts\Translation\LocaleAwareInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use DatetimeInterface;
 
 class DateTimeFormatter
