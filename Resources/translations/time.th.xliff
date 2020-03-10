@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>%count% ปีที่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>%count% เดือนที่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>%count% วันที่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>%count% ชั่วโมงที่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.minute</source>
+                <target>%count% นาทีที่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.ago.second</source>
+                <target>%count% วินาทีที่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.empty</source>
+                <target>ณ ตอนนี้</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.second</source>
+                <target>ใน %count% วินาที</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.hour</source>
+                <target>ใน %count% ชั่วโมง</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.minute</source>
+                <target>ใน %count% นาที</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.day</source>
+                <target>ใน %count% วัน</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>diff.in.month</source>
+                <target>ใน %count% เดือน</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>diff.in.year</source>
+                <target>ใน %count% ปี</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
