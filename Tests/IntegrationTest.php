@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\Log\Logger;
@@ -23,7 +24,7 @@ class IntegrationTest extends TestCase
         $kernel->boot();
         $container = $kernel->getContainer();
 
-        $result = $container->get('twig')->render('@integration_test/template.twig', [
+        $result = $container->get('public.twig')->render('@integration_test/template.twig', [
             'yesterday' => (new \DateTime('-1 day'))
         ]);
         $this->assertSame('1 day ago', $result);
@@ -64,6 +65,7 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
         // avoid logging request logs
         $container->register('logger', Logger::class)
             ->setArgument(0, LogLevel::EMERGENCY);
+        $container->setAlias('public.twig', new Alias('twig', true));
     }
     public function getCacheDir()
     {
@@ -74,31 +76,18 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
         return sys_get_temp_dir().'/logs'.spl_object_hash($this);
     }
 }
-if (method_exists(AbstractTimeBundleIntegrationTestKernel::class, 'configureRouting')) {
+if (Kernel::VERSION_ID < 50100) {
     class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-        protected function configureRouting(RoutingConfigurator $routes): void
+        protected function configureRoutes(RouteCollectionBuilder $routes)
         {
             $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
         }
     }
 } else {
-    $kernelClass = new \ReflectionClass(AbstractTimeBundleIntegrationTestKernel::class);
-    $configureRoutes = $kernelClass->getMethod('configureRoutes');
-    $firstParam = $configureRoutes->getParameters()[0];
-
-    if ($firstParam->getType()->getName() === RouteCollectionBuilder::class) {
-        class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-            protected function configureRoutes(RouteCollectionBuilder $routes)
-            {
-                $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
-            }
-        }
-    } else {
-        class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-            protected function configureRoutes(RoutingConfigurator $routes)
-            {
-                $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
-            }
+    class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
+        protected function configureRoutes(RoutingConfigurator $routes)
+        {
+            $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
         }
     }
 }
