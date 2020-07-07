@@ -36,14 +36,12 @@
     },
 
     "autoload": {
-        "psr-0": {
-            "Knp\\Bundle\\TimeBundle": ""
+        "psr-4": {
+            "Knp\\Bundle\\TimeBundle\\": ""
         }
     },
 
     "minimum-stability": "dev",
-
-    "target-dir": "Knp/Bundle/TimeBundle",
 
     "extra": {
         "branch-alias": {
