@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>diff.ago.year</source>
+                <target>преди 1 година|преди %count% години</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>diff.ago.month</source>
+                <target>преди 1 месец|преди %count% месеца</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>diff.ago.day</source>
+                <target>преди 1 ден|преди %count% дни</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>diff.ago.hour</source>
+                <target>преди 1 час|преди %count% часа</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>diff.ago.minute</source>
+                <target>преди 1 минута|преди %count% минути</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>diff.ago.second</source>
+                <target>преди 1 секунда|преди %count% секунди</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>diff.empty</source>
+                <target>сега</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>diff.in.second</source>
+                <target>след 1 секунда|след %count% секунди</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>diff.in.hour</source>
+                <target>след 1 час|след %count% часа</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>diff.in.minute</source>
+                <target>след 1 минута|след %count% минути</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>diff.in.day</source>
+                <target>след 1 ден|след %count% дни</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>diff.in.month</source>
+                <target>след 1 месец|след %count% месеца</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>diff.in.year</source>
+                <target>след 1 година|след %count% години</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
