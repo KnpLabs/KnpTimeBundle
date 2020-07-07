@@ -9,50 +9,25 @@ Last edited {{ post.updatedAt|ago }}
 
 The date formatted can be translated into any language, and many are supported out of the box.
 
-## INSTALLATION via Composer
+## INSTALLATION
 
-    composer require knplabs/knp-time-bundle
+Use Composer to install the library:
 
-## CONFIGURATION
-Register the bundle:
-
-```php
-<?php
-// app/AppKernel.php
-public function registerBundles()
-{
-    $bundles = array(
-        // ...
-        new Knp\Bundle\TimeBundle\KnpTimeBundle(),
-    );
-    // ...
-}
+```
+composer require knplabs/knp-time-bundle
 ```
 
-Enable the translation component if you haven't already done it:
-
-```yaml
-# app/config/config.yml
-framework:
-    # ...
-    translator:      { fallback: '%locale%' } # uncomment this line if you see this line commented
-```
-
+Woo! You did it! Assuminy project uses Symfony Flex, the
+bundle should be configured and ready to go. If not, you
+can enable `Knp\Bundle\TimeBundle\KnpTimeBundle` manually.
 
 ## USAGE
-
-In PHP!
-
-```php
-<?php
-// Use the helper with Php
-echo $view['time']->diff($dateTime); // returns something like "3 minutes ago"
-```
 
 In Twig!
 
 ```html+jinja
 {{ someDateTimeVariable|ago }}
+
 ... or use the equivalent function
 {{ time_diff(someDateTimeVariable) }}
 ```
