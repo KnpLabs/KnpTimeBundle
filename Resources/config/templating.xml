@@ -6,14 +6,9 @@
 
     <parameters>
         <parameter key="time.templating.helper.time.class">Knp\Bundle\TimeBundle\Templating\Helper\TimeHelper</parameter>
-        <parameter key="time.datetime_formatter.class">Knp\Bundle\TimeBundle\DateTimeFormatter</parameter>
     </parameters>
 
     <services>
-        <service id="time.datetime_formatter" class="%time.datetime_formatter.class%">
-            <argument type="service" id="translator"/>
-        </service>
-
         <service id="time.templating.helper.time" class="%time.templating.helper.time.class%">
             <argument type="service" id="time.datetime_formatter" />
             <tag name="templating.helper" alias="time" />

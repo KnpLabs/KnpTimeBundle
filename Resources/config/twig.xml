@@ -10,7 +10,7 @@
 
     <services>
         <service id="time.twig.extension.time" class="%time.twig.extension.time.class%" public="false">
-            <argument type="service" id="time.templating.helper.time" />
+            <argument type="service" id="time.datetime_formatter" />
             <tag name="twig.extension" />
         </service>
     </services>

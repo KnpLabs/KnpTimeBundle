@@ -2,7 +2,7 @@
 
 namespace Knp\Bundle\TimeBundle\Twig\Extension;
 
-use Knp\Bundle\TimeBundle\Templating\Helper\TimeHelper;
+use Knp\Bundle\TimeBundle\DateTimeFormatter;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -22,11 +22,11 @@ use Twig\TwigFunction;
  */
 class TimeExtension extends AbstractExtension
 {
-    protected $helper;
+    protected $formatter;
 
-    public function __construct(TimeHelper $helper)
+    public function __construct(DateTimeFormatter $formatter)
     {
-        $this->helper = $helper;
+        $this->formatter = $formatter;
     }
 
     /**
@@ -38,8 +38,8 @@ class TimeExtension extends AbstractExtension
     {
         return array(
             new TwigFunction(
-                    'time_diff', 
-                    array($this, 'diff'), 
+                    'time_diff',
+                    array($this, 'diff'),
                     array('is_safe' => array('html'))
                 ),
         );
@@ -49,8 +49,8 @@ class TimeExtension extends AbstractExtension
     {
         return array(
             new TwigFilter(
-                    'ago', 
-                    array($this, 'diff'), 
+                    'ago',
+                    array($this, 'diff'),
                     array('is_safe' => array('html'))
                 ),
         );
@@ -58,7 +58,10 @@ class TimeExtension extends AbstractExtension
 
     public function diff($since = null, $to = null)
     {
-        return $this->helper->diff($since, $to);
+        return $this->formatter->formatDiff(
+            $this->formatter->getDatetimeObject($since),
+            $this->formatter->getDatetimeObject($to)
+        );
     }
 
     /**
