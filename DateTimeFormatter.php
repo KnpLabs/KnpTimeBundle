@@ -3,6 +3,7 @@
 namespace Knp\Bundle\TimeBundle;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
+use DateTime;
 use DatetimeInterface;
 
 class DateTimeFormatter
@@ -73,6 +74,24 @@ class DateTimeFormatter
         }
 
         return $this->doGetDiffMessage($count, $invert, $unit);
+    }
+
+    /**
+     * Returns a DateTime instance for the given datetime
+     *
+     * @param mixed $datetime
+     */
+    public function getDateTimeObject($dateTime = null): DateTimeInterface
+    {
+        if ($dateTime instanceof DateTimeInterface) {
+            return $dateTime;
+        }
+
+        if (is_int($dateTime)) {
+            $dateTime = date('Y-m-d H:i:s', $dateTime);
+        }
+
+        return new DateTime($dateTime);
     }
 
     protected function doGetDiffMessage($count, $invert, $unit)

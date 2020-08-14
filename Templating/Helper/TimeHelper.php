@@ -4,8 +4,6 @@ namespace Knp\Bundle\TimeBundle\Templating\Helper;
 
 use Symfony\Component\Templating\Helper\Helper;
 use Knp\Bundle\TimeBundle\DateTimeFormatter;
-use DateTime;
-use DateTimeInterface;
 
 class TimeHelper extends Helper
 {
@@ -27,30 +25,18 @@ class TimeHelper extends Helper
      */
     public function diff($from, $to = null)
     {
-        $from = $this->getDatetimeObject($from);
-        $to = $this->getDatetimeObject($to);
+        $from = $this->formatter->getDatetimeObject($from);
+        $to = $this->formatter->getDatetimeObject($to);
 
         return $this->formatter->formatDiff($from, $to);
     }
 
     /**
-     * Returns a DateTime instance for the given datetime
-     *
-     * @param  mixed $datetime
-     *
-     * @return DateTimeInterface
+     * @deprecated Use DateTimeFormatter::getDateTimeObject() directly.
      */
     public function getDatetimeObject($datetime = null)
     {
-        if ($datetime instanceof DateTimeInterface) {
-            return $datetime;
-        }
-
-        if (is_integer($datetime)) {
-            $datetime = date('Y-m-d H:i:s', $datetime);
-        }
-
-        return new DateTime($datetime);
+        return $this->formatter->getDatetimeObject($datetime);
     }
 
     public function getName()
