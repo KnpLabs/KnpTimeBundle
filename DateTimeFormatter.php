@@ -81,17 +81,17 @@ class DateTimeFormatter
      *
      * @param mixed $datetime
      */
-    public function getDatetimeObject($datetime = null): DateTimeInterface
+    public function getDateTimeObject($dateTime = null): DateTimeInterface
     {
-        if ($datetime instanceof DateTimeInterface) {
-            return $datetime;
+        if ($dateTime instanceof DateTimeInterface) {
+            return $dateTime;
         }
 
-        if (is_int($datetime)) {
-            $datetime = date('Y-m-d H:i:s', $datetime);
+        if (is_int($dateTime)) {
+            $dateTime = date('Y-m-d H:i:s', $dateTime);
         }
 
-        return new DateTime($datetime);
+        return new DateTime($dateTime);
     }
 
     protected function doGetDiffMessage($count, $invert, $unit)
