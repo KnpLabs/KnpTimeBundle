@@ -12,5 +12,7 @@
         <service id="time.datetime_formatter" class="%time.datetime_formatter.class%">
             <argument type="service" id="translator"/>
         </service>
+
+        <service id="Knp\Bundle\TimeBundle\DateTimeFormatter" alias="time.datetime_formatter" />
     </services>
 </container>
