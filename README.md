@@ -7,6 +7,8 @@ Last edited {{ post.updatedAt|ago }}
 <-- Last edited 1 week ago -->
 ```
 
+Want to see it used in a screencast 🎥? Check out SymfonyCasts: https://symfonycasts.com/screencast/symfony-doctrine/ago
+
 The date formatted can be translated into any language, and many are supported out of the box.
 
 ## INSTALLATION
