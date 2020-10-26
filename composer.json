@@ -32,7 +32,7 @@
     },
 
     "suggest": {
-        "symfony/twig-bundle": "to use the Twig time_diff function"
+        "symfony/twig-bundle": "to use the Twig `time_diff()` function or `|ago` filter"
     },
 
     "autoload": {
