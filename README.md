@@ -1,4 +1,4 @@
-# Friendly ago dates ("5 minutes ago")!
+# Friendly *ago* dates ("5 minutes ago")!
 
 This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
 
@@ -19,18 +19,18 @@ Use Composer to install the library:
 composer require knplabs/knp-time-bundle
 ```
 
-Woo! You did it! Assuminy project uses Symfony Flex, the
+Woo! You did it! Assuming your project uses Symfony Flex, the
 bundle should be configured and ready to go. If not, you
 can enable `Knp\Bundle\TimeBundle\KnpTimeBundle` manually.
 
 ## USAGE
 
-In Twig!
+In Twig:
 
-```html+jinja
+```twig
 {{ someDateTimeVariable|ago }}
 
-... or use the equivalent function
+... or use the equivalent function:
 {{ time_diff(someDateTimeVariable) }}
 ```
 
