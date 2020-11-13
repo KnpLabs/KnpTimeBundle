@@ -5,6 +5,7 @@ namespace Knp\Bundle\TimeBundle;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use DateTime;
 use DatetimeInterface;
+use Carbon\Carbon;
 
 class DateTimeFormatter
 {
@@ -30,25 +31,10 @@ class DateTimeFormatter
      */
     public function formatDiff(DateTimeInterface $from, DateTimeInterface $to)
     {
-        static $units = array(
-            'y' => 'year',
-            'm' => 'month',
-            'd' => 'day',
-            'h' => 'hour',
-            'i' => 'minute',
-            's' => 'second'
-        );
-
-        $diff = $to->diff($from);
-
-        foreach ($units as $attribute => $unit) {
-            $count = $diff->$attribute;
-            if (0 !== $count) {
-                return $this->doGetDiffMessage($count, $diff->invert, $unit);
-            }
-        }
-
-        return $this->getEmptyDiffMessage();
+        $start = Carbon::parse($from);
+        $end = Carbon::parse($to);
+        
+        return $end->diffForHumans($start);
     }
 
     /**
