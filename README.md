@@ -61,7 +61,7 @@ public function yourAction(DateTimeFormatter $dateTimeFormatter)
 If you want to run tests, please check that you have installed dev dependencies.
 
 ```bash
-./vendor/bin/phpunit
+./vendor/bin/simple-phpunit
 ```
 
 ## Maintainers
