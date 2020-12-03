@@ -21,7 +21,6 @@ matrix:
 
 before_install:
     - phpenv config-rm xdebug.ini || true
-    - composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-master
 
 install:
     - |
