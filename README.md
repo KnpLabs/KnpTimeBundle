@@ -32,6 +32,9 @@ In Twig!
 
 ... or use the equivalent function
 {{ time_diff(someDateTimeVariable) }}
+
+... or in the future
+{{ someDateTimeVariable|in }}
 ```
 
 ### In controllers
