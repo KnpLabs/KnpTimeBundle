@@ -32,10 +32,9 @@ In Twig!
 
 ... or use the equivalent function
 {{ time_diff(someDateTimeVariable) }}
-
-... or in the future
-{{ someDateTimeVariable|in }}
 ```
+
+Note: the "ago" filter works fine for dates in the future, too. 
 
 ### In controllers
 
