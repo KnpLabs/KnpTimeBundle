@@ -34,6 +34,8 @@ In Twig:
 {{ time_diff(someDateTimeVariable) }}
 ```
 
+Note: the "ago" filter works fine for dates in the future, too. 
+
 ### In controllers
 
 You can also "ago" dates inside PHP by autowiring the `Knp\Bundle\TimeBundle\DateTimeFormatter` service:
