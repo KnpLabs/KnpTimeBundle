@@ -1,7 +1,7 @@
 {
     "name":        "knplabs/knp-time-bundle",
     "type":        "symfony-bundle",
-    "description": "Knplabs time bundle makes your dates look sensible and descriptive",
+    "description": "Making your dates look sensible and descriptive",
     "keywords":    ["time", "date", "descriptive time", "knplabs", "knp", "bundle"],
     "homepage":    "http://github.com/KnpLabs/KnpTimeBundle",
     "license":     "MIT",
@@ -32,7 +32,7 @@
     },
 
     "suggest": {
-        "symfony/twig-bundle": "to use the Twig time_diff function"
+        "symfony/twig-bundle": "to use the Twig `time_diff()` function or `|ago` filter"
     },
 
     "autoload": {
