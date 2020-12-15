@@ -1,7 +1,7 @@
 {
     "name":        "knplabs/knp-time-bundle",
     "type":        "symfony-bundle",
-    "description": "Makes your dates look sensible and descriptive",
+    "description": "Making your dates look sensible and descriptive",
     "keywords":    ["time", "date", "descriptive time", "knplabs", "knp", "bundle"],
     "homepage":    "http://github.com/KnpLabs/KnpTimeBundle",
     "license":     "MIT",
