@@ -56,11 +56,12 @@ class TimeExtension extends AbstractExtension
         );
     }
 
-    public function diff($since = null, $to = null)
+    public function diff($since = null, $to = null, $locale = null)
     {
         return $this->formatter->formatDiff(
             $this->formatter->getDatetimeObject($since),
-            $this->formatter->getDatetimeObject($to)
+            $this->formatter->getDatetimeObject($to),
+            $locale
         );
     }
 

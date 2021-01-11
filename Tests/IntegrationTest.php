@@ -27,7 +27,13 @@ class IntegrationTest extends TestCase
         $result = $container->get('public.twig')->render('@integration_test/template.twig', [
             'yesterday' => (new \DateTime('-1 day'))
         ]);
+
+        $resultFr = $container->get('public.twig')->render('@integration_test/templateSpecificLocale.twig', [
+            'yesterday' => (new \DateTime('-1 day'))
+        ]);
+
         $this->assertSame('1 day ago', $result);
+        $this->assertSame('il y a 1 jour', $resultFr);
     }
 }
 

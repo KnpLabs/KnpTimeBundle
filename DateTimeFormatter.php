@@ -25,10 +25,11 @@ class DateTimeFormatter
      *
      * @param  DateTimeInterface $from
      * @param  DateTimeInterface $to
+     * @param  string|null $locale
      *
      * @return string
      */
-    public function formatDiff(DateTimeInterface $from, DateTimeInterface $to)
+    public function formatDiff(DateTimeInterface $from, DateTimeInterface $to, string $locale = null)
     {
         static $units = array(
             'y' => 'year',
@@ -44,11 +45,11 @@ class DateTimeFormatter
         foreach ($units as $attribute => $unit) {
             $count = $diff->$attribute;
             if (0 !== $count) {
-                return $this->doGetDiffMessage($count, $diff->invert, $unit);
+                return $this->doGetDiffMessage($count, $diff->invert, $unit, $locale);
             }
         }
 
-        return $this->getEmptyDiffMessage();
+        return $this->getEmptyDiffMessage($locale);
     }
 
     /**
@@ -94,25 +95,25 @@ class DateTimeFormatter
         return new DateTime($dateTime);
     }
 
-    protected function doGetDiffMessage($count, $invert, $unit)
+    protected function doGetDiffMessage($count, $invert, $unit, $locale = null)
     {
         $id = sprintf('diff.%s.%s', $invert ? 'ago' : 'in', $unit);
 
         // check for Symfony >= 4.2
         if (class_exists('Symfony\Component\Translation\Formatter\IntlFormatter')) {
-            return $this->translator->trans($id, array('%count%' => $count), 'time');
+            return $this->translator->trans($id, array('%count%' => $count), 'time', $locale);
         } else {
-            return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time');
+            return $this->translator->transChoice($id, $count, array('%count%' => $count), 'time', $locale);
         }
     }
 
     /**
      * Returns the message for an empty diff
-     *
+     * @param string|null $locale
      * @return string
      */
-    public function getEmptyDiffMessage()
+    public function getEmptyDiffMessage(string $locale = null)
     {
-        return $this->translator->trans('diff.empty', array(), 'time');
+        return $this->translator->trans('diff.empty', array(), 'time', $locale);
     }
 }
