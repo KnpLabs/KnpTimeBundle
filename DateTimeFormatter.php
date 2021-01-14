@@ -25,7 +25,6 @@ class DateTimeFormatter
      *
      * @param  DateTimeInterface $from
      * @param  DateTimeInterface $to
-     * @param  string|null $locale
      *
      * @return string
      */
@@ -109,7 +108,6 @@ class DateTimeFormatter
 
     /**
      * Returns the message for an empty diff
-     * @param string|null $locale
      * @return string
      */
     public function getEmptyDiffMessage(string $locale = null)
