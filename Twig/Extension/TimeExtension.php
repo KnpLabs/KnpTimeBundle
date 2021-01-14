@@ -7,17 +7,7 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien.potencier@symfony-project.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 /**
- *
  * @author Fabien Potencier <fabien.potencier@symfony-project.com>
  */
 class TimeExtension extends AbstractExtension
@@ -31,10 +21,8 @@ class TimeExtension extends AbstractExtension
 
     /**
      * Returns a list of global functions to add to the existing list.
-     *
-     * @return array An array of global functions
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return array(
             new TwigFunction(
@@ -45,7 +33,7 @@ class TimeExtension extends AbstractExtension
         );
     }
 
-    public function getFilters()
+    public function getFilters(): array
     {
         return array(
             new TwigFilter(
@@ -56,7 +44,7 @@ class TimeExtension extends AbstractExtension
         );
     }
 
-    public function diff($since = null, $to = null)
+    public function diff($since = null, $to = null): string
     {
         return $this->formatter->formatDiff(
             $this->formatter->getDatetimeObject($since),
@@ -66,10 +54,8 @@ class TimeExtension extends AbstractExtension
 
     /**
      * Returns the name of the extension.
-     *
-     * @return string The extension name
      */
-    public function getName()
+    public function getName(): string
     {
         return 'time';
     }
