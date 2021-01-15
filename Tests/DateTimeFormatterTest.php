@@ -22,7 +22,7 @@ class DateTimeFormatterTest extends TestCase
         $this->formatter = new DateTimeFormatter($translator);
     }
 
-    public function testFormatDiff()
+    public function testFormatDiff(): void
     {
         $tests = array(
             array('- 5 years', 'now', 'diff.ago.year'),
@@ -48,7 +48,7 @@ class DateTimeFormatterTest extends TestCase
         }
     }
 
-    public function testGetDiffMessage()
+    public function testGetDiffMessage(): void
     {
         foreach (array('year', 'month', 'day', 'hour', 'minute', 'second') as $unit) {
             $this->assertEquals(sprintf('diff.in.%s', $unit), $this->formatter->getDiffMessage(1, false, $unit));
