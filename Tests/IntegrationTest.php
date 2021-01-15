@@ -35,10 +35,12 @@ class IntegrationTest extends TestCase
     public function testLocalTranslation()
     {
         $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/templateSpecificLocale.twig', [
-            'yesterday' => (new \DateTime('-1 day'))
+            'yesterday' => (new \DateTime('-1 day')),
+            'monthAgo' => (new \DateTime('-1 month'))
         ]);
 
-        $this->assertSame('il y a 1 jour', $result);
+        $this->assertStringContainsString('il y a 1 jour', $result);
+        $this->assertStringContainsString('il y a 1 mois', $result);
     }
 
     protected function setUp(): void
