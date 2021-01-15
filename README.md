@@ -58,6 +58,15 @@ public function yourAction(DateTimeFormatter $dateTimeFormatter)
 }
 ```
 
+## Controlling the Translation Locale
+
+The bundle will automatically use the current locale when translating
+the "ago" messages. However, you can override the locale:
+
+```twig
+{{ someDateTimeVariable|ago(locale='es') }}
+```
+
 ## TESTS
 
 If you want to run tests, please check that you have installed dev dependencies.
