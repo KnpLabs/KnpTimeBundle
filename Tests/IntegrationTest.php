@@ -18,16 +18,33 @@ use Symfony\Component\Routing\RouteCollectionBuilder;
 
 class IntegrationTest extends TestCase
 {
+    /**
+     * @var TimeBundleIntegrationTestKernel
+     */
+    private $kernel;
+
     public function testServiceWiring()
     {
-        $kernel = new TimeBundleIntegrationTestKernel();
-        $kernel->boot();
-        $container = $kernel->getContainer();
-
-        $result = $container->get('public.twig')->render('@integration_test/template.twig', [
+        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/template.twig', [
             'yesterday' => (new \DateTime('-1 day'))
         ]);
+
         $this->assertSame('1 day ago', $result);
+    }
+
+    public function testLocalTranslation()
+    {
+        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/templateSpecificLocale.twig', [
+            'yesterday' => (new \DateTime('-1 day'))
+        ]);
+
+        $this->assertSame('il y a 1 jour', $result);
+    }
+
+    protected function setUp(): void
+    {
+        $this->kernel = new TimeBundleIntegrationTestKernel();
+        $this->kernel->boot();
     }
 }
 
