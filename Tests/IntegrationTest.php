@@ -23,7 +23,7 @@ class IntegrationTest extends TestCase
      */
     private $kernel;
 
-    public function testServiceWiring()
+    public function testServiceWiring(): void
     {
         $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/template.twig', [
             'yesterday' => (new \DateTime('-1 day'))
@@ -58,7 +58,7 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
     {
         parent::__construct('test', true);
     }
-    public function registerBundles()
+    public function registerBundles(): array
     {
         return [
             new FrameworkBundle(),
@@ -66,7 +66,7 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
             new KnpTimeBundle()
         ];
     }
-    protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader)
+    protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
         $container->loadFromExtension('framework', [
             'secret' => 'foo',
@@ -86,25 +86,25 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
             ->setArgument(0, LogLevel::EMERGENCY);
         $container->setAlias('public.twig', new Alias('twig', true));
     }
-    public function getCacheDir()
+    public function getCacheDir(): string
     {
         return sys_get_temp_dir().'/cache'.spl_object_hash($this);
     }
-    public function getLogDir()
+    public function getLogDir(): string
     {
         return sys_get_temp_dir().'/logs'.spl_object_hash($this);
     }
 }
 if (Kernel::VERSION_ID < 50100) {
     class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-        protected function configureRoutes(RouteCollectionBuilder $routes)
+        protected function configureRoutes(RouteCollectionBuilder $routes): void
         {
             $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
         }
     }
 } else {
     class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-        protected function configureRoutes(RoutingConfigurator $routes)
+        protected function configureRoutes(RoutingConfigurator $routes): void
         {
             $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
         }
