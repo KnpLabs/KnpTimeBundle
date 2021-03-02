@@ -2,14 +2,10 @@ name: KnpTimeBundle Tests
 
 on:
     push:
-#        branches:
-#            - master
+        branches:
+            - master
     pull_request:
     release:
-
-#env:
-#    PHPUNIT_FLAGS: '-v'
-#    SYMFONY_REQUIRE: '>=2.8'
 
 jobs:
     composer-validate:
