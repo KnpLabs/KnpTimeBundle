@@ -26,13 +26,17 @@
 
     "require-dev": {
         "symfony/framework-bundle": "^4.3|^5.0",
-        "symfony/phpunit-bridge": "^4.3|^5.0",
+        "symfony/phpunit-bridge": "^5.2",
         "symfony/templating": "^4.3|^5.0",
         "symfony/twig-bundle": "^4.3|^5.0"
     },
 
     "suggest": {
         "symfony/twig-bundle": "to use the Twig `time_diff()` function or `|ago` filter"
+    },
+
+    "conflict": {
+        "phpunit/phpunit": "<8.0"
     },
 
     "autoload": {

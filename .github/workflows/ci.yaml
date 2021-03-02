@@ -28,16 +28,29 @@ jobs:
 
     stable-tests:
         name: Stable
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-18.04
 
         strategy:
             fail-fast: false
             matrix:
-                php-versions: [ '7.4', '8.0' ]
+                php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
 
         steps:
             -   name: Set PHP Version
                 run: sudo update-alternatives --set php /usr/bin/php${{ matrix.php-versions }}
+
+            -   name: Get PHP Version
+                run: |
+                    ver=$(php -v | grep -oP '(?<=PHP )\d.\d')
+                    echo "::set-output name=version::$ver"
+                id: php-ver
+
+            -   name: Using PHP Version from matrix
+                run: |
+                    echo "Runner is not using PHP Version defined in the php-versions matrix."
+                    php -v
+                    exit 1
+                if: steps.php-ver.outputs.version != matrix.php-versions
 
             -   name: Checkout
                 uses: actions/checkout@v2
@@ -53,7 +66,10 @@ jobs:
 
     lowest-tests:
         name: Lowest Dependencies
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-18.04
+
+        env:
+            SYMFONY_PHPUNIT_VERSION: 9.5
 
         strategy:
             fail-fast: false
@@ -64,6 +80,19 @@ jobs:
             -   name: Set PHP Version
                 run: sudo update-alternatives --set php /usr/bin/php${{ matrix.php-versions }}
 
+            -   name: Get PHP Version
+                run: |
+                    ver=$(php -v | grep -oP '(?<=PHP )\d.\d')
+                    echo "::set-output name=version::$ver"
+                id: php-ver
+
+            -   name: Using PHP Version from matrix
+                run: |
+                    echo "Runner is not using PHP Version defined in the php-versions matrix."
+                    php -v
+                    exit 1
+                if: steps.php-ver.outputs.version != matrix.php-versions
+
             -   name: Checkout
                 uses: actions/checkout@v2
 
@@ -71,7 +100,7 @@ jobs:
                 run: composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-main
 
             -   name: Install Composer Dependencies
-                run: composer update --prefer-dist --prefer-lowest --prefer-stable --no-progress
+                run: composer update --prefer-lowest --prefer-dist --no-progress
 
             -   name: PHPUnit
                 run: vendor/bin/simple-phpunit
