@@ -25,3 +25,53 @@ jobs:
 
             -   name: Validate
                 run: composer validate --strict
+
+    stable-tests:
+        name: Stable
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php-versions: [ '7.4', '8.0' ]
+
+        steps:
+            -   name: Set PHP Version
+                run: sudo update-alternatives --set php /usr/bin/php${{ matrix.php-versions }}
+
+            -   name: Checkout
+                uses: actions/checkout@v2
+
+            -   name: Require symfony/flex
+                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-main
+
+            -   name: Install Composer Dependencies
+                run: composer update --prefer-dist --no-progress
+
+            -   name: PHPUnit
+                run: vendor/bin/simple-phpunit
+
+    lowest-tests:
+        name: Lowest Dependencies
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php-versions: [ '7.4', '8.0' ]
+
+        steps:
+            -   name: Set PHP Version
+                run: sudo update-alternatives --set php /usr/bin/php${{ matrix.php-versions }}
+
+            -   name: Checkout
+                uses: actions/checkout@v2
+
+            -   name: Require symfony/flex
+                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-main
+
+            -   name: Install Composer Dependencies
+                run: composer update --prefer-dist --prefer-lowest --prefer-stable --no-progress
+
+            -   name: PHPUnit
+                run: vendor/bin/simple-phpunit
