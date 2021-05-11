@@ -44,7 +44,7 @@
             </trans-unit>
             <trans-unit id="11">
                 <source>diff.in.day</source>
-                <target>za dzień|za %count% dni|za %count% dni</target>
+                <target>jutro|za %count% dni|za %count% dni</target>
             </trans-unit>
             <trans-unit id="12">
                 <source>diff.in.month</source>
