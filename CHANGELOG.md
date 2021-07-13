@@ -1,30 +1,11 @@
-## [v1.9.1](https://github.com/symfony/maker-bundle/releases/tag/v1.9.1)
-
-*April 19th, 2019*
-
-### UNKNOWN
-
-- [#117](https://github.com/knplabs/KnpTimeBundle/pull/117) - Use transChoice for Symfony <4.2 - *@cb8*
-
-## [v1.3](https://github.com/symfony/maker-bundle/releases/tag/v1.3)
-
-*December 12th, 2013*
-
-## [v1.2](https://github.com/symfony/maker-bundle/releases/tag/v1.2)
-
-*November 15th, 2013*
-
 ## [v1.16.0](https://github.com/symfony/maker-bundle/releases/tag/v1.16.0)
 
 *March 2nd, 2021*
 
 ### Minor
 
-- [#155](https://github.com/knplabs/KnpTimeBundle/pull/155) - WIP move CI to github actions - *@jrushlow*
-
-### UNKNOWN
-
 - [#156](https://github.com/knplabs/KnpTimeBundle/pull/156) - change CI and bump supported versions - *@jrushlow*
+- [#155](https://github.com/knplabs/KnpTimeBundle/pull/155) - WIP move CI to github actions - *@jrushlow*
 
 ## [v1.15.0](https://github.com/symfony/maker-bundle/releases/tag/v1.15.0)
 
@@ -33,15 +14,15 @@
 ### Minor
 
 - [#143](https://github.com/knplabs/KnpTimeBundle/pull/143) - Update README.md - *@ThomasLandauer*
+- [#153](https://github.com/knplabs/KnpTimeBundle/pull/153) - implement PHP's type system - *@jrushlow*
+- [#154](https://github.com/knplabs/KnpTimeBundle/pull/154) - updating README for locale override - *@weaverryan*
 
 ### UNKNOWN
 
 - [#147](https://github.com/knplabs/KnpTimeBundle/pull/147) - Add compatibility for PHP 8.0 - *@m-vo*
-- [#153](https://github.com/knplabs/KnpTimeBundle/pull/153) - implement PHP's type system - *@jrushlow*
 - [#152](https://github.com/knplabs/KnpTimeBundle/pull/152) - added the locale parameter - *@jpgiroux*
 - [#144](https://github.com/knplabs/KnpTimeBundle/pull/144) - Update composer.json - *@ThomasLandauer*
 - [#150](https://github.com/knplabs/KnpTimeBundle/pull/150) - Added Norwegian bokmål and Norwegian nynorsk translations - *@jon-harald*
-- [#154](https://github.com/knplabs/KnpTimeBundle/pull/154) - updating README for locale override - *@weaverryan*
 - [#149](https://github.com/knplabs/KnpTimeBundle/pull/149) - Update/doc - *@muchafm*
 
 ## [v1.13.0](https://github.com/symfony/maker-bundle/releases/tag/v1.13.0)
@@ -74,17 +55,24 @@
 
 - [#124](https://github.com/knplabs/KnpTimeBundle/pull/124) - Fix typo in README - *@svenluijten*
 - [#127](https://github.com/knplabs/KnpTimeBundle/pull/127) - use namespaced twig classes - *@zaggi-iwnl*
-- [#121](https://github.com/knplabs/KnpTimeBundle/pull/121) - Allow Symfony 5 - *@tacman*
 - [#129](https://github.com/knplabs/KnpTimeBundle/pull/129) - bumping php & symfony version dependencies and making code updates - *@weaverryan*
+
+## [v1.10.0](https://github.com/symfony/maker-bundle/releases/tag/v1.10.0)
+
+*December 4th, 2019*
+
+### UNKNOWN
+
+- [#121](https://github.com/knplabs/KnpTimeBundle/pull/121) - Allow Symfony 5 - *@tacman*
 - [#123](https://github.com/knplabs/KnpTimeBundle/pull/123) - removing support for most obsolete versions - *@weaverryan*
 
-## [v1.1](https://github.com/symfony/maker-bundle/releases/tag/v1.1)
+## [v1.9.1](https://github.com/symfony/maker-bundle/releases/tag/v1.9.1)
 
-*January 11th, 2013*
+*April 19th, 2019*
 
-## [v1.0](https://github.com/symfony/maker-bundle/releases/tag/v1.0)
+### UNKNOWN
 
-*January 11th, 2013*
+- [#117](https://github.com/knplabs/KnpTimeBundle/pull/117) - Use transChoice for Symfony <4.2 - *@cb8*
 
 ## [1.9.0](https://github.com/symfony/maker-bundle/releases/tag/1.9.0)
 
@@ -198,3 +186,19 @@
 ## [1.4.0](https://github.com/symfony/maker-bundle/releases/tag/1.4.0)
 
 *September 17th, 2015*
+
+## [v1.3](https://github.com/symfony/maker-bundle/releases/tag/v1.3)
+
+*December 12th, 2013*
+
+## [v1.2](https://github.com/symfony/maker-bundle/releases/tag/v1.2)
+
+*November 15th, 2013*
+
+## [v1.1](https://github.com/symfony/maker-bundle/releases/tag/v1.1)
+
+*January 11th, 2013*
+
+## [v1.0](https://github.com/symfony/maker-bundle/releases/tag/v1.0)
+
+*January 11th, 2013*
