@@ -39,7 +39,7 @@ class TimeHelper extends Helper
         return $this->formatter->getDatetimeObject($datetime);
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'time';
     }
