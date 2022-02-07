@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [v1.18.0](https://github.com/knplabs/knptimebundle/releases/tag/v1.18.0)
+
+*February 7th, 2022*
+
+### Feature
+
+- [#164](https://github.com/knplabs/knptimebundle/pull/164) - Force DateTime constructor parameter (PHP 8.1 deprecation) - *@grosmanal*
+
 ## [v1.17.0](https://github.com/knplabs/KnpTimeBundle/releases/tag/v1.17.0)
 
 *October 28th, 2021*
