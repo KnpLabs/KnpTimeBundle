@@ -29,7 +29,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
+                php-versions: [ '7.2', '7.3', '7.4', '8.0', '8.1' ]
 
         steps:
             -   name: Set PHP Version
@@ -52,7 +52,7 @@ jobs:
                 uses: actions/checkout@v2
 
             -   name: Require symfony/flex
-                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-main
+                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex >=1.x
 
             -   name: Install Composer Dependencies
                 run: composer update --prefer-dist --no-progress
@@ -70,7 +70,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php-versions: [ '7.4', '8.0' ]
+                php-versions: [ '7.4', '8.1' ]
 
         steps:
             -   name: Set PHP Version
@@ -93,7 +93,7 @@ jobs:
                 uses: actions/checkout@v2
 
             -   name: Require symfony/flex
-                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-main
+                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex >=1.x
 
             -   name: Install Composer Dependencies
                 run: composer update --prefer-lowest --prefer-dist --no-progress
