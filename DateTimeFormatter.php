@@ -79,7 +79,7 @@ class DateTimeFormatter
             $dateTime = date('Y-m-d H:i:s', $dateTime);
         }
 
-        if (is_null($dateTime)) {
+        if (null === $dateTime) {
             $dateTime = 'now';
         }
 
