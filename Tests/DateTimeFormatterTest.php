@@ -37,12 +37,14 @@ class DateTimeFormatterTest extends TestCase
             array('+ 20 hours', 'now', 'diff.in.hour'),
             array('+ 15 days', 'now', 'diff.in.day'),
             array('+ 10 months', 'now', 'diff.in.month'),
-            array('+ 5 years', 'now', 'diff.in.year')
+            array('+ 5 years', 'now', 'diff.in.year'),
+            array('+ 5 years', null, 'diff.in.year'),
+            array('now', null, 'diff.empty'),
         );
 
         foreach ($tests as $test) {
             $from = new \DatetimeImmutable(date('Y-m-d H:i:s', strtotime($test[0])));
-            $to = new \Datetime(date('Y-m-d H:i:s', strtotime($test[1])));
+            $to = $test[1] ? new \Datetime(date('Y-m-d H:i:s', strtotime($test[1]))) : null;
 
             $this->assertEquals($test[2], $this->formatter->formatDiff($from, $to));
         }

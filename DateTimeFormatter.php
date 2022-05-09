@@ -18,8 +18,12 @@ class DateTimeFormatter
     /**
      * Returns a formatted diff for the given from and to datetimes
      */
-    public function formatDiff(DateTimeInterface $from, DateTimeInterface $to, string $locale = null): string
+    public function formatDiff(DateTimeInterface $from, DateTimeInterface $to = null, string $locale = null): string
     {
+        if (null === $to) {
+            $to = new \DateTimeImmutable('now');
+        }
+
         static $units = array(
             'y' => 'year',
             'm' => 'month',
