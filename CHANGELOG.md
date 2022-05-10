@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## [v1.19.0](https://github.com/knplabs/knptimebundle/releases/tag/v1.19.0)
+
+*May 10th, 2022*
+
+### Feature
+
+- [#169](https://github.com/knplabs/knptimebundle/pull/169) - [DX] Make "to" argument optional - *@weaverryan*
+
 ## [v1.18.0](https://github.com/knplabs/knptimebundle/releases/tag/v1.18.0)
 
 *February 7th, 2022*
