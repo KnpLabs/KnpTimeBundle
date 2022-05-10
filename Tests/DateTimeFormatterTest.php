@@ -22,30 +22,34 @@ class DateTimeFormatterTest extends TestCase
         $this->formatter = new DateTimeFormatter($translator);
     }
 
-    public function testFormatDiff(): void
+    /**
+     * @dataProvider getFormatDiffTests
+     */
+    public function testFormatDiff(string $fromString, ?string $toString, string $expected): void
     {
-        $tests = array(
-            array('- 5 years', 'now', 'diff.ago.year'),
-            array('- 10 months', 'now', 'diff.ago.month'),
-            array('- 15 days', 'now', 'diff.ago.day'),
-            array('- 20 hours', 'now', 'diff.ago.hour'),
-            array('- 25 minutes', 'now', 'diff.ago.minute'),
-            array('- 30 seconds', 'now', 'diff.ago.second'),
-            array('now', 'now', 'diff.empty'),
-            array('+ 30 seconds', 'now', 'diff.in.second'),
-            array('+ 25 minutes', 'now', 'diff.in.minute'),
-            array('+ 20 hours', 'now', 'diff.in.hour'),
-            array('+ 15 days', 'now', 'diff.in.day'),
-            array('+ 10 months', 'now', 'diff.in.month'),
-            array('+ 5 years', 'now', 'diff.in.year')
-        );
+        $from = new \DatetimeImmutable(date('Y-m-d H:i:s', strtotime($fromString)));
+        $to = $toString !== null ? new \Datetime(date('Y-m-d H:i:s', strtotime($toString))) : null;
 
-        foreach ($tests as $test) {
-            $from = new \DatetimeImmutable(date('Y-m-d H:i:s', strtotime($test[0])));
-            $to = new \Datetime(date('Y-m-d H:i:s', strtotime($test[1])));
+        $this->assertSame($expected, $this->formatter->formatDiff($from, $to));
+    }
 
-            $this->assertEquals($test[2], $this->formatter->formatDiff($from, $to));
-        }
+    public function getFormatDiffTests(): \Generator
+    {
+        yield array('- 5 years', 'now', 'diff.ago.year');
+        yield array('- 10 months', 'now', 'diff.ago.month');
+        yield array('- 15 days', 'now', 'diff.ago.day');
+        yield array('- 20 hours', 'now', 'diff.ago.hour');
+        yield array('- 25 minutes', 'now', 'diff.ago.minute');
+        yield array('- 30 seconds', 'now', 'diff.ago.second');
+        yield array('now', 'now', 'diff.empty');
+        yield array('+ 30 seconds', 'now', 'diff.in.second');
+        yield array('+ 25 minutes', 'now', 'diff.in.minute');
+        yield array('+ 20 hours', 'now', 'diff.in.hour');
+        yield array('+ 15 days', 'now', 'diff.in.day');
+        yield array('+ 10 months', 'now', 'diff.in.month');
+        yield array('+ 5 years', 'now', 'diff.in.year');
+        yield array('+ 5 years', null, 'diff.in.year');
+        yield array('now', null, 'diff.empty');
     }
 
     public function testGetDiffMessage(): void
