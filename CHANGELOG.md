@@ -1,5 +1,8 @@
 # CHANGELOG
 
+*We intend to follow [Semantic Versioning 2.0.0](https://semver.org/), if you
+find a change that break's semver, please create an issue.*
+
 ## [v1.19.0](https://github.com/knplabs/knptimebundle/releases/tag/v1.19.0)
 
 *May 10th, 2022*
