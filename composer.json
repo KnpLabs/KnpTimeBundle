@@ -41,7 +41,13 @@
 
     "autoload": {
         "psr-4": {
-            "Knp\\Bundle\\TimeBundle\\": ""
+            "Knp\\Bundle\\TimeBundle\\": "",
+            "Knp\\Bundle\\KnpTimeBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Knp\\Bundle\\KnpTimeBundle\\Tests\\": "tests/"
         }
     },
 

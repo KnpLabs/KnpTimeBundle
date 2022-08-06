@@ -1,17 +1,15 @@
 <?php
 
-namespace Knp\Bundle\TimeBundle\DependencyInjection;
+namespace Knp\Bundle\KnpTimeBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Templating\Helper\Helper;
 use Twig\Extension\AbstractExtension;
 
-/**
- * @deprecated since v1.20.0 - use Knp\Bundle\KnpTimeBundle\DependencyInjection\KnpTimeBundleExtension instead
- */
-class KnpTimeExtension
+class KnpTimeBundleExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {

@@ -2,8 +2,9 @@
 
 namespace Knp\Bundle\TimeBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle as BaseBundle;
-
-class KnpTimeBundle extends BaseBundle
+/**
+ * @deprecated since v1.20.0 - use Knp\Bundle\KnpTimeBundle\KnpTimeBundle instead
+ */
+class KnpTimeBundle
 {
 }
