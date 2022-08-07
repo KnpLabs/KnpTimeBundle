@@ -1,6 +1,6 @@
 <?php
 
-namespace Knp\Bundle\KnpTimeBundle\DependencyInjection;
+namespace Knp\Bundle\TimeBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
