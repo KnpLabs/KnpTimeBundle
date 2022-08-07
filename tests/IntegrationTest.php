@@ -99,6 +99,6 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
 class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
+        $routes->add('/foo', 'kernel::renderFoo');
     }
 }
