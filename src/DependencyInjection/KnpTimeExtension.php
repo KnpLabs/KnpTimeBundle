@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Templating\Helper\Helper;
 use Twig\Extension\AbstractExtension;
 
-class KnpTimeBundleExtension extends Extension
+class KnpTimeExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
