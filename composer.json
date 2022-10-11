@@ -18,17 +18,17 @@
     ],
 
     "require": {
-        "php":                          ">=7.2.5",
-        "symfony/dependency-injection": "^4.3|^5.0|^6.0",
-        "symfony/translation":          "^4.3|^5.0|^6.0",
-        "symfony/config":               "^4.3|^5.0|^6.0"
+        "php": ">=7.2.5",
+        "symfony/dependency-injection": "^5.4|^6.0",
+        "symfony/templating": "^5.4|^6.0",
+        "symfony/translation": "^5.4|^6.0",
+        "symfony/config": "^5.4|^6.0"
     },
 
     "require-dev": {
-        "symfony/framework-bundle": "^4.3|^5.0|^6.0",
-        "symfony/phpunit-bridge": "^5.2|^6.0",
-        "symfony/templating": "^4.3|^5.0|^6.0",
-        "symfony/twig-bundle": "^4.3|^5.0|^6.0"
+        "symfony/framework-bundle": "^5.4|^6.0",
+        "symfony/phpunit-bridge": "^5.4|^6.0",
+        "symfony/twig-bundle": "^5.4|^6.0"
     },
 
     "suggest": {
@@ -41,7 +41,12 @@
 
     "autoload": {
         "psr-4": {
-            "Knp\\Bundle\\TimeBundle\\": ""
+            "Knp\\Bundle\\TimeBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Knp\\Bundle\\TimeBundle\\Tests\\": "tests/"
         }
     },
 

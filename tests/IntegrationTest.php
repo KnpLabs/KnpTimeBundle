@@ -14,7 +14,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\Log\Logger;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
-use Symfony\Component\Routing\RouteCollectionBuilder;
 
 class IntegrationTest extends TestCase
 {
@@ -73,6 +72,7 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
             'router' => [
                 'utf8' => true,
             ],
+            'http_method_override' => false,
         ]);
         $container->loadFromExtension('twig', [
             'paths' => [
@@ -95,18 +95,10 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
         return sys_get_temp_dir().'/logs'.spl_object_hash($this);
     }
 }
-if (Kernel::VERSION_ID < 50100) {
-    class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-        protected function configureRoutes(RouteCollectionBuilder $routes): void
-        {
-            $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
-        }
-    }
-} else {
-    class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
-        protected function configureRoutes(RoutingConfigurator $routes): void
-        {
-            $routes->add('/foo', 'kernel:'.(parent::VERSION_ID >= 40100 ? ':' : '').'renderFoo');
-        }
+
+class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
+    protected function configureRoutes(RoutingConfigurator $routes): void
+    {
+        $routes->add('/foo', 'kernel::renderFoo');
     }
 }

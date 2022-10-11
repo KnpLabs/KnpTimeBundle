@@ -15,17 +15,13 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>Tests</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory>.</directory>
-            <exclude>
-                <directory>tests</directory>
-                <directory>vendor</directory>
-            </exclude>
+            <directory>src</directory>
         </whitelist>
     </filter>
 </phpunit>

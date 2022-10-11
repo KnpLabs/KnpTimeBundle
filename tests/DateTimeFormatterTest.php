@@ -60,14 +60,14 @@ class DateTimeFormatterTest extends TestCase
         }
     }
 
-    public function testGetDiffMessageThrowsAnExceptionIfTheDiffIsEmpty()
+    public function testGetDiffMessageThrowsAnExceptionIfTheDiffIsEmpty(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
         $this->formatter->getDiffMessage(0, true, 'day');
     }
 
-    public function testGetDiffMessageThrowsAnExceptionIfTheDiffUnitIsNotSupported()
+    public function testGetDiffMessageThrowsAnExceptionIfTheDiffUnitIsNotSupported(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
