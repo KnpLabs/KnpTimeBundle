@@ -18,11 +18,11 @@
     ],
 
     "require": {
-        "php":                          ">=7.2.5",
+        "php": ">=7.2.5",
         "symfony/dependency-injection": "^5.4|^6.0",
         "symfony/templating": "^5.4|^6.0",
-        "symfony/translation":          "^5.4|^6.0",
-        "symfony/config":               "^5.4|^6.0"
+        "symfony/translation": "^5.4|^6.0",
+        "symfony/config": "^5.4|^6.0"
     },
 
     "require-dev": {
