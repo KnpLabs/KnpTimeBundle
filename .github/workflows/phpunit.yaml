@@ -1,0 +1,72 @@
+name: PHPUnit
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+    release:
+
+jobs:
+    stable-tests:
+        name: Stable (PHP ${{ matrix.php-versions}})
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php-versions: [ '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
+
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php-versions }}
+
+            -   name: Allow Symfony Flex
+                run: composer global config --no-plugins allow-plugins.symfony/flex true
+
+            -   name: Require symfony/flex
+                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex >=1.x
+
+            -   name: Install Composer Dependencies
+                run: composer update --prefer-dist --no-progress
+
+            -   name: PHPUnit
+                run: vendor/bin/simple-phpunit
+
+    lowest-tests:
+        name: Lowest Dependencies
+        runs-on: ubuntu-latest
+
+        env:
+            SYMFONY_PHPUNIT_VERSION: 9.5
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php-versions: [ '7.4', '8.1', '8.2' ]
+
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php-versions }}
+
+            -   name: Allow Symfony Flex
+                run: composer global config --no-plugins allow-plugins.symfony/flex true
+
+            -   name: Require symfony/flex
+                run: composer global require --no-progress --no-scripts --no-plugins symfony/flex >=1.x
+
+            -   name: Install Composer Dependencies
+                run: composer update --prefer-lowest --prefer-dist --no-progress
+
+            -   name: PHPUnit
+                run: vendor/bin/simple-phpunit
