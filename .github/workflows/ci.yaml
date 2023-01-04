@@ -17,7 +17,7 @@ jobs:
                 run: sudo update-alternatives --set php /usr/bin/php7.4
 
             -   name: Checkout
-                uses: actions/checkout@v2
+                uses: actions/checkout@v3
 
             -   name: Validate
                 run: composer validate --strict
@@ -29,7 +29,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php-versions: [ '7.2', '7.3', '7.4', '8.0', '8.1' ]
+                php-versions: [ '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
 
         steps:
             -   name: Set PHP Version
@@ -49,7 +49,7 @@ jobs:
                 if: steps.php-ver.outputs.version != matrix.php-versions
 
             -   name: Checkout
-                uses: actions/checkout@v2
+                uses: actions/checkout@v3
 
             -   name: Allow Symfony Flex
                 run: composer global config --no-plugins allow-plugins.symfony/flex true
@@ -73,7 +73,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php-versions: [ '7.4', '8.1' ]
+                php-versions: [ '7.4', '8.1', '8.2' ]
 
         steps:
             -   name: Set PHP Version
@@ -93,7 +93,7 @@ jobs:
                 if: steps.php-ver.outputs.version != matrix.php-versions
 
             -   name: Checkout
-                uses: actions/checkout@v2
+                uses: actions/checkout@v3
 
             -   name: Allow Symfony Flex
                 run: composer global config --no-plugins allow-plugins.symfony/flex true
