@@ -1,0 +1,39 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+    release:
+
+jobs:
+    tests:
+        name: PHP ${{ matrix.php }}, SF ${{ matrix.symfony }} - ${{ matrix.deps }}
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                php: [ 8.1, 8.2, 8.3 ]
+                deps: [ highest ]
+                symfony: [ 5.4.*, 6.3.*, 6.4.* ]
+                include:
+                    - php: 8.1
+                      deps: lowest
+                      symfony: '*'
+        steps:
+            - uses: zenstruck/.github@php-test-symfony
+              with:
+                  php: ${{ matrix.php }}
+                  symfony: ${{ matrix.symfony }}
+                  deps: ${{ matrix.deps }}
+
+    composer-validate:
+        uses: zenstruck/.github/.github/workflows/php-composer-validate.yml@main
+
+    cs:
+        uses: zenstruck/.github/.github/workflows/php-cs-fixer.yml@main
+        with:
+            php: 8.1
+
+    sca:
+        uses: zenstruck/.github/.github/workflows/php-stan.yml@main

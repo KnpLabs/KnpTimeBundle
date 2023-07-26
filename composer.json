@@ -3,24 +3,23 @@
     "type":        "symfony-bundle",
     "description": "Making your dates look sensible and descriptive",
     "keywords":    ["time", "date", "descriptive time", "knplabs", "knp", "bundle"],
-    "homepage":    "http://github.com/KnpLabs/KnpTimeBundle",
+    "homepage":    "https://github.com/KnpLabs/KnpTimeBundle",
     "license":     "MIT",
 
     "authors": [
         {
             "name": "KnpLabs Team",
-            "homepage": "http://knplabs.com"
+            "homepage": "https://knplabs.com"
         },
         {
             "name": "Symfony Community",
-            "homepage": "http://github.com/KnpLabs/KnpTimeBundle/contributors"
+            "homepage": "https://github.com/KnpLabs/KnpTimeBundle/contributors"
         }
     ],
 
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=8.1",
         "symfony/dependency-injection": "^5.4|^6.0",
-        "symfony/templating": "^5.4|^6.0",
         "symfony/translation": "^5.4|^6.0",
         "symfony/config": "^5.4|^6.0"
     },
@@ -28,11 +27,13 @@
     "require-dev": {
         "symfony/framework-bundle": "^5.4|^6.0",
         "symfony/phpunit-bridge": "^5.4|^6.0",
-        "symfony/twig-bundle": "^5.4|^6.0"
+        "symfony/twig-bundle": "^5.4|^6.0",
+        "phpstan/phpstan": "^1.11",
+        "phpunit/phpunit": "^9.6"
     },
 
     "suggest": {
-        "symfony/twig-bundle": "to use the Twig `time_diff()` function or `|ago` filter"
+        "symfony/twig-bundle": "to use the Twig `time_diff()` function or `|time_diff` filter"
     },
 
     "conflict": {
@@ -54,7 +55,7 @@
 
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1.x-dev"
+            "dev-master": "2.x-dev"
         }
     }
 }

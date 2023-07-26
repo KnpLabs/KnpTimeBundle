@@ -9,55 +9,38 @@ use Twig\TwigFunction;
 
 /**
  * @author Fabien Potencier <fabien.potencier@symfony-project.com>
+ *
+ * @internal
  */
-class TimeExtension extends AbstractExtension
+final class TimeExtension extends AbstractExtension
 {
-    protected $formatter;
-
-    public function __construct(DateTimeFormatter $formatter)
-    {
-        $this->formatter = $formatter;
-    }
-
     /**
      * Returns a list of global functions to add to the existing list.
      */
     public function getFunctions(): array
     {
-        return array(
+        return [
             new TwigFunction(
-                    'time_diff',
-                    array($this, 'diff'),
-                    array('is_safe' => array('html'))
-                ),
-        );
+                'time_diff',
+                [DateTimeFormatter::class, 'formatDiff'],
+                ['is_safe' => ['html']]
+            ),
+        ];
     }
 
     public function getFilters(): array
     {
-        return array(
+        return [
             new TwigFilter(
-                    'ago',
-                    array($this, 'diff'),
-                    array('is_safe' => array('html'))
-                ),
-        );
-    }
-
-    public function diff($since = null, $to = null, $locale = null): string
-    {
-        return $this->formatter->formatDiff(
-            $this->formatter->getDatetimeObject($since),
-            $this->formatter->getDatetimeObject($to),
-            $locale
-        );
-    }
-
-    /**
-     * Returns the name of the extension.
-     */
-    public function getName(): string
-    {
-        return 'time';
+                'ago',
+                [DateTimeFormatter::class, 'formatDiff'],
+                ['is_safe' => ['html']]
+            ),
+            new TwigFilter(
+                'time_diff',
+                [DateTimeFormatter::class, 'formatDiff'],
+                ['is_safe' => ['html']]
+            ),
+        ];
     }
 }

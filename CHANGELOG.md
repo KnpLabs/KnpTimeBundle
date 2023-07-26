@@ -3,6 +3,17 @@
 *We intend to follow [Semantic Versioning 2.0.0](https://semver.org/), if you
 find a change that break's semver, please create an issue.*
 
+## [v2.0.0]
+
+- Modernize/simplify the code base
+- Require PHP 8.1+
+- Remove `symfony/templating` integration
+- Make `DateTimeFormatter` final
+- Remove `DateTimeFormatter::getDiffMessage()`
+- Remove `DateTimeFormatter::getDateTimeObject()`
+- Remove `DateTimeFormatter::getEmptyDiffMessage()`
+- Add `time_diff` filter as an alias for `ago`
+
 ## [v1.20.0](https://github.com/knplabs/knptimebundle/releases/tag/v1.20.0)
 
 *October 11th, 2022*
