@@ -12,7 +12,8 @@ find a change that break's semver, please create an issue.*
 - Remove `DateTimeFormatter::getDiffMessage()`
 - Remove `DateTimeFormatter::getDateTimeObject()`
 - Remove `DateTimeFormatter::getEmptyDiffMessage()`
-- Add `time_diff` filter as an alias for `ago`
+- Add `time_diff` Twig filter as an alias for `ago`
+- Add `DateTimeFormatter::formatDuration()` and `duration` Twig filter 
 
 ## [v1.20.0](https://github.com/knplabs/knptimebundle/releases/tag/v1.20.0)
 

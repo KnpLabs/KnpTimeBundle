@@ -51,4 +51,41 @@ final class DateTimeFormatterTest extends TestCase
         yield ['+ 5 years', null, 'diff.in.year'];
         yield ['now', null, 'diff.empty'];
     }
+
+    /**
+     * @dataProvider formatTimeProvider
+     *
+     * @param int    $secs
+     * @param string $expectedFormat
+     */
+    public function testFormatDuration($secs, $expectedFormat): void
+    {
+        $this->assertEquals($expectedFormat, $this->formatter->formatDuration($secs));
+    }
+
+    public static function formatTimeProvider(): iterable
+    {
+        return [
+            [0,      'duration.none'],
+            [1,      'duration.second'],
+            [2,      'duration.second'],
+            [59,     'duration.second'],
+            [60,     'duration.minute'],
+            [61,     'duration.minute'],
+            [119,    'duration.minute'],
+            [120,    'duration.minute'],
+            [121,    'duration.minute'],
+            [3599,   'duration.minute'],
+            [3600,   'duration.hour'],
+            [7199,   'duration.hour'],
+            [7200,   'duration.hour'],
+            [7201,   'duration.hour'],
+            [86399,  'duration.hour'],
+            [86400,  'duration.day'],
+            [86401,  'duration.day'],
+            [172799, 'duration.day'],
+            [172800, 'duration.day'],
+            [172801, 'duration.day'],
+        ];
+    }
 }

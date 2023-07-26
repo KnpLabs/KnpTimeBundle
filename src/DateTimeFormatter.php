@@ -48,6 +48,47 @@ final class DateTimeFormatter
         return $this->translator->trans('diff.empty', [], 'time', $locale);
     }
 
+    /**
+     * @author Fabien Potencier <fabien@symfony.com>
+     *
+     * @source https://github.com/symfony/symfony/blob/ad72245261792c6b5d2db821fcbd141b11095215/src/Symfony/Component/Console/Helper/Helper.php#L97
+     */
+    public function formatDuration(float $seconds, string $locale = null): string
+    {
+        static $timeFormats = [
+            [0, 'duration.none'],
+            [1, 'duration.second'],
+            [2, 'duration.second', 1],
+            [60, 'duration.minute'],
+            [120, 'duration.minute', 60],
+            [3600, 'duration.hour'],
+            [7200, 'duration.hour', 3600],
+            [86400, 'duration.day'],
+            [172800, 'duration.day', 86400],
+        ];
+
+        foreach ($timeFormats as $index => $format) {
+            if ($seconds >= $format[0]) {
+                if ((isset($timeFormats[$index + 1]) && $seconds < $timeFormats[$index + 1][0])
+                    || $index === \count($timeFormats) - 1
+                ) {
+                    if (2 === \count($format)) {
+                        return $this->translator->trans($format[1], [], 'time', $locale);
+                    }
+
+                    return $this->translator->trans(
+                        $format[1],
+                        ['%count%' => floor($seconds / $format[2])],
+                        'time',
+                        $locale
+                    );
+                }
+            }
+        }
+
+        return $this->translator->trans('duration.none', [], 'time', $locale);
+    }
+
     private static function formatDateTime(int|string|\DateTimeInterface|null $value): \DateTimeInterface
     {
         if ($value instanceof \DateTimeInterface) {
