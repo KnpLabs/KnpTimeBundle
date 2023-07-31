@@ -1,0 +1,7 @@
+---------------------------------------------------------------------------
+
+by kbond at 2023-07-26T13:58:23Z
+
+Regarding 0e7b957 (add `time_diff` twig filter and deprecate `ago`), I'm guessing `time_diff` was not used originally because it interfered with `time_diff` from the deprecated `twig/extensions`. I think enough time has passed now.
+
+I deprecated `ago` because it is a bit of a misnomer as it works with future dates as well but don't have a strong opinion here.
