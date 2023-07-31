@@ -29,14 +29,14 @@ final class IntegrationTest extends TestCase
         $this->assertStringContainsString('Now: now', $result);
 
         $this->assertStringContainsString('1 day ago', $result);
-        $this->assertStringContainsString('Zero: < 1 sec', $result);
-        $this->assertStringContainsString('Less than a second: < 1 sec', $result);
-        $this->assertStringContainsString('One second: 1 sec', $result);
-        $this->assertStringContainsString('Multiple seconds: 59 secs', $result);
-        $this->assertStringContainsString('One minute: 1 min', $result);
-        $this->assertStringContainsString('Multiple minutes: 59 mins', $result);
-        $this->assertStringContainsString('One hour: 1 hr', $result);
-        $this->assertStringContainsString('Multiple hours: 23 hrs', $result);
+        $this->assertStringContainsString('Zero: < 1 second', $result);
+        $this->assertStringContainsString('Less than a second: < 1 second', $result);
+        $this->assertStringContainsString('One second: 1 second', $result);
+        $this->assertStringContainsString('Multiple seconds: 59 seconds', $result);
+        $this->assertStringContainsString('One minute: 1 minute', $result);
+        $this->assertStringContainsString('Multiple minutes: 59 minutes', $result);
+        $this->assertStringContainsString('One hour: 1 hour', $result);
+        $this->assertStringContainsString('Multiple hours: 23 hours', $result);
         $this->assertStringContainsString('One day: 1 day', $result);
         $this->assertStringContainsString('Multiple days: 99 days', $result);
     }

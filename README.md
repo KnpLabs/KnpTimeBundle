@@ -7,7 +7,7 @@ Last edited: {{ post.updatedAt|time_diff }} <!-- Last edited: 1 week ago -->
 
 Event date: {{ event.date|time_diff }} <!-- Event date: in two weeks -->
 
-Read time: {{ post.readTimeInSeconds|duration }} <!-- Read time: 2 mins -->
+Read time: {{ post.readTimeInSeconds|duration }} <!-- Read time: 2 minutes -->
 ```
 
 Want to see it used in a screencast 🎥? Check out SymfonyCasts: https://symfonycasts.com/screencast/symfony-doctrine/ago
@@ -47,7 +47,7 @@ Time formatting:
 Duration formatting:
 
 ```twig
-{{ someDurationInSeconds|duration }} {# 2 mins #}
+{{ someDurationInSeconds|duration }} {# 2 minutes #}
 ```
 
 ### Service
@@ -55,7 +55,7 @@ Duration formatting:
 You can also format dates and durations in your services/controllers by autowiring/injecting the
 `Knp\Bundle\TimeBundle\DateTimeFormatter` service:
 
-```
+```php
 use Knp\Bundle\TimeBundle\DateTimeFormatter;
 // ...
 
@@ -71,7 +71,7 @@ public function yourAction(DateTimeFormatter $dateTimeFormatter)
     return $this->json([
         //  ...
         'published_at' => $agoTime, // 2 years ago
-        'read_time' => $readTime, // 1 min
+        'read_time' => $readTime, // 1 minute
         // ...
     ]);
 }
