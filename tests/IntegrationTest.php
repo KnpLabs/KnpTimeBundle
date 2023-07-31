@@ -19,31 +19,40 @@ final class IntegrationTest extends TestCase
 {
     private TimeBundleIntegrationTestKernel $kernel;
 
-    public function testServiceWiring(): void
+    public function testTimeDiffTwigExtension(): void
     {
-        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/template.twig', [
+        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/time_diff.twig', [
             'yesterday' => (new \DateTime('-1 day')),
         ]);
 
-        $this->assertStringContainsString('Yesterday: 1 day ago', $result);
-        $this->assertStringContainsString('Now: now', $result);
-
-        $this->assertStringContainsString('1 day ago', $result);
-        $this->assertStringContainsString('Zero: < 1 second', $result);
-        $this->assertStringContainsString('Less than a second: < 1 second', $result);
-        $this->assertStringContainsString('One second: 1 second', $result);
-        $this->assertStringContainsString('Multiple seconds: 59 seconds', $result);
-        $this->assertStringContainsString('One minute: 1 minute', $result);
-        $this->assertStringContainsString('Multiple minutes: 59 minutes', $result);
-        $this->assertStringContainsString('One hour: 1 hour', $result);
-        $this->assertStringContainsString('Multiple hours: 23 hours', $result);
-        $this->assertStringContainsString('One day: 1 day', $result);
-        $this->assertStringContainsString('Multiple days: 99 days', $result);
+        $this->assertStringContainsString("Yesterday: 1 day ago\n", $result);
+        $this->assertStringContainsString("Now: now\n", $result);
     }
 
-    public function testLocalTranslation(): void
+    public function testDurationTwigExtension(): void
     {
-        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/templateSpecificLocale.twig', [
+        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/duration.twig', [
+            'yesterday' => (new \DateTime('-1 day')),
+        ]);
+
+        $this->assertStringContainsString("Zero: < 1 second\n", $result);
+        $this->assertStringContainsString("Less than a second: < 1 second\n", $result);
+        $this->assertStringContainsString("One second: 1 second\n", $result);
+        $this->assertStringContainsString("Multiple seconds: 59 seconds\n", $result);
+        $this->assertStringContainsString("One minute: 1 minute\n", $result);
+        $this->assertStringContainsString("Over one minute: 1 minute\n", $result);
+        $this->assertStringContainsString("Multiple minutes: 59 minutes\n", $result);
+        $this->assertStringContainsString("One hour: 1 hour\n", $result);
+        $this->assertStringContainsString("Over one hour: 1 hour\n", $result);
+        $this->assertStringContainsString("Multiple hours: 23 hours\n", $result);
+        $this->assertStringContainsString("One day: 1 day\n", $result);
+        $this->assertStringContainsString("Over one day: 1 day\n", $result);
+        $this->assertStringContainsString("Multiple days: 99 days\n", $result);
+    }
+
+    public function testTimeDiffLocalTranslation(): void
+    {
+        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/time_diff_specific_locale.twig', [
             'yesterday' => (new \DateTime('-1 day')),
             'monthAgo' => (new \DateTime('-32 days')),
         ]);
