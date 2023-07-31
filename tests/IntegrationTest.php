@@ -15,27 +15,25 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\Log\Logger;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
-class IntegrationTest extends TestCase
+final class IntegrationTest extends TestCase
 {
-    /**
-     * @var TimeBundleIntegrationTestKernel
-     */
-    private $kernel;
+    private TimeBundleIntegrationTestKernel $kernel;
 
     public function testServiceWiring(): void
     {
         $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/template.twig', [
-            'yesterday' => (new \DateTime('-1 day'))
+            'yesterday' => (new \DateTime('-1 day')),
         ]);
 
-        $this->assertSame('1 day ago', $result);
+        $this->assertStringContainsString('Yesterday: 1 day ago', $result);
+        $this->assertStringContainsString('Now: now', $result);
     }
 
-    public function testLocalTranslation()
+    public function testLocalTranslation(): void
     {
         $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/templateSpecificLocale.twig', [
             'yesterday' => (new \DateTime('-1 day')),
-            'monthAgo' => (new \DateTime('-1 month'))
+            'monthAgo' => (new \DateTime('-32 days')),
         ]);
 
         $this->assertStringContainsString('il y a 1 jour', $result);
@@ -57,14 +55,16 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
     {
         parent::__construct('test', true);
     }
+
     public function registerBundles(): array
     {
         return [
             new FrameworkBundle(),
             new TwigBundle(),
-            new KnpTimeBundle()
+            new KnpTimeBundle(),
         ];
     }
+
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
         $container->loadFromExtension('framework', [
@@ -86,17 +86,20 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
             ->setArgument(0, LogLevel::EMERGENCY);
         $container->setAlias('public.twig', new Alias('twig', true));
     }
+
     public function getCacheDir(): string
     {
         return sys_get_temp_dir().'/cache'.spl_object_hash($this);
     }
+
     public function getLogDir(): string
     {
         return sys_get_temp_dir().'/logs'.spl_object_hash($this);
     }
 }
 
-class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel {
+class TimeBundleIntegrationTestKernel extends AbstractTimeBundleIntegrationTestKernel
+{
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
         $routes->add('/foo', 'kernel::renderFoo');
