@@ -1,17 +1,20 @@
-# Friendly *ago* dates ("5 minutes ago")!
+# knplabs/knp-time-bundle
 
-This bundle does one simple job: takes dates and gives you friendly "2 hours ago"-type messages. Woh!
+Friendly *ago*/*until* dates ("5 minutes ago" or "in 5 minutes") and *durations* ("2 mins")!
 
-```html+jinja
-Last edited {{ post.updatedAt|ago }}
-<-- Last edited 1 week ago -->
+```twig
+Last edited: {{ post.updatedAt|time_diff }} <!-- Last edited: 1 week ago -->
+
+Event date: {{ event.date|time_diff }} <!-- Event date: in two weeks -->
+
+Read time: {{ post.readTimeInSeconds|duration }} <!-- Read time: 2 mins -->
 ```
 
 Want to see it used in a screencast 🎥? Check out SymfonyCasts: https://symfonycasts.com/screencast/symfony-doctrine/ago
 
-The date formatted can be translated into any language, and many are supported out of the box.
+The formatted date/duration can be translated into any language, and many are supported out of the box.
 
-## INSTALLATION
+## Installation
 
 Use Composer to install the library:
 
@@ -23,22 +26,34 @@ Woo! You did it! Assuming your project uses Symfony Flex, the
 bundle should be configured and ready to go. If not, you
 can enable `Knp\Bundle\TimeBundle\KnpTimeBundle` manually.
 
-## USAGE
+## Usage
 
-In Twig:
+### Twig
+
+Time formatting:
 
 ```twig
-{{ someDateTimeVariable|ago }}
+{{ someDateTimeVariable|time_diff }} {# 2 weeks ago #}
 
-... or use the equivalent function:
-{{ time_diff(someDateTimeVariable) }}
+{# |ago is an alias for |time_diff #}
+{{ someDateTimeVariable|ago }} {# 1 second ago #}
+
+{# ... or use the equivalent function: #}
+{{ time_diff(someDateTimeVariable) }} {# in 2 months #}
 ```
 
-Note: the "ago" filter works fine for dates in the future, too. 
+> **Note**: the `time_diff` filter/function and `ago` alias works fine for dates in the future, too. 
 
-### In controllers
+Duration formatting:
 
-You can also "ago" dates inside PHP by autowiring the `Knp\Bundle\TimeBundle\DateTimeFormatter` service:
+```twig
+{{ someDurationInSeconds|duration }} {# 2 mins #}
+```
+
+### Service
+
+You can also format dates and durations in your services/controllers by autowiring/injecting the
+`Knp\Bundle\TimeBundle\DateTimeFormatter` service:
 
 ```
 use Knp\Bundle\TimeBundle\DateTimeFormatter;
@@ -46,14 +61,18 @@ use Knp\Bundle\TimeBundle\DateTimeFormatter;
 
 public function yourAction(DateTimeFormatter $dateTimeFormatter)
 {
-    $someDate = new \DateTime('2017-02-11'); //or $entity->publishedDate()
-    $now = new \DateTime();
-    
-    $agoTime = $dateTimeFormatter->formatDiff($someDate, $now);
+    $someDate = new \DateTimeImmutable('2017-02-11'); // or $entity->publishedDate()
+    $toDate = new \DateTimeImmutable('now');
+
+    $agoTime = $dateTimeFormatter->formatDiff($someDate, $toDate); // $toDate parameter is optional and defaults to "now"
+
+    $readTime = $dateTimeFormatter->formatDuration(64); // or $entity->readTimeInSeconds()
+
     return $this->json([
-        ...
-        'published_at' => $agoTime
-        ...
+        //  ...
+        'published_at' => $agoTime, // 2 years ago
+        'read_time' => $readTime, // 1 min
+        // ...
     ]);
 }
 ```
@@ -61,18 +80,21 @@ public function yourAction(DateTimeFormatter $dateTimeFormatter)
 ## Controlling the Translation Locale
 
 The bundle will automatically use the current locale when translating
-the "ago" messages. However, you can override the locale:
+the "time_diff" ("ago") and "duration" messages. However, you can override
+the locale:
 
 ```twig
-{{ someDateTimeVariable|ago(locale='es') }}
+{{ someDateTimeVariable|time_diff(locale='es') }}
+
+{{ someDurationInSeconds|duration(locale='es') }}
 ```
 
-## TESTS
+## Tests
 
 If you want to run tests, please check that you have installed dev dependencies.
 
 ```bash
-./vendor/bin/simple-phpunit
+./vendor/bin/phpunit
 ```
 
 ## Maintainers
