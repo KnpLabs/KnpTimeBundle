@@ -66,6 +66,14 @@
                 <source>duration.hour</source> 
                 <target>1 time|%count% timer</target> 
             </trans-unit> 
+            <trans-unit id="17"> 
+                <source>duration.day</source> 
+                <target>1 dag|%count% dager</target> 
+            </trans-unit> 
+            <trans-unit id="18"> 
+                <source>duration.none</source> 
+                <target>&lt; 1 sekund</target> 
+            </trans-unit>
         </body>
     </file>
 </xliff>
