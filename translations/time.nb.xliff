@@ -54,6 +54,18 @@
                 <source>diff.in.year</source>
                 <target>om %count% år</target>
             </trans-unit>
+            <trans-unit id="14"> 
+                <source>duration.second</source> 
+                <target>1 sekund|%count% sekunder</target> 
+            </trans-unit> 
+            <trans-unit id="15"> 
+                <source>duration.minute</source> 
+                <target>1 minutt|%count% minutter</target> 
+            </trans-unit> 
+            <trans-unit id="16"> 
+                <source>duration.hour</source> 
+                <target>1 time|%count% timer</target> 
+            </trans-unit> 
         </body>
     </file>
 </xliff>
