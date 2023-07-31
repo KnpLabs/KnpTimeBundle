@@ -56,15 +56,15 @@
             </trans-unit>
             <trans-unit id="14">
                 <source>duration.second</source>
-                <target>1 sec|%count% secs</target>
+                <target>1 second|%count% seconds</target>
             </trans-unit>
             <trans-unit id="15">
                 <source>duration.minute</source>
-                <target>1 min|%count% mins</target>
+                <target>1 minute|%count% minutes</target>
             </trans-unit>
             <trans-unit id="16">
                 <source>duration.hour</source>
-                <target>1 hr|%count% hrs</target>
+                <target>1 hour|%count% hours</target>
             </trans-unit>
             <trans-unit id="17">
                 <source>duration.day</source>
@@ -72,7 +72,7 @@
             </trans-unit>
             <trans-unit id="18">
                 <source>duration.none</source>
-                <target>&lt; 1 sec</target>
+                <target>&lt; 1 second</target>
             </trans-unit>
         </body>
     </file>
