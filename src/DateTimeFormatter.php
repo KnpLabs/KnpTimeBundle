@@ -73,7 +73,7 @@ final class DateTimeFormatter
                     || $index === \count($timeFormats) - 1
                 ) {
                     if (2 === \count($format)) {
-                        return $this->translator->trans($format[1], [], 'time', $locale);
+                        return $this->translator->trans($format[1], ['%count%' => 1], 'time', $locale);
                     }
 
                     return $this->translator->trans(
