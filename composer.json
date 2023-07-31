@@ -1,8 +1,8 @@
 {
     "name":        "knplabs/knp-time-bundle",
     "type":        "symfony-bundle",
-    "description": "Making your dates look sensible and descriptive",
-    "keywords":    ["time", "date", "descriptive time", "knplabs", "knp", "bundle"],
+    "description": "Making your dates and durations look sensible and descriptive",
+    "keywords":    ["time", "date", "descriptive time", "knplabs", "knp", "bundle", "duration"],
     "homepage":    "https://github.com/KnpLabs/KnpTimeBundle",
     "license":     "MIT",
 
@@ -33,7 +33,7 @@
     },
 
     "suggest": {
-        "symfony/twig-bundle": "to use the Twig `time_diff()` function or `|time_diff` filter"
+        "symfony/twig-bundle": "to use the Twig `time_diff()` function and `|time_diff`/`|duration` filter"
     },
 
     "conflict": {
