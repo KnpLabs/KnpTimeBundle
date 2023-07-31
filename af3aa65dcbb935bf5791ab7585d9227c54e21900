@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------
+
+by weaverryan at 2023-07-31T19:38:46Z
+
+You mean it's literally outputting `1 second|%count% seconds`?
+
+---------------------------------------------------------------------------
+
+by kbond at 2023-07-31T19:39:17Z
+
+> You mean it's literally outputting 1 second|%count% seconds?
+
+Yes
+
+---------------------------------------------------------------------------
+
+by weaverryan at 2023-07-31T19:40:46Z
+
+What does `$seconds` look like by the time it gets here? https://github.com/KnpLabs/KnpTimeBundle/blob/main/src/DateTimeFormatter.php#L56
+
+---------------------------------------------------------------------------
+
+by kbond at 2023-07-31T19:42:41Z
+
+`1.0`, `2.0`, etc
+
+---------------------------------------------------------------------------
+
+by kbond at 2023-07-31T19:44:30Z
+
+Found the problem, I'm not passing `%count%` to https://github.com/KnpLabs/KnpTimeBundle/blob/3fe79604a94c0f77fc28613e9fc45b6ce665ecf6/src/DateTimeFormatter.php#L76
