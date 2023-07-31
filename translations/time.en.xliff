@@ -54,6 +54,26 @@
                 <source>diff.in.year</source>
                 <target>in 1 year|in %count% years</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>1 sec|%count% secs</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>1 min|%count% mins</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>1 hr|%count% hrs</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>1 day|%count% days</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 sec</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

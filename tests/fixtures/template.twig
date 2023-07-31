@@ -1,2 +1,13 @@
 Yesterday: {{ yesterday|ago }}
 Now: {{ date()|time_diff }}
+
+Zero: {{ 0|duration }}
+Less than a second: {{ 0.1|duration }}
+One second: {{ 1|duration }}
+Multiple seconds: {{ 59|duration }}
+One minute: {{ 60|duration }}
+Multiple minutes: {{ 3599|duration }}
+One hour: {{ 3600|duration }}
+Multiple hours: {{ 86399|duration }}
+One day: {{ 86400|duration }}
+Multiple days: {{ 8554100|duration }}
