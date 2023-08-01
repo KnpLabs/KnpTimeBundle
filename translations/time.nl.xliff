@@ -54,6 +54,26 @@
                 <source>diff.in.year</source>
                 <target>over 1 jaar|over %count% jaar</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>1 seconde|%count% seconden</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>1 minuut|%count% minuten</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>1 uur|%count% uur</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>1 dag|%count% dagen</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 seconde</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
