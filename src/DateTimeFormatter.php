@@ -89,6 +89,22 @@ final class DateTimeFormatter
         return $this->translator->trans('duration.none', [], 'time', $locale);
     }
 
+    /**
+     * Returns a formatted age for the given from and to datetimes.
+     */
+    public function formatAge(
+        int|string|\DateTimeInterface $from,
+        int|string|\DateTimeInterface $to = null,
+        string $locale = null
+    ): string {
+        $from = self::formatDateTime($from);
+        $to = self::formatDateTime($to);
+
+        $diff = $from->diff($to);
+
+        return $this->translator->trans('age', ['%count%' => $diff->y], 'time', $locale);
+    }
+
     private static function formatDateTime(int|string|\DateTimeInterface|null $value): \DateTimeInterface
     {
         if ($value instanceof \DateTimeInterface) {

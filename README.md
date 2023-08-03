@@ -8,6 +8,8 @@ Last edited: {{ post.updatedAt|time_diff }} <!-- Last edited: 1 week ago -->
 Event date: {{ event.date|time_diff }} <!-- Event date: in two weeks -->
 
 Read time: {{ post.readTimeInSeconds|duration }} <!-- Read time: 2 minutes -->
+
+Age: {{ user.birthdate|age }} <!-- Age: 30 years old -->
 ```
 
 Want to see it used in a screencast 🎥? Check out SymfonyCasts: https://symfonycasts.com/screencast/symfony-doctrine/ago
@@ -50,6 +52,16 @@ Duration formatting:
 {{ someDurationInSeconds|duration }} {# 2 minutes #}
 ```
 
+Age formatting:
+
+```twig
+{# with filter: #}
+Age: {{ user.birthdate|age }} {# Age: 30 years old #}
+
+{# ... or use the equivalent function: #}
+Age: {{ age(user.birthdate) }} {# Age: 30 years old #}
+```
+
 ### Service
 
 You can also format dates and durations in your services/controllers by autowiring/injecting the
@@ -67,6 +79,8 @@ public function yourAction(DateTimeFormatter $dateTimeFormatter)
     $agoTime = $dateTimeFormatter->formatDiff($someDate, $toDate); // $toDate parameter is optional and defaults to "now"
 
     $readTime = $dateTimeFormatter->formatDuration(64); // or $entity->readTimeInSeconds()
+
+    $ageTime = $dateTimeFormatter->formatAge($someDate, $toDate); // $toDate parameter is optional and defaults to "now"
 
     return $this->json([
         //  ...
@@ -87,6 +101,8 @@ the locale:
 {{ someDateTimeVariable|time_diff(locale='es') }}
 
 {{ someDurationInSeconds|duration(locale='es') }}
+
+{{ someDateTimeVariable|age(locale='es') }}
 ```
 
 ## Tests

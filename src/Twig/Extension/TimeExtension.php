@@ -25,6 +25,11 @@ final class TimeExtension extends AbstractExtension
                 [DateTimeFormatter::class, 'formatDiff'],
                 ['is_safe' => ['html']]
             ),
+            new TwigFunction(
+                'age',
+                [DateTimeFormatter::class, 'formatAge'],
+                ['is_safe' => ['html']]
+            ),
         ];
     }
 
@@ -44,6 +49,11 @@ final class TimeExtension extends AbstractExtension
             new TwigFilter(
                 'duration',
                 [DateTimeFormatter::class, 'formatDuration'],
+                ['is_safe' => ['html']]
+            ),
+            new TwigFilter(
+                'age',
+                [DateTimeFormatter::class, 'formatAge'],
                 ['is_safe' => ['html']]
             ),
         ];
