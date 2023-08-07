@@ -74,6 +74,10 @@
                 <source>duration.none</source>
                 <target>&lt; 1 seconde</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>1 an|%count% ans</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
