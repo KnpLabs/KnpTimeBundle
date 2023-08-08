@@ -29,7 +29,7 @@
         "symfony/phpunit-bridge": "^5.4|^6.0",
         "symfony/twig-bundle": "^5.4|^6.0",
         "phpstan/phpstan": "^1.11",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^10.2"
     },
 
     "suggest": {

@@ -33,7 +33,7 @@ final class DateTimeFormatterTest extends TestCase
         $this->assertSame($expected, $this->formatter->formatDiff($from, $to));
     }
 
-    public function getFormatDiffTests(): \Generator
+    public static function getFormatDiffTests(): \Generator
     {
         yield ['- 5 years', 'now', 'diff.ago.year'];
         yield ['- 10 months', 'now', 'diff.ago.month'];
