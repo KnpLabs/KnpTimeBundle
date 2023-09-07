@@ -73,7 +73,7 @@ use Knp\Bundle\TimeBundle\DateTimeFormatter;
 
 public function yourAction(DateTimeFormatter $dateTimeFormatter)
 {
-    $someDate = new \DateTimeImmutable('2017-02-11'); // or $entity->publishedDate()
+    $someDate = new \DateTimeImmutable('-2 years'); // or $entity->publishedDate()
     $toDate = new \DateTimeImmutable('now');
 
     $agoTime = $dateTimeFormatter->formatDiff($someDate, $toDate); // $toDate parameter is optional and defaults to "now"
