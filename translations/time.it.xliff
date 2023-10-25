@@ -54,6 +54,30 @@
                 <source>diff.in.year</source>
                 <target>tra 1 anno|tra %count% anni</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>1 secondo|%count% secondi</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>1 minuto|%count% minuti</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>1 ora|%count% ore</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>1 giorno|%count% giorni</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 secondo</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>1 anno|%count% anni</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
