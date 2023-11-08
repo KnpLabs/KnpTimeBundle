@@ -123,7 +123,7 @@ final class DateTimeFormatter
         return new \DateTime($value);
     }
 
-    private function convert( $seconds )
+    private function convert( float $seconds ): string
     {
         $secs = $seconds % 60;
         $hrs = $seconds / 60;
