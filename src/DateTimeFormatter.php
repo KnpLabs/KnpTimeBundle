@@ -53,7 +53,7 @@ final class DateTimeFormatter
      *
      * @source https://github.com/symfony/symfony/blob/ad72245261792c6b5d2db821fcbd141b11095215/src/Symfony/Component/Console/Helper/Helper.php#L97
      */
-    public function formatDuration(float $seconds, int $precision = 2, string $locale = null): string
+    public function formatDuration(float $seconds, string $locale = null): string
     {
         static $timeFormats = [
             [0, 'duration.none'],
@@ -76,9 +76,10 @@ final class DateTimeFormatter
                         return $this->translator->trans($format[1], ['%count%' => 1], 'time', $locale);
                     }
 
+                    $time   = $this->convert( $seconds );
                     return $this->translator->trans(
                         $format[1],
-                        ['%count%' => number_format($seconds / $format[2], $precision)],
+                        ['%count%' => $time],
                         'time',
                         $locale
                     );
@@ -120,5 +121,19 @@ final class DateTimeFormatter
         }
 
         return new \DateTime($value);
+    }
+
+    private function convert( $seconds )
+    {
+        $secs = $seconds % 60;
+        $hrs = $seconds / 60;
+        $mins = $hrs % 60;
+        
+        $hrs = $hrs / 60;
+        if ( (int)$hrs ) {
+            return (int)$hrs . "." . (int)$mins;
+        }
+        
+        return (int)$mins . "." . (int)$secs;
     }
 }
