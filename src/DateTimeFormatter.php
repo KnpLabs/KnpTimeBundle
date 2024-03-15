@@ -18,8 +18,8 @@ final class DateTimeFormatter
      */
     public function formatDiff(
         int|string|\DateTimeInterface $from,
-        int|string|\DateTimeInterface $to = null,
-        string $locale = null
+        int|string|\DateTimeInterface|null $to = null,
+        ?string $locale = null
     ): string {
         $from = self::formatDateTime($from);
         $to = self::formatDateTime($to);
@@ -53,7 +53,7 @@ final class DateTimeFormatter
      *
      * @source https://github.com/symfony/symfony/blob/ad72245261792c6b5d2db821fcbd141b11095215/src/Symfony/Component/Console/Helper/Helper.php#L97
      */
-    public function formatDuration(float $seconds, string $locale = null): string
+    public function formatDuration(float $seconds, ?string $locale = null): string
     {
         static $timeFormats = [
             [0, 'duration.none'],
@@ -94,8 +94,8 @@ final class DateTimeFormatter
      */
     public function formatAge(
         int|string|\DateTimeInterface $from,
-        int|string|\DateTimeInterface $to = null,
-        string $locale = null
+        int|string|\DateTimeInterface|null $to = null,
+        ?string $locale = null
     ): string {
         $from = self::formatDateTime($from);
         $to = self::formatDateTime($to);
