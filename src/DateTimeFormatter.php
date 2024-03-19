@@ -76,9 +76,10 @@ final class DateTimeFormatter
                         return $this->translator->trans($format[1], ['%count%' => 1], 'time', $locale);
                     }
 
+                    $time   = $this->convert( $seconds );
                     return $this->translator->trans(
                         $format[1],
-                        ['%count%' => floor($seconds / $format[2])],
+                        ['%count%' => $time],
                         'time',
                         $locale
                     );
@@ -120,5 +121,19 @@ final class DateTimeFormatter
         }
 
         return new \DateTime($value);
+    }
+
+    private function convert( float $seconds ): string
+    {
+        $secs = $seconds % 60;
+        $hrs = $seconds / 60;
+        $mins = $hrs % 60;
+        
+        $hrs = $hrs / 60;
+        if ( (int)$hrs ) {
+            return (int)$hrs . "." . (int)$mins;
+        }
+        
+        return (int)$mins . "." . (int)$secs;
     }
 }
