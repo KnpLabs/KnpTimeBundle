@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- http://phpunit.de/manual/4.1/en/appendixes.configuration.html -->
+<!-- https://docs.phpunit.de/en/10.3/configuration.html -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.3/phpunit.xsd"
-         backupGlobals="false"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
          failOnRisky="true"
          failOnWarning="true"
 >
-    <php>
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
-    </php>
+  <source>
+    <include>
+      <directory>src</directory>
+    </include>
+  </source>
 
-    <testsuites>
-        <testsuite name="Project Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
+  <php>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="max[self]=0"/>
+  </php>
 
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory>src</directory>
-        </whitelist>
-    </filter>
+  <testsuites>
+    <testsuite name="Project Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
 </phpunit>
