@@ -3,6 +3,14 @@
 *We intend to follow [Semantic Versioning 2.0.0](https://semver.org/), if you
 find a change that break's semver, please create an issue.*
 
+## [v2.3.0](https://github.com/knplabs/knptimebundle/releases/tag/v2.3.0)
+
+*June 6th, 2024*
+
+### Feature
+
+- [#209](https://github.com/KnpLabs/KnpTimeBundle/pull/209) [translation] add additional Slovak translations - *@tito10047*
+
 ## [v2.0.0]
 
 - Modernize/simplify the code base
