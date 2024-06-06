@@ -3,7 +3,7 @@ name: CI
 on:
     push:
         branches:
-            - master
+            - main 
     pull_request:
     release:
 
@@ -22,6 +22,8 @@ jobs:
                       symfony: '*'
                     - php: 8.3
                       symfony: '7.0.*'
+                    - php: 8.3
+                      symfony: '7.1.*'
         steps:
             - uses: zenstruck/.github@php-test-symfony
               with:
