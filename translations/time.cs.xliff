@@ -54,6 +54,30 @@
                 <source>diff.in.year</source>
                 <target>{1}za rok|[2, 4]za %count% roky|[5, Inf]za %count% let</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>1 sekunda|[2, 4]%count% sekundy|[5, Inf]%count% sekund</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>1 minuta|[2, 4]%count% minuty|[5, Inf]%count% minut</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>1 hodina|[2, 4]%count% hodiny|[5, Inf]%count% hodin</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>1 den|[2, 4]%count% dny|[5, Inf]%count% dní</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 sekunda</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>1 rok|[2, 4] roky|[5, Inf] let</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
