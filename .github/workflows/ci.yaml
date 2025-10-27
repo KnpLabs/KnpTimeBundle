@@ -26,6 +26,8 @@ jobs:
                       symfony: '7.1.*'
                     - php: 8.4
                       symfony: '7.1.*'
+                    - php: 8.5
+                      symfony: '7.1.*'
         steps:
             - uses: zenstruck/.github@php-test-symfony
               with:
