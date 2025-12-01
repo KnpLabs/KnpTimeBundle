@@ -24,8 +24,14 @@ jobs:
                       symfony: '7.0.*'
                     - php: 8.3
                       symfony: '7.1.*'
+                    - php: 8.4
+                      symfony: '7.1.*'
+                    - php: 8.5
+                      symfony: '7.4.*'
+                    - php: 8.5
+                      symfony: '8.0.*'
         steps:
-            - uses: zenstruck/.github@php-test-symfony
+            - uses: zenstruck/.github/actions/php-test-symfony@main
               with:
                   php: ${{ matrix.php }}
                   symfony: ${{ matrix.symfony }}

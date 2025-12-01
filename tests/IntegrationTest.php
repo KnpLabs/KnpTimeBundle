@@ -100,7 +100,6 @@ abstract class AbstractTimeBundleIntegrationTestKernel extends Kernel
                 __DIR__.'/fixtures' => 'integration_test',
             ],
             'strict_variables' => true,
-            'exception_controller' => null,
         ]);
         // avoid logging request logs
         $container->register('logger', Logger::class)

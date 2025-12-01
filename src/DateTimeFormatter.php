@@ -19,7 +19,7 @@ final class DateTimeFormatter
     public function formatDiff(
         int|string|\DateTimeInterface $from,
         int|string|\DateTimeInterface|null $to = null,
-        ?string $locale = null
+        ?string $locale = null,
     ): string {
         $from = self::formatDateTime($from);
         $to = self::formatDateTime($to);
@@ -95,7 +95,7 @@ final class DateTimeFormatter
     public function formatAge(
         int|string|\DateTimeInterface $from,
         int|string|\DateTimeInterface|null $to = null,
-        ?string $locale = null
+        ?string $locale = null,
     ): string {
         $from = self::formatDateTime($from);
         $to = self::formatDateTime($to);
