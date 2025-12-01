@@ -52,13 +52,9 @@
         }
     },
 
-    "minimum-stability": "RC",
     "prefer-stable": true,
 
     "extra": {
-        "symfony": {
-            "require": "^8.0"
-        },
         "branch-alias": {
             "dev-master": "2.x-dev"
         }
