@@ -61,6 +61,18 @@ final class IntegrationTest extends TestCase
         $this->assertStringContainsString('il y a 1 mois', $result);
     }
 
+    public function testZodiacSignTwigFilter(): void
+    {
+        $result = $this->kernel->getContainer()->get('public.twig')->render('@integration_test/zodiac_sign.twig', [
+            'date' => new \DateTimeImmutable('1990-08-01'),
+        ]);
+
+        $this->assertStringContainsString('Filter value: leo', $result);
+        $this->assertStringContainsString('Filter symbol: ♌', $result);
+        $this->assertStringContainsString('Function value: leo', $result);
+        $this->assertStringContainsString('Function symbol: ♌', $result);
+    }
+
     protected function setUp(): void
     {
         $this->kernel = new TimeBundleIntegrationTestKernel();

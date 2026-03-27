@@ -105,6 +105,49 @@ the locale:
 {{ someDateTimeVariable|age(locale='es') }}
 ```
 
+## Zodiac Sign
+
+### Twig
+
+```twig
+{# With filter #}
+{% set zodiac_sign = user.birthdate|zodiac_sign %}
+
+{# ... or use the equivalent function: #}
+{% set zodiac_sign = zodiac_sign(user.birthdate) %}
+
+Your zodiac sign is {{ zodiac_sign.symbol }} {{ zodiac_sign|trans }}
+{# outputs "Your zodiac sign is ♉ Taurus" #}
+
+{# Get translated name with specific locale #}
+{{ zodiac_sign|trans(locale='fr') }}
+{# outputs "Taureau" #}
+```
+
+### Service
+
+You can also format dates in your services/controllers by autowiring/injecting the
+`Knp\Bundle\TimeBundle\DateTimeFormatter` service:
+
+```php
+use Knp\Bundle\TimeBundle\DateTimeFormatter;
+// ...
+
+public function yourAction(DateTimeFormatter $dateTimeFormatter)
+{
+    $someDate = new \DateTimeImmutable('1990-08-01'); // or $entity->getBirthdate()
+
+    $zodiacSign = $dateTimeFormatter->calculateZodiacSign($someDate);
+
+    return $this->json([
+        //  ...
+        'symbol' => $zodiacSign->getSymbol(), // ♌
+        'name'   => $zodiacSign->trans($translator), // Leo
+        // ...
+    ]);
+}
+```
+
 ## Tests
 
 If you want to run tests, please check that you have installed dev dependencies.

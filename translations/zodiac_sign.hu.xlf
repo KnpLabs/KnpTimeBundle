@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>zodiac_sign.aries</source>
+                <target>Kos</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>zodiac_sign.taurus</source>
+                <target>Bika</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>zodiac_sign.gemini</source>
+                <target>Ikrek</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>zodiac_sign.cancer</source>
+                <target>Rák</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>zodiac_sign.leo</source>
+                <target>Oroszlán</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>zodiac_sign.virgo</source>
+                <target>Szűz</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>zodiac_sign.libra</source>
+                <target>Mérleg</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>zodiac_sign.scorpio</source>
+                <target>Skorpió</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>zodiac_sign.sagittarius</source>
+                <target>Nyilas</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>zodiac_sign.capricorn</source>
+                <target>Bak</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>zodiac_sign.aquarius</source>
+                <target>Vízöntő</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>zodiac_sign.pisces</source>
+                <target>Halak</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

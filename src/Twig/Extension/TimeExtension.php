@@ -30,6 +30,10 @@ final class TimeExtension extends AbstractExtension
                 [DateTimeFormatter::class, 'formatAge'],
                 ['is_safe' => ['html']]
             ),
+            new TwigFunction(
+                'zodiac_sign',
+                [DateTimeFormatter::class, 'calculateZodiacSign'],
+            ),
         ];
     }
 
@@ -55,6 +59,10 @@ final class TimeExtension extends AbstractExtension
                 'age',
                 [DateTimeFormatter::class, 'formatAge'],
                 ['is_safe' => ['html']]
+            ),
+            new TwigFilter(
+                'zodiac_sign',
+                [DateTimeFormatter::class, 'calculateZodiacSign'],
             ),
         ];
     }

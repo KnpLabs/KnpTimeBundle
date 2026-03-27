@@ -105,6 +105,29 @@ final class DateTimeFormatter
         return $this->translator->trans('age', ['%count%' => $diff->y], 'time', $locale);
     }
 
+    /**
+     * Returns the zodiac sign for the given date.
+     */
+    public function calculateZodiacSign(\DateTimeInterface|string|int|float|null $date = null): ZodiacSign
+    {
+        $dateTime = match (true) {
+            null === $date => new \DateTimeImmutable(),
+            \is_int($date) => new \DateTimeImmutable('@'.$date),
+            \is_float($date) => new \DateTimeImmutable('@'.(string) (int) $date),
+            \is_string($date) => new \DateTimeImmutable($date),
+            $date instanceof \DateTimeImmutable => $date,
+            default => \DateTimeImmutable::createFromInterface($date),
+        };
+
+        foreach (ZodiacSign::cases() as $zodiacSign) {
+            if ($zodiacSign->contains($dateTime)) {
+                return $zodiacSign;
+            }
+        }
+
+        throw new \InvalidArgumentException(\sprintf('Unable to determine zodiac sign for date "%s".', $dateTime->format(\DateTimeInterface::RFC3339)));
+    }
+
     private static function formatDateTime(int|string|\DateTimeInterface|null $value): \DateTimeInterface
     {
         if ($value instanceof \DateTimeInterface) {
