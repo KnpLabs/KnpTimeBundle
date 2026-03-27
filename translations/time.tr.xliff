@@ -54,6 +54,30 @@
                 <source>diff.in.year</source>
                 <target>%count% yıl içinde</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>%count% saniye</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>%count% dakika</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>%count% saat</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>%count% gün</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 saniye</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>%count% yaşında</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

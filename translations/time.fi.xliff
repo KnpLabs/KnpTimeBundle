@@ -54,6 +54,30 @@
                 <source>diff.in.year</source>
                 <target>yhden vuoden päästä|%count% vuoden päästä</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>1 sekuntti|%count% sekunttia</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>1 minuutti|%count% minuuttia</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>1 tunti|%count% tuntia</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>1 päivä|%count% päivää</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 sekuntti</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>1 vuosi|%count% vuotta</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

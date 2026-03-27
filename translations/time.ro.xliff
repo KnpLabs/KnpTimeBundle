@@ -54,6 +54,30 @@
                 <source>diff.in.year</source>
                 <target>peste %count% an|peste %count% ani|peste %count% de ani</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>%count% secundă|%count% secunde|%count% de secunde</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>%count% minut|%count% minute|%count% de minute</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>%count% oră|%count% ore|%count% de ore</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>%count% zi|%count% zile|%count% de zile</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 secundă</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>%count% an|%count% ani|%count% de ani</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

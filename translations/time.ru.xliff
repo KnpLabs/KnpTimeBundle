@@ -74,6 +74,10 @@
                 <source>duration.none</source>
                 <target>&lt; 1 секунды</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>%count% год|%count% года|%count% лет</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

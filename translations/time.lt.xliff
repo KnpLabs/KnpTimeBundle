@@ -54,6 +54,30 @@
                 <source>diff.in.year</source>
                 <target>po metų|po %count% metų|po %count% metų</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>duration.second</source>
+                <target>1 sekundė|%count% sekundės|%count% sekundžių</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>duration.minute</source>
+                <target>1 minutė|%count% minutės|%count% minučių</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>duration.hour</source>
+                <target>1 valanda|%count% valandos|%count% valandų</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>duration.day</source>
+                <target>1 diena|%count% dienos|%count% dienų</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>duration.none</source>
+                <target>&lt; 1 sekundės</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>1 metai|%count% metai|%count% metų</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

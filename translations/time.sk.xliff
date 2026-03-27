@@ -74,6 +74,10 @@
                 <source>duration.none</source>
                 <target>&lt; 1 sekunda</target>
             </trans-unit>
+            <trans-unit id="19">
+                <source>age</source>
+                <target>{1}1 rok|[2, 4]%count% roky|[5, Inf]%count% rokov</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
