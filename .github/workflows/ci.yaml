@@ -30,6 +30,8 @@ jobs:
                       symfony: '7.4.*'
                     - php: 8.5
                       symfony: '8.0.*'
+                    - php: 8.6
+                      symfony: '8.0.*'
         steps:
             - uses: zenstruck/.github/actions/php-test-symfony@main
               with:
